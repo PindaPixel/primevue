@@ -218,14 +218,6 @@
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
     </div>
-    <!-- <div class="flex flex-column w-full md:p-8 justify-content-center align-items-center gap-2" style="max-width: 1440px">
-        <img src="../templates/assets/Vue-cli.svg" alt="" class="w-full h-full" style="max-width: 788px; max-height: 443px" />
-        <div class="flex flex-column align-items-start h-full border-round-lg" style="max-height: 221px; border: 1px solid var(--root-surface-border, #dfe7ef)">
-            <div class="flex h-full align-items-center" style="max-height: 56px; padding: 4px 24px; gap: 72px; flex-shrink: 0; align-self: stretch">
-                <div style="display: flex; height: 20px; align-items: center; gap: 24px"></div>
-            </div>
-        </div>
-    </div> -->
 
     <div class="flex flex-column align-items-center justify-content-center gap-6 py-8">
         <FeatureMenu :items="items2" />
@@ -241,58 +233,58 @@
         <div class="grid w-full" style="max-width: 1062px">
             <div class="flex flex-column col-12 md:col-6 justify-content-start align-items-center md:align-items-end">
                 <div class="card w-full" style="max-width: 410px; min-width: 300px">
-                    <div class="flex flex-column align-items-center">
-                        <img src="./assets/features-images/responsive.svg" class="w-full" alt="" />
-                        <div>
-                            <h5 class="mt-2">Fully Responsive</h5>
-                            <div class="text-xs md:text-base font-normal line-height-3">Apollo is crafted to provide optimal viewing and interaction experience for a wide range of devices.</div>
+                    <div class="flex flex-column align-items-start gap-3">
+                        <img src="./assets/features-images/Responsive.jpg" class="w-full" alt="" />
+                        <div class="flex flex-column align-items-start gap-2">
+                            <span class="font-semibold text-lg line-height-2 align-self-stretch text-900">Fully Responsive</span>
+                            <div class="text-sm font-normal line-height-2">Apollo is crafted to provide optimal viewing and interaction experience for a wide range of devices.</div>
                         </div>
                     </div>
                 </div>
                 <div class="card w-full" style="max-width: 410px; min-width: 300px">
-                    <div class="flex flex-column align-items-center">
-                        <img src="./assets/features-images/Support.svg" class="w-full" alt="" />
-                        <div>
-                            <h5 class="mt-2">Lifetime Support</h5>
-                            <div class="text-xs md:text-base font-normal line-height-3">Apollo has a dedicated forum where lifetime support is delivered by engineers at PrimeTek in a timely manner.</div>
+                    <div class="flex flex-column align-items-start gap-3">
+                        <img src="./assets/features-images/Support.jpg" class="w-full" alt="" />
+                        <div class="flex flex-column align-items-start gap-2">
+                            <span class="font-semibold text-lg line-height-2 align-self-stretch text-900">Lifetime Support</span>
+                            <div class="text-sm font-normal line-height-2">Apollo has a dedicated forum where lifetime support is delivered by engineers at PrimeTek in a timely manner.</div>
                         </div>
                     </div>
                 </div>
                 <div class="card w-full" style="max-width: 410px; min-width: 300px">
-                    <div class="flex flex-column align-items-center">
-                        <img src="./assets/features-images/Eslint.svg" class="w-full" alt="" />
-                        <div>
-                            <h5 class="mt-2">Top Notch Quality</h5>
-                            <div class="text-xs md:text-base font-normal line-height-3">Superior standards with 100% compatibility for strict mode and linting tools.</div>
+                    <div class="flex flex-column align-items-start gap-3">
+                        <img src="./assets/features-images/Eslint.jpg" class="w-full" alt="" />
+                        <div class="flex flex-column align-items-start gap-2">
+                            <span class="font-semibold text-lg line-height-2 align-self-stretch text-900">Top Notch Quality</span>
+                            <div class="text-sm font-normal line-height-2">Superior standards with 100% compatibility for strict mode and linting tools.</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-column col-12 md:col-6 md:mt-8 md:pt-4 md:align-items-start align-items-center">
+            <div class="flex flex-column col-12 md:col-6 md:mt-8 justify-content-start align-items-center md:align-items-start">
                 <div class="card w-full" style="max-width: 410px; min-width: 300px">
-                    <div class="flex flex-column align-items-center">
-                        <img src="./assets/features-images/Browser.svg" class="w-full" alt="" />
-                        <div>
-                            <h5 class="mt-2">Cross Browser Compatible</h5>
-                            <div class="text-xs md:text-base font-normal line-height-3">First class support for Firefox, Safari, Chrome and Edge.</div>
+                    <div class="flex flex-column align-items-start gap-3">
+                        <img src="./assets/features-images/Browser.jpg" class="w-full" alt="" />
+                        <div class="flex flex-column align-items-start gap-2">
+                            <span class="font-semibold text-lg line-height-2 align-self-stretch text-900">Cross Browser Compatible</span>
+                            <div class="text-sm font-normal line-height-2">First class support for Firefox, Safari, Chrome and Edge.</div>
                         </div>
                     </div>
                 </div>
                 <div class="card w-full" style="max-width: 410px; min-width: 300px">
-                    <div class="flex flex-column align-items-center">
-                        <img src="./assets/features-images/Design.svg" class="w-full" alt="" />
-                        <div>
-                            <h5 class="mt-2">Customizable Design</h5>
-                            <div class="text-xs md:text-base font-normal line-height-3">Fully customizable with a mixture of Sass and CSS variables.</div>
+                    <div class="flex flex-column align-items-start gap-3">
+                        <img src="./assets/features-images/Design.jpg" class="w-full" alt="" />
+                        <div class="flex flex-column align-items-start gap-2">
+                            <span class="font-semibold text-lg line-height-2 align-self-stretch text-900">Customizable Design</span>
+                            <div class="text-sm font-normal line-height-2">Fully customizable with a mixture of Sass and CSS variables.</div>
                         </div>
                     </div>
                 </div>
                 <div class="card w-full" style="max-width: 410px; min-width: 300px">
-                    <div class="flex flex-column align-items-center">
-                        <img src="./assets/features-images/Mobile.svg" class="w-full" alt="" />
-                        <div>
-                            <h5 class="mt-2">Mobile Experience</h5>
-                            <div class="text-xs md:text-base font-normal line-height-3">Touch optimized enhanced mobile experience with responsive design.</div>
+                    <div class="flex flex-column align-items-start gap-3">
+                        <img src="./assets/features-images/Mobile.jpg" class="w-full" alt="" />
+                        <div class="flex flex-column align-items-start gap-2">
+                            <span class="font-semibold text-lg line-height-2 align-self-stretch text-900">Mobile Experience</span>
+                            <div class="text-sm font-normal line-height-2">Touch optimized enhanced mobile experience with responsive design.</div>
                         </div>
                     </div>
                 </div>
