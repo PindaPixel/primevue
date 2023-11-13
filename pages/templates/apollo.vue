@@ -128,7 +128,7 @@
             </div>
         </div>
     </div>
-    <Dialog :pt="{ content: { style: 'flex-grow:1' } }" header="Video Content" v-model:visible="displayModal" :modal="true" :style="{ width: '80vw', height: '45vw' }" :draggable="false" :resizable="false">
+    <Dialog v-model:visible="displayModal" header="Video Content" :modal="true" :style="{ width: '80vw', height: '45vw' }" :draggable="false" :resizable="false" :pt="{ content: { style: 'flex-grow:1' } }">
         <iframe
             :style="{ width: '100%', height: '100%' }"
             src="https://www.youtube.com/embed/Y07edRJd5QM"
@@ -140,7 +140,7 @@
     </Dialog>
     <div class="flex flex-column align-items-center justify-content-center gap-6 py-4 md:py-8">
         <p class="align-items-center text-center font-semibold line-height-3 align-items-stretch text-2xl md:text-6xl text-900 mb-0" style="max-width: 718px">Features that the Apollo template gives you</p>
-        <FeatureMenu :items="items" :dynamicStyle="{ height: '8rem' }" />
+        <FeatureMenu :items="items" />
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
@@ -218,9 +218,18 @@
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
     </div>
+    <!-- <div class="flex flex-column w-full md:p-8 justify-content-center align-items-center gap-2" style="max-width: 1440px">
+        <img src="../templates/assets/Vue-cli.svg" alt="" class="w-full h-full" style="max-width: 788px; max-height: 443px" />
+        <div class="flex flex-column align-items-start h-full border-round-lg" style="max-height: 221px; border: 1px solid var(--root-surface-border, #dfe7ef)">
+            <div class="flex h-full align-items-center" style="max-height: 56px; padding: 4px 24px; gap: 72px; flex-shrink: 0; align-self: stretch">
+                <div style="display: flex; height: 20px; align-items: center; gap: 24px"></div>
+            </div>
+        </div>
+    </div> -->
 
     <div class="flex flex-column align-items-center justify-content-center gap-6 py-8">
-        <FeatureMenu :items="items2" :dynamicStyle="{ height: '10.3rem' }" />
+        <FeatureMenu :items="items2" />
+
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
