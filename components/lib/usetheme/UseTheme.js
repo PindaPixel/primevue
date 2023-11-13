@@ -8,12 +8,12 @@ export function useTheme(theme, options = {}) {
 
     const load = (_theme, _useStyleOptions = {}) => {
         const selectedTheme = _theme || theme || {};
-        const name = options.name || 'prime';
+        const name = _useStyleOptions.name || options.name || 'prime';
         const generatedTheme = selectedTheme[name] || selectedTheme;
         const { styles, variables } = PrimeCSS.generate({ [name]: generatedTheme }, options);
 
-        stylesRef.value = useStyle(styles.css, { name: `${name}-styles`, ..._useStyleOptions });
-        variablesRef.value = useStyle(variables.css, { name: `${name}-variables`, ..._useStyleOptions });
+        stylesRef.value = useStyle(styles.css, { ..._useStyleOptions, name: `${name}-styles` });
+        variablesRef.value = useStyle(variables.css, { ..._useStyleOptions, name: `${name}-variables` });
 
         stylesRef.value.load();
         variablesRef.value.load();

@@ -12,7 +12,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             options: {
                 dark: false,
                 fontFamily: 'myFontFamily',
-                fontSize: '2rem',
+                fontSize: '1rem',
                 borderRadius: '8px',
                 textColor: 'red',
                 primaryColor: '#10b981',

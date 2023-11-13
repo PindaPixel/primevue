@@ -1,6 +1,6 @@
 <script>
 import BaseStyle from 'primevue/base/style';
-import { ObjectUtils } from 'primevue/utils';
+import { DomHandler, ObjectUtils, UniqueComponentId } from 'primevue/utils';
 import { mergeProps } from 'vue';
 import BaseComponentStyle from './style/BaseComponentStyle';
 
@@ -34,8 +34,17 @@ export default {
             immediate: true,
             handler(newValue) {
                 if (!newValue) {
-                    BaseComponentStyle.loadStyle({ nonce: this.$config?.csp?.nonce });
-                    this.$options.style && this.$style.loadStyle({ nonce: this.$config?.csp?.nonce });
+                    BaseComponentStyle.loadStyle(this.$styleOptions);
+                    this.$options.style && this.$style.loadStyle(this.$styleOptions);
+                }
+            }
+        },
+        $globalTheme: {
+            immediate: true,
+            handler(newValue) {
+                if (newValue) {
+                    BaseComponentStyle.loadTheme(this.$globalTheme, { useStyleOptions: this.$styleOptions });
+                    this.$options.style && this.$style.loadTheme(this.$globalTheme, { useStyleOptions: this.$styleOptions });
                 }
             }
         },
@@ -43,8 +52,28 @@ export default {
             immediate: true,
             handler(newValue) {
                 if (newValue) {
-                    BaseComponentStyle.loadTheme(this.$preset, { nonce: this.$config?.csp?.nonce });
-                    this.$options.style && this.$style.loadTheme(this.$preset, { nonce: this.$config?.csp?.nonce });
+                    let componentId = DomHandler.getAttribute(this.$el, 'id') || DomHandler.getAttribute(this.$el, 'data-pc-id');
+
+                    if (!componentId) {
+                        componentId = UniqueComponentId();
+                        DomHandler.setAttribute(this.$el, 'data-pc-id', componentId);
+                    }
+
+                    const selector = DomHandler.getAttribute(this.$el, 'id') ? `#${componentId}` : `[data-pc-id="${componentId}"]`;
+
+                    this.$options.style &&
+                        this.$style.loadTheme(
+                            {
+                                [componentId]: {
+                                    selector,
+                                    ...this.$theme
+                                }
+                            },
+                            {
+                                useThemeOptions: { variableOptions: { selector } },
+                                useStyleOptions: { ...this.$styleOptions, ...{ name: `${componentId}` } }
+                            }
+                        );
                 }
             }
         }
@@ -66,7 +95,7 @@ export default {
         this._hook('onCreated');
     },
     beforeMount() {
-        BaseStyle.loadStyle({ nonce: this.$config?.csp?.nonce });
+        BaseStyle.loadStyle(this.$styleOptions);
         this._loadGlobalStyles();
         this._hook('onBeforeMount');
     },
@@ -214,19 +243,22 @@ export default {
         isUnstyled() {
             return this.unstyled !== undefined ? this.unstyled : this.$config?.unstyled;
         },
-        $theme() {
-            return this.theme !== undefined ? this.theme : this.$config?.theme;
-        },
-        $preset() {
-            const { preset, options } = this.$theme || {};
+        $globalTheme() {
+            const { preset, options } = this.$config?.theme || {};
 
             return ObjectUtils.getItemValue(preset, options);
+        },
+        $theme() {
+            return ObjectUtils.getItemValue(this.theme);
         },
         $params() {
             return { instance: this, props: this.$props, state: this.$data, parentInstance: this.$parentInstance };
         },
         $style() {
             return { classes: undefined, inlineStyles: undefined, loadStyle: () => {}, loadCustomStyle: () => {}, loadTheme: () => {}, ...(this._getHostInstance(this) || {}).$style, ...this.$options.style };
+        },
+        $styleOptions() {
+            return { nonce: this.$config?.csp?.nonce };
         },
         $config() {
             return this.$primevue?.config;

@@ -39,8 +39,16 @@ export default {
     loadStyle(options = {}) {
         return this.css ? useStyle(this.css, { name: this.name, ...options }) : {};
     },
-    loadTheme(theme, useStyleOptions = {}) {
-        return theme && this.options?.theme ? useTheme(theme, { name: this.name, ...this.options?.theme }).load(undefined, useStyleOptions) : {};
+    loadTheme(theme, options = {}) {
+        return theme && this.options?.theme
+            ? useTheme(theme, {
+                  name: this.name,
+                  ...this.options?.theme,
+                  ...options.useThemeOptions,
+                  variableOptions: { ...this.options?.theme?.variableOptions, ...options.useThemeOptions?.variableOptions },
+                  selectorOptions: { ...this.options?.theme?.selectorOptions, ...options.useThemeOptions?.selectorOptions }
+              }).load(undefined, options.useStyleOptions)
+            : {};
     },
     getStyleSheet(extendedCSS = '', props = {}) {
         if (this.css) {
