@@ -154,9 +154,9 @@
             <div class="col-12 lg:col-4">
                 <div class="flex h-full justify-content-center">
                     <div class="shadow-2 p-5 h-full flex flex-column surface-card border-round-md">
-                        <div class="flex flex-column align-items-center justify-content-center gap-4 w-full">
-                            <img src="../templates/assets/Features/Use_applications.svg" alt="" class="w-full border-round-sm" style="max-width: 298px; max-height: 242px; background-color: #eff3f8" />
-                            <div class="flex flex-column w-full align-items-start gap-4" style="max-width: 298px">
+                        <div class="flex flex-column align-items-center justify-content-center gap-3 w-full">
+                            <img src="../templates/assets/Features/Use_applications.jpg" alt="" class="w-full border-round-sm" style="max-width: 298px; max-height: 242px; background-color: #eff3f8" />
+                            <div class="flex flex-column w-full align-items-start gap-2" style="max-width: 298px">
                                 <span class="align-self-stretch text-900 text-lg font-semibold line-height-3">Ready to Use Applications</span>
                                 <span class="align-self-stretch text-sm font-normal line-height-3">Mail, File System, Tasks, Calendar, Blog and Chat are the sample applications to get started with ease.</span>
                             </div>
@@ -167,9 +167,9 @@
             <div class="col-12 lg:col-4">
                 <div class="flex h-full justify-content-center">
                     <div class="shadow-2 p-5 h-full flex flex-column surface-card border-round-md">
-                        <div class="flex flex-column align-items-center justify-content-center gap-4 w-full">
-                            <img src="../templates/assets/Features/E-commerce.svg" alt="" class="w-full border-round-sm" style="max-width: 298px; max-height: 242px; background-color: #eff3f8" />
-                            <div class="flex flex-column w-full align-items-start gap-4" style="max-width: 298px">
+                        <div class="flex flex-column align-items-center justify-content-center gap-3 w-full">
+                            <img src="../templates/assets/Features/E-commerce.jpg" alt="" class="w-full border-round-sm" style="max-width: 298px; max-height: 242px; background-color: #eff3f8" />
+                            <div class="flex flex-column w-full align-items-start gap-2" style="max-width: 298px">
                                 <span class="align-self-stretch text-900 text-lg font-semibold line-height-3">E-Commerce Pages</span>
                                 <span class="align-self-stretch text-sm font-normal line-height-3">Apollo offers E-commerce pages to kickstart your e-commerce project powered by PrimeBlocks.</span>
                             </div>
@@ -180,9 +180,9 @@
             <div class="col-12 lg:col-4">
                 <div class="flex h-full justify-content-center">
                     <div class="shadow-2 p-5 flex flex-column surface-card border-round-md">
-                        <div class="flex flex-column align-items-center justify-content-center gap-4 w-full">
-                            <img src="../templates/assets/Features/Pages.svg" alt="" class="w-full border-round-sm" style="max-width: 298px; max-height: 242px; background-color: #eff3f8" />
-                            <div class="flex flex-column w-full align-items-start gap-4" style="max-width: 298px">
+                        <div class="flex flex-column align-items-center justify-content-center gap-3 w-full">
+                            <img src="../templates/assets/Features/Pages.jpg" alt="" class="w-full border-round-sm" style="max-width: 298px; max-height: 242px; background-color: #eff3f8" />
+                            <div class="flex flex-column w-full align-items-start gap-2" style="max-width: 298px">
                                 <span class="align-self-stretch text-900 text-lg font-semibold line-height-3">Ready to Use Pages</span>
                                 <span class="align-self-stretch text-sm font-normal line-height-3">Landing, login, invoice, help, user management and error pages are provided as template pages to get started with building your app.</span>
                             </div>
