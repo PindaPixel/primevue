@@ -25,31 +25,22 @@
                 </div>
             </div> -->
 
-            <Galleria
-                :value="activeItem.image"
-                :numVisible="5"
-                :containerStyle="galleriaStyle"
-                :circular="true"
-                :autoPlay="true"
-                :showThumbnails="false"
-                :showIndicators="true"
-                indicatorsPosition="top"
-                :transitionInterval="1000"
-                :pt="{
-                    indicators: { style: { backgroundColor: 'white', borderRadius: '40px', maxHeight: '40px', borderRadius: '40px', border: '1px solid var(--root-surface-border, #dfe7ef)', maxWidth: '398px' } }
-                }"
-            >
-                <!-- Transition interval set to 1 second -->
-                <template #item="slotProps">
-                    <img :src="slotProps.item" :alt="slotProps.item.alt" style="display: block; width: 100%" />
-                </template>
+            <div class="flex p-1 align-items-start gap-1" style="border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
+                <div
+                    v-for="layoutMenu in layoutMenus"
+                    :key="layoutMenu.id"
+                    @click="onMenuClick(layoutMenu)"
+                    :style="[activeMenu.id === layoutMenu.id ? { 'background-color': '#f5f5f5' } : {}]"
+                    class="flex align-items-start gap-2"
+                    style="padding: 3.5px 8px"
+                >
+                    <span>
+                        {{ layoutMenu.menu }}
+                    </span>
+                </div>
+            </div>
 
-                <template #indicator="{ index }">
-                    <div class="w-full" style="">
-                        <span class="border-round-3xl p-1 font-normal cursor-pointer" style="font-size: 12px" :style="[activeIndex === layoutMenus.id ? { 'background-color': '#f5f5f5' } : {}]">{{ layoutMenus[index].menu }}</span>
-                    </div>
-                </template>
-            </Galleria>
+            <img :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
         </div>
         <div v-else>
             <img :src="`/_nuxt/pages/templates/assets/features/${activeItem.image}`" style="display: block; width: 100%" :alt="activeItem.id" />
@@ -86,42 +77,54 @@ export default {
     data() {
         return {
             activeItem: this.items[0],
+            activeMenu: {
+                id: 1,
+                menu: 'Static',
+                image: 'static.svg'
+            },
+
             autoplayInterval: null,
+            active: {},
             layoutMenus: [
                 {
                     id: 1,
-                    menu: 'Static'
+                    menu: 'Static',
+                    image: 'static.svg'
                 },
                 {
                     id: 2,
-                    menu: 'Slim'
+                    menu: 'Slim',
+                    image: 'slim.svg'
                 },
                 {
                     id: 3,
-                    menu: 'Reveal'
+                    menu: 'Reveal',
+                    image: 'reveal.svg'
                 },
                 {
                     id: 4,
-                    menu: 'Horizontal'
+                    menu: 'Horizontal',
+                    image: 'horizontal.svg'
                 },
                 {
                     id: 5,
-                    menu: 'Overlay'
+                    menu: 'Overlay',
+                    image: 'overlay.svg'
                 },
                 {
                     id: 6,
-                    menu: 'Slim+'
+                    menu: 'Slim+',
+                    image: 'slim+.svg'
                 },
                 {
                     id: 7,
-                    menu: 'Drawer'
+                    menu: 'Drawer',
+                    image: 'drawer.svg'
                 }
             ]
         };
     },
     mounted() {
-        this.activeMenu = this.layoutMenus[0];
-
         this.autoplayInterval = setInterval(() => {
             const currentIndex = this.items.findIndex((item) => item.id === this.activeItem.id);
             const nextIndex = (currentIndex + 1) % this.items.length;
