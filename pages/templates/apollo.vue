@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-column justify-content-center">
-        <div class="flex flex-wrap justify-content-center align-items-center overflow-hidden" style="background-image: url('/_nuxt/pages/templates/assets/Hero.jpg'); background-repeat: no-repeat; background-size: cover">
+        <div class="flex flex-wrap md:flex-nowrap justify-content-center align-items-center overflow-hidden" style="background-image: url('/_nuxt/pages/templates/assets/Hero.jpg'); background-repeat: no-repeat; background-size: cover">
             <div
                 class="flex w-full gap-4 pt-3 border-round-3xl my-8 mx-3 p-4 xl:ml-8"
                 style="

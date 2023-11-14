@@ -16,7 +16,7 @@
                 </div>
             </li>
         </ul>
-        <div v-if="activeItem.isGalleria">
+        <div v-if="activeItem.isGalleria" class="w-full h-full" style="max-height: 500px; max-width: 470px">
             <div class="flex p-1 align-items-start justify-content-around mb-4 gap-1 w-full" style="border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
                 <div
                     v-for="layoutMenu in layoutMenus"
@@ -31,7 +31,7 @@
                     </span>
                 </div>
             </div>
-            <img style="display: block; width: 100%" :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
+            <img style="display: block; width: 100%" class="p-4" :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
         </div>
         <div v-else>
             <img :src="`/_nuxt/pages/templates/assets/features/${activeItem.image}`" style="display: block; width: 100%" :alt="activeItem.id" />
@@ -75,6 +75,7 @@ export default {
             },
 
             autoplayInterval: null,
+            autoPlayLayout: null,
             active: {},
             layoutMenus: [
                 {
@@ -125,14 +126,29 @@ export default {
     },
     beforeUnmount() {
         clearInterval(this.autoplayInterval);
+        clearInterval(this.autoPlayLayout);
     },
     methods: {
         onClick(item) {
             clearInterval(this.autoplayInterval);
             this.activeItem = item;
+            this.startAnimate();
         },
         onMenuClick(menu) {
+            clearInterval(this.autoPlayLayout);
             this.activeMenu = menu;
+        },
+        startAnimate() {
+            if (this.activeItem.isGalleria === true) {
+                this.autoPlayLayout = setInterval(() => {
+                    const currentIndex = this.layoutMenus.findIndex((item) => item.id === this.activeMenu.id);
+                    const nextIndex = (currentIndex + 1) % this.layoutMenus.length;
+
+                    this.activeMenu = this.layoutMenus[nextIndex];
+                }, 2000);
+            } else {
+                clearInterval(this.autoPlayLayout);
+            }
         }
     }
 };
