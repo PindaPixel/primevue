@@ -1,73 +1,4 @@
 <template>
-    <Dialog
-        v-model:visible="visible"
-        modal
-        :pt="{
-            mask: {
-                style: 'backdrop-filter: blur(2px)'
-            }
-        }"
-    >
-        <template #container>
-            <div class="flex w-full justify-content-center">
-                <div class="card flex flex-column align-items-center w-full h-full p-4" style="max-width: 356px; height: 454px">
-                    <div class="flex align-items-center align-self-stretch gap-4">
-                        <div class="flex flex-column align-items-start" style="gap: 2px">
-                            <span class="font-semibold text-xl">Apollo</span>
-                            <span class="font-normal text-sm">Layout For PrimeVue</span>
-                            <a class="cursor-pointer text-xs font-medium underline" style="color: #2196f3"> License Detail</a>
-                        </div>
-                        <img src="./assets/ProductImage.svg" class="w-10rem h-8rem" alt="" />
-                    </div>
-
-                    <div class="flex flex-column gap-3 align-items-start align-self-stretch">
-                        <span class="p-1 text-900 text-xs font-semibold">License</span>
-                        <div class="flex flex-column align-self-stretch gap-2 border-1 border-round-sm border-black-alpha-10 mb-3 p-1">
-                            <div class="flex align-items-center justify-content-center align-self-stretch gap-2 pb-2 border-bottom-1 border-black-alpha-10">
-                                <RadioButton v-model="checked" :value="checked" />
-                                <span class="flex-grow-1 text-900 text-xs font-medium">Basic License</span>
-                                <span class="flex align-items-start text-center text-900 text-base font-semibold vertical-align-middle">$59</span>
-                            </div>
-                            <div class="flex flex-column justify-content-center align-items-start align-self-stretch" style="padding: 6px 12px">
-                                <span class="text-900 text-xs font-normal line-height-3"> Non commercial usage</span>
-                                <span class="text-900 text-xs font-normal line-height-3"> Single End Product, No multi use</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-column gap-3 align-items-start align-self-stretch">
-                        <div class="flex flex-column align-self-stretch border-1 p-1 gap-2 border-round-sm border-black-alpha-10">
-                            <div class="flex align-items-center justify-content-center align-self-stretch border-bottom-1 border-black-alpha-10 pb-2 gap-2">
-                                <RadioButton v-model="checked1" />
-                                <span class="flex-grow-1 text-900 text-xs font-medium">Extended License</span>
-                                <span class="flex align-items-start text-center text-900 text-base font-semibold vertical-align-middle">$590</span>
-                            </div>
-                            <div class="flex flex-column justify-content-center align-items-start align-self-stretch" style="padding: 6px 12px">
-                                <span class="text-900 text-xs font-normal line-height-3">Commercial usage</span>
-                                <span class="text-900 text-xs font-normal line-height-3"> Multiple end products </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-column gap-3 mt-3 align-items-start align-self-stretch">
-                        <span>Payment Method</span>
-                        <div class="flex justify-content-between gap-3">
-                            <Button label="Visa/Mastercard" size="small" outlined />
-                            <Button label="Visa/Mastercard" size="small" outlined />
-                        </div>
-                        <div class="flex align-items-center justify-content-between">
-                            <div class="flex align-items-center">
-                                <Checkbox v-model="checked" :binary="true" />
-
-                                <span class="text-xs font-medium pl-2">I accept the <span class="text-blue-700 underline cursor-pointer">Terms and Conditions.</span></span>
-                            </div>
-                        </div>
-                        <div class="w-full">
-                            <Button @click="visible = false" class="w-full" label="Buy Now"></Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
-    </Dialog>
     <div class="flex flex-column justify-content-center">
         <div class="flex flex-wrap justify-content-center align-items-center overflow-hidden" style="background-image: url('/_nuxt/pages/templates/assets/Hero.jpg'); background-repeat: no-repeat; background-size: cover">
             <div
@@ -89,7 +20,7 @@
                     <div class="flex flex-column justify-content-center align-items-start align-self-stretch">
                         <div class="flex flex-wrap align-items-center justify-content-around gap-3 align-self-stretch">
                             <Button label="Live Demo" class="flex w-full justify-content-center align-items-center surface-900 border-900" style="padding: 10.5px 17.5px; gap: 7px; border-radius: 48px; max-width: 200px"></Button>
-                            <Button label="Buy Now" @click="visible = true" severity="info" class="flex w-full justify-content-center align-items-center" style="padding: 10.5px 17.5px; gap: 7px; border-radius: 48px; max-width: 200px"></Button>
+                            <Button label="Buy Now" severity="info" class="flex w-full justify-content-center align-items-center" style="padding: 10.5px 17.5px; gap: 7px; border-radius: 48px; max-width: 200px"></Button>
                         </div>
                     </div>
                     <div class="flex lg:justify-content-start justify-content-center w-full sm:mb-3 align-items-center gap-3">
@@ -105,11 +36,11 @@
                 </div>
             </div>
             <div class="flex align-items-end lg:mr-5">
-                <img src="../templates/assets/Group_4.png" alt="1" class="relative w-full h-full ml-4 mt-8" style="max-height: 390px; width: 643px; min-height: 325px" />
+                <img src="../templates/assets/Group_4.png" alt="1" class="relative w-full h-full ml-4 mt-8" style="max-height: 390px; max-width: 643px; min-height: 325px" />
             </div>
         </div>
     </div>
-    <div class="flex flex-column align-items-center gap-6 py-4 md:py-8">
+    <div class="flex flex-column align-items-center gap-6 py-4 py-8">
         <div class="flex flex-column align-items-center gap-3" style="max-width: 700px">
             <div class="flex flex-column w-full">
                 <span class="text-900 text-2xl text-center md:text-6xl font-semibold" style="max-width: 700px">Integration with </span>
@@ -128,7 +59,7 @@
             </div>
         </div>
     </div>
-    <Dialog v-model:visible="displayModal" header="Video Content" :modal="true" :style="{ width: '80vw', height: '45vw' }" :draggable="false" :resizable="false" :pt="{ content: { style: 'flex-grow:1' } }">
+    <Dialog v-model:visible="displayModal" header="Video Content" :modal="true" :style="{ width: '80vw', height: '45vw' }" :draggable="false" :resizable="false" :pt="{ content: { style: 'flex-grow:1; overflow:hidden' } }">
         <iframe
             :style="{ width: '100%', height: '100%' }"
             src="https://www.youtube.com/embed/Y07edRJd5QM"
@@ -138,7 +69,7 @@
             allowfullscreen
         ></iframe>
     </Dialog>
-    <div class="flex flex-column align-items-center justify-content-center gap-6 py-4 md:py-8">
+    <div class="flex flex-column align-items-center justify-content-center gap-6 py-8">
         <p class="align-items-center text-center font-semibold line-height-3 align-items-stretch text-2xl md:text-6xl text-900 mb-0" style="max-width: 718px">Features that the Apollo template gives you</p>
         <FeatureMenu :items="items" />
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
@@ -149,7 +80,7 @@
         </div>
     </div>
 
-    <div class="flex w-full justify-content-center">
+    <div class="flex w-full justify-content-center pb-8">
         <div class="grid" style="max-width: 1062px">
             <div class="col-12 lg:col-4">
                 <div class="flex h-full justify-content-center">
@@ -193,8 +124,8 @@
         </div>
     </div>
 
-    <div class="flex flex-column justify-content-center align-items-center gap-2 w-full md:py-8" style="max-width: 1440px">
-        <div class="flex w-full align-items-center gap-4 pb-6" style="max-width: 1062px">
+    <div class="flex flex-column justify-content-center align-items-center gap-8 w-full" style="max-width: 1440px">
+        <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
             <img src="../templates/assets/Apollo_logo.svg" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
@@ -211,7 +142,7 @@
                 </span>
             </div>
         </div>
-        <div class="flex w-full align-items-center gap-4 pt-6" style="max-width: 1062px">
+        <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
             <img src="../templates/assets/Apollo_logo.svg" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
@@ -219,7 +150,7 @@
         </div>
     </div>
 
-    <div class="flex flex-column align-items-center justify-content-center gap-6 py-8">
+    <div class="flex flex-column align-items-center justify-content-center gap-8 pt-8">
         <FeatureMenu :items="items2" />
 
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
@@ -229,7 +160,7 @@
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
     </div>
-    <div class="flex justify-content-center md:p-8">
+    <div class="flex justify-content-center p-8">
         <div class="grid w-full" style="max-width: 1062px">
             <div class="flex flex-column col-12 md:col-6 justify-content-start align-items-center md:align-items-end">
                 <div class="card w-full" style="max-width: 410px; min-width: 300px">
@@ -291,27 +222,27 @@
             </div>
         </div>
     </div>
-    <span class="flex text-900 text-2xl md:text-6xl justify-content-center font-semibold w-full md:p-8">Related Layouts</span>
+    <span class="flex text-900 text-2xl md:text-6xl justify-content-center font-semibold w-full pt-8 pb-6">Related Layouts</span>
     <div class="flex w-full justify-content-center">
-        <div class="grid" style="max-width: 1062px">
+        <div class="grid align-items-center justify-content-center" style="max-width: 1062px">
             <div class="col-12 lg:col-4">
                 <div class="flex p-3 h-full justify-content-center">
                     <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 418px">
-                        <img src="../templates/assets/layout-images/Atlantis.svg" class="border-round-lg" alt="" />
+                        <img src="../templates/assets/layout-images/Atlantis.png" class="border-round-lg" alt="" />
                     </div>
                 </div>
             </div>
             <div class="col-12 lg:col-4">
                 <div class="flex p-3 h-full justify-content-center">
                     <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 418px">
-                        <img src="../templates/assets/layout-images/Avalon.svg" class="border-round-lg" alt="" />
+                        <img src="../templates/assets/layout-images/Avalon.png" class="border-round-lg" alt="" />
                     </div>
                 </div>
             </div>
             <div class="col-12 lg:col-4">
                 <div class="flex p-3 h-full justify-content-center">
                     <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 418px">
-                        <img src="../templates/assets/layout-images/Diamond.svg" class="border-round-lg" alt="" />
+                        <img src="../templates/assets/layout-images/Diamond.png" class="border-round-lg" alt="" />
                     </div>
                 </div>
             </div>
@@ -347,13 +278,13 @@ export default {
                     description: 'Static, Overlay, Slim, Slim+, Reveal, Drawer and Horizontal are the available menu layouts depending on your preference.',
                     isGalleria: true,
                     image: [
-                        '/_nuxt/pages/templates/assets/layout-menu/static.svg',
-                        '/_nuxt/pages/templates/assets/layout-menu/slim.svg',
-                        '/_nuxt/pages/templates/assets/layout-menu/reveal.svg',
-                        '/_nuxt/pages/templates/assets/layout-menu/horizontal.svg',
-                        '/_nuxt/pages/templates/assets/layout-menu/overlay.svg',
-                        '/_nuxt/pages/templates/assets/layout-menu/slim+.svg',
-                        '/_nuxt/pages/templates/assets/layout-menu/drawer.svg'
+                        '/_nuxt/pages/templates/assets/layout-menu/static.png',
+                        '/_nuxt/pages/templates/assets/layout-menu/slim.png',
+                        '/_nuxt/pages/templates/assets/layout-menu/reveal.png',
+                        '/_nuxt/pages/templates/assets/layout-menu/horizontal.png',
+                        '/_nuxt/pages/templates/assets/layout-menu/overlay.png',
+                        '/_nuxt/pages/templates/assets/layout-menu/slim+.png',
+                        '/_nuxt/pages/templates/assets/layout-menu/drawer.png'
                     ]
                 },
                 {

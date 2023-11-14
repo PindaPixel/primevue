@@ -17,30 +17,21 @@
             </li>
         </ul>
         <div v-if="activeItem.isGalleria">
-            <!-- <div class="flex p-1 align-items-start" style="border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
-                <div v-for="layoutMenu in layoutMenus" :key="layoutMenu.id" class="flex align-items-start gap-2" style="padding: 3.5px 8px">
-                    <span @click="onMenuClick(layoutMenu)" :style="[activeMenu.id === layoutMenu.id ? { 'background-color': '#f5f5f5' } : {}]">
-                        {{ layoutMenu.menu }}
-                    </span>
-                </div>
-            </div> -->
-
-            <div class="flex p-1 align-items-start gap-1" style="border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
+            <div class="flex p-1 align-items-start justify-content-around mb-4 gap-1 w-full" style="border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
                 <div
                     v-for="layoutMenu in layoutMenus"
                     :key="layoutMenu.id"
                     @click="onMenuClick(layoutMenu)"
                     :style="[activeMenu.id === layoutMenu.id ? { 'background-color': '#f5f5f5' } : {}]"
-                    class="flex align-items-start gap-2"
-                    style="padding: 3.5px 8px"
+                    class="flex align-items-start p-1"
+                    style="border-radius: 36px; max-width: 100px"
                 >
-                    <span>
+                    <span :style="[activeMenu.id === layoutMenu.id ? { color: '#212121', 'text-size': '12px' } : {}]" class="flex justify-content-start align-items-center text-xs md:text-sm">
                         {{ layoutMenu.menu }}
                     </span>
                 </div>
             </div>
-
-            <img :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
+            <img style="display: block; width: 100%" :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
         </div>
         <div v-else>
             <img :src="`/_nuxt/pages/templates/assets/features/${activeItem.image}`" style="display: block; width: 100%" :alt="activeItem.id" />
@@ -80,7 +71,7 @@ export default {
             activeMenu: {
                 id: 1,
                 menu: 'Static',
-                image: 'static.svg'
+                image: 'static.png'
             },
 
             autoplayInterval: null,
@@ -89,37 +80,37 @@ export default {
                 {
                     id: 1,
                     menu: 'Static',
-                    image: 'static.svg'
+                    image: 'static.png'
                 },
                 {
                     id: 2,
                     menu: 'Slim',
-                    image: 'slim.svg'
+                    image: 'slim.png'
                 },
                 {
                     id: 3,
                     menu: 'Reveal',
-                    image: 'reveal.svg'
+                    image: 'reveal.png'
                 },
                 {
                     id: 4,
                     menu: 'Horizontal',
-                    image: 'horizontal.svg'
+                    image: 'horizontal.png'
                 },
                 {
                     id: 5,
                     menu: 'Overlay',
-                    image: 'overlay.svg'
+                    image: 'overlay.png'
                 },
                 {
                     id: 6,
                     menu: 'Slim+',
-                    image: 'slim+.svg'
+                    image: 'slim+.png'
                 },
                 {
                     id: 7,
                     menu: 'Drawer',
-                    image: 'drawer.svg'
+                    image: 'drawer.png'
                 }
             ]
         };
