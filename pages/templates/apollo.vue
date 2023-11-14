@@ -223,27 +223,25 @@
         </div>
     </div>
     <span class="flex text-900 text-2xl md:text-6xl justify-content-center font-semibold w-full pt-8 pb-6">Related Layouts</span>
-    <div class="flex w-full justify-content-center">
-        <div class="grid align-items-center justify-content-center" style="max-width: 1062px">
-            <div class="col-12 lg:col-4">
-                <div class="flex p-3 h-full justify-content-center">
-                    <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 418px">
-                        <img src="../templates/assets/layout-images/Atlantis.png" class="border-round-lg" alt="" />
-                    </div>
+    <div class="grid align-items-center justify-content-center" style="max-width: 1062px">
+        <div class="col-12 lg:col-4">
+            <div class="flex p-3 h-full justify-content-center">
+                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
+                    <img src="../templates/assets/layout-images/Atlantis.png" class="border-round-lg" alt="" />
                 </div>
             </div>
-            <div class="col-12 lg:col-4">
-                <div class="flex p-3 h-full justify-content-center">
-                    <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 418px">
-                        <img src="../templates/assets/layout-images/Avalon.png" class="border-round-lg" alt="" />
-                    </div>
+        </div>
+        <div class="col-12 lg:col-4">
+            <div class="flex p-3 h-full justify-content-center">
+                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
+                    <img src="../templates/assets/layout-images/Avalon.png" class="border-round-lg" alt="" />
                 </div>
             </div>
-            <div class="col-12 lg:col-4">
-                <div class="flex p-3 h-full justify-content-center">
-                    <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 418px">
-                        <img src="../templates/assets/layout-images/Diamond.png" class="border-round-lg" alt="" />
-                    </div>
+        </div>
+        <div class="col-12 lg:col-4">
+            <div class="flex p-3 h-full justify-content-center">
+                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
+                    <img src="../templates/assets/layout-images/Diamond.png" class="border-round-lg" alt="" />
                 </div>
             </div>
         </div>
