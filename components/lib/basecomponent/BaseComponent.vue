@@ -43,6 +43,8 @@ export default {
             immediate: true,
             handler(newValue) {
                 if (newValue) {
+                    console.log(this.$style.name);
+                    // @todo: this.$globalTheme[this.$style.name]
                     BaseComponentStyle.loadTheme(this.$globalTheme, { useStyleOptions: this.$styleOptions });
                     this.$options.style && this.$style.loadTheme(this.$globalTheme, { useStyleOptions: this.$styleOptions });
                 }
