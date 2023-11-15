@@ -50,8 +50,8 @@
                 >Only the folders that are related to the layout needs to move in to your project. We‘ve already created a short tutorial with details for Sakai Vue. The both templates have the same implementation.</span
             >
         </div>
-        <div class="border-round-2xl" style="max-width: 1062px; max-height: 596.25px; min-width: 351px; background-color: #e0e0f7; backdrop-filter: blur(2px)">
-            <div class="relative h-12rem md:h-full">
+        <div class="border-round-2xl" style="max-width: 1062px; max-height: 596.25px; background-color: #e0e0f7; backdrop-filter: blur(2px)">
+            <div class="relative">
                 <img src="../templates/assets/Dashboard.svg" class="flex align-items-start w-full h-full" style="object-fit: cover; filter: blur(2px)" alt="" />
                 <div class="flex" style="max-width: 100px">
                     <img src="../templates/assets/PLay.svg" @click="displayModal = true" class="absolute top-50 right-50 cursor-pointer" style="margin-right: -5rem; margin-top: -5rem; height: 10rem" alt="" />
@@ -131,12 +131,25 @@
             <img src="../templates/assets/Apollo_logo.svg" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
-        <div class="flex flex-column p-5 w-full align-items-start gap-4 border-round-2xl bg-white" style="max-width: 788px; min-width: 347px; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08)">
-            <div class="flex flex-column align-items-center align-self-stretch border-round-lg h-full" style="max-height: 221px">
-                <img src="../templates/assets/Vuecli.svg" alt="" class="h-full flex-grow-0 align-self-stretch" style="max-height: 165px" />
+        <div class="flex flex-column p-5 w-full align-items-start gap-4 border-round-2xl bg-white" style="max-width: 788px; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08)">
+            <div class="flex flex-column align-items-center border-round-lg w-full h-full" style="max-height: 221px; border: 1px solid var(--root-surface-border, #dfe7ef)">
+                <div class="flex w-full h-full align-items-center justify-content-start gap-7 flex-grow-0 align-self-strecth" style="max-height: 56px; padding: 4px 24px; border-radius: 12px 12px 0px 0px; background: var(--surface-0, #fff)">
+                    <img src="../templates/assets/Buttons.png" alt="" />
+                </div>
+                <div class="flex w-full justify-content-between align-items-center px-3 border-round-bottom flex-grow-0" style="height: 165px; background-color: #212121">
+                    <div class="flex flex-column h-full justify-content-center gap-4">
+                        <div class="text-white text-sm font-normal line-height-1">> npm install</div>
+                        <div class="text-white text-sm font-normal line-height-1">> ng new my-apollo-app</div>
+                        <div class="text-white text-sm font-normal line-height-1">> cd my-apollo-app</div>
+                        <div class="text-white text-sm font-normal line-height-1">> ng serve</div>
+                    </div>
+                    <div class="flex pt-8 sm:pt-0 sm:px-4 flex-gorw-0 align-items-center justify-content-end">
+                        <img src="../templates/assets/Vue_logo.svg" class="w-5rem h-5rem sm:w-full sm:h-full" alt="" />
+                    </div>
+                </div>
             </div>
-            <div class="flex flex-column align-items-start gap-4 align-self-stretch">
-                <span class="align-self-stretch text-2xl font-bold line-height-4">Vue.js App with No Configuration</span>
+            <div class="flex flex-column align-items-start gap-2 align-self-stretch">
+                <span class="align-self-stretch text-2xl font-bold">Vue.js App with No Configuration</span>
                 <span class="align-self-stretch text-lg font-normal line-height-3"
                     >Apollo is powered by Vue CLI to get started in no time following the best practices like service based component interaction modular design and strict mode support
                 </span>
@@ -160,10 +173,10 @@
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
     </div>
-    <div class="flex justify-content-center p-8">
+    <div class="flex justify-content-center py-8">
         <div class="grid w-full" style="max-width: 1062px">
             <div class="flex flex-column col-12 md:col-6 justify-content-start align-items-center md:align-items-end">
-                <div class="card w-full" style="max-width: 410px; min-width: 300px">
+                <div class="card w-full" style="max-width: 410px">
                     <div class="flex flex-column align-items-start gap-3">
                         <img src="./assets/features-images/Responsive.jpg" class="w-full" alt="" />
                         <div class="flex flex-column align-items-start gap-2">
@@ -172,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card w-full" style="max-width: 410px; min-width: 300px">
+                <div class="card w-full" style="max-width: 410px">
                     <div class="flex flex-column align-items-start gap-3">
                         <img src="./assets/features-images/Support.jpg" class="w-full" alt="" />
                         <div class="flex flex-column align-items-start gap-2">
@@ -181,7 +194,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card w-full" style="max-width: 410px; min-width: 300px">
+                <div class="card w-full" style="max-width: 410px">
                     <div class="flex flex-column align-items-start gap-3">
                         <img src="./assets/features-images/Eslint.jpg" class="w-full" alt="" />
                         <div class="flex flex-column align-items-start gap-2">
@@ -192,7 +205,7 @@
                 </div>
             </div>
             <div class="flex flex-column col-12 md:col-6 md:mt-8 justify-content-start align-items-center md:align-items-start">
-                <div class="card w-full" style="max-width: 410px; min-width: 300px">
+                <div class="card w-full" style="max-width: 410px">
                     <div class="flex flex-column align-items-start gap-3">
                         <img src="./assets/features-images/Browser.jpg" class="w-full" alt="" />
                         <div class="flex flex-column align-items-start gap-2">
@@ -201,7 +214,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card w-full" style="max-width: 410px; min-width: 300px">
+                <div class="card w-full" style="max-width: 410px">
                     <div class="flex flex-column align-items-start gap-3">
                         <img src="./assets/features-images/Design.jpg" class="w-full" alt="" />
                         <div class="flex flex-column align-items-start gap-2">
@@ -210,7 +223,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card w-full" style="max-width: 410px; min-width: 300px">
+                <div class="card w-full" style="max-width: 410px">
                     <div class="flex flex-column align-items-start gap-3">
                         <img src="./assets/features-images/Mobile.jpg" class="w-full" alt="" />
                         <div class="flex flex-column align-items-start gap-2">
@@ -223,23 +236,23 @@
         </div>
     </div>
     <span class="flex text-900 text-2xl md:text-6xl justify-content-center font-semibold w-full pt-8 pb-6">Related Layouts</span>
-    <div class="grid align-items-center justify-content-center" style="max-width: 1062px">
-        <div class="col-12 lg:col-4">
+    <div class="grid align-items-center justify-content-center">
+        <div class="col-12 md:col-4">
             <div class="flex p-3 h-full justify-content-center">
-                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
+                <div class="h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
                     <img src="../templates/assets/layout-images/Atlantis.png" class="border-round-lg" alt="" />
                 </div>
             </div>
         </div>
-        <div class="col-12 lg:col-4">
-            <div class="flex p-3 h-full justify-content-center">
+        <div class="col-12 md:col-4">
+            <div class="flex h-full justify-content-center">
                 <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
                     <img src="../templates/assets/layout-images/Avalon.png" class="border-round-lg" alt="" />
                 </div>
             </div>
         </div>
-        <div class="col-12 lg:col-4">
-            <div class="flex p-3 h-full justify-content-center">
+        <div class="col-12 md:col-4">
+            <div class="flex h-full justify-content-center">
                 <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
                     <img src="../templates/assets/layout-images/Diamond.png" class="border-round-lg" alt="" />
                 </div>
