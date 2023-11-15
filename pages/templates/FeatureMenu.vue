@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-wrap-reverse w-full h-full p-5 justify-content-center align-items-center border-round-2xl bg-white" style="gap: 40px; max-width: 1062px; min-width: 351px">
+    <div class="flex flex-wrap-reverse w-full h-full p-5 justify-content-center align-items-center border-round-2xl bg-white" style="gap: 40px; max-width: 1062px">
         <ul class="flex flex-column align-items-center pl-0 m-0 h-full gap-2 flex-1">
             <li
                 v-for="item in items"
@@ -17,7 +17,7 @@
             </li>
         </ul>
         <div v-if="activeItem.isGalleria" class="w-full h-full" style="max-height: 500px; max-width: 470px">
-            <div class="flex p-1 align-items-start justify-content-around mb-4 gap-1 w-full" style="border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
+            <div class="flex p-1 align-items-start justify-content-around gap-1 w-full" style="min-width: 305px; border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
                 <div
                     v-for="layoutMenu in layoutMenus"
                     :key="layoutMenu.id"
@@ -26,12 +26,12 @@
                     class="flex align-items-start p-1"
                     style="border-radius: 36px; max-width: 100px"
                 >
-                    <span :style="[activeMenu.id === layoutMenu.id ? { color: '#212121', 'text-size': '12px' } : {}]" class="flex justify-content-start align-items-center text-xs md:text-sm">
+                    <span :style="[activeMenu.id === layoutMenu.id ? { color: '#212121', 'text-size': '12px' } : {}]" class="flex justify-content-start align-items-center text-xs px-1">
                         {{ layoutMenu.menu }}
                     </span>
                 </div>
             </div>
-            <img style="display: block; width: 100%" class="p-4" :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
+            <img style="display: block; width: 100%" class="pt-4 h-full" :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
         </div>
         <div v-else>
             <img :src="`/_nuxt/pages/templates/assets/features/${activeItem.image}`" style="display: block; width: 100%" :alt="activeItem.id" />
