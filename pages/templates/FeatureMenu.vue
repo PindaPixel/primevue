@@ -1,11 +1,11 @@
 <template>
-    <div class="flex flex-wrap-reverse w-full h-full gap-5 p-5 justify-content-center align-items-center border-round-2xl bg-white" style="max-width: 1062px">
+    <div class="flex flex-wrap-reverse w-full h-full gap-5 p-5 justify-content-center align-items-center border-round-2xl surface-card" style="max-width: 1062px">
         <ul class="flex flex-column align-items-center pl-0 m-0 h-full gap-2 flex-1">
             <li
                 v-for="item in items"
                 :key="item.id"
                 class="flex w-full p-3 align-items-start gap-4 border-round-xl cursor-pointer"
-                :style="[activeItem.id === item.id ? { 'background-color': '#f5f5f5' } : {}]"
+                :style="[activeItem.id === item.id ? { 'background-color': 'var(--surface-100)' } : {}]"
                 style="min-width: 280px"
                 @click="onClick(item)"
             >

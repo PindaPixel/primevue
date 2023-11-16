@@ -20,7 +20,7 @@
                         <span class="text-white">Vue template with mode options, menu layouts, sample apps, pre-made pages, and 24 PrimeVue themes.</span>
 
                         <div class="flex flex-wrap md:flex-nowrap w-full align-items-center gap-3">
-                            <Button label="Live Demo" class="w-full surface-900 border-900 border-round-3xl py-3 px-4" style="padding: 10.5px 17.5px"></Button>
+                            <Button label="Live Demo" class="w-full surface-900 border-900 border-round-3xl" style="padding: 10.5px 17.5px"></Button>
                             <Button label="Buy Now" severity="info" class="w-full border-round-3xl" style="padding: 10.5px 17.5px"></Button>
                         </div>
 
@@ -134,7 +134,7 @@
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
         <div class="flex pt-8" style="background: url('/_nuxt/pages/templates/assets/Background.png') no-repeat center; min-height: 500px">
-            <div class="flex flex-column p-5 w-full align-items-start gap-4 border-round-2xl bg-white" style="max-width: 788px; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08)">
+            <div class="flex surface-card flex-column p-5 w-full align-items-start gap-4 border-round-2xl bg-white" style="max-width: 788px; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08)">
                 <div class="flex flex-column align-items-center border-round-lg w-full h-full" style="max-height: 221px; border: 1px solid var(--root-surface-border, #dfe7ef)">
                     <div class="flex w-full h-full align-items-center justify-content-start gap-7 flex-grow-0 align-self-strecth" style="max-height: 56px; padding: 4px 24px; border-radius: 12px 12px 0px 0px; background: var(--surface-0, #fff)">
                         <img src="../templates/assets/Buttons.png" alt="" />
@@ -153,7 +153,7 @@
                 </div>
                 <div class="flex flex-column align-items-start gap-2 align-self-stretch">
                     <span class="align-self-stretch text-2xl font-bold">Vue.js App with No Configuration</span>
-                    <span class="align-self-stretch text-lg font-normal line-height-3"
+                    <span class="align-self-stretch text-lg font-normal line-height-3 text-600"
                         >Apollo is powered by Vue CLI to get started in no time following the best practices like service based component interaction modular design and strict mode support
                     </span>
                 </div>
@@ -243,22 +243,22 @@
     <span class="flex text-900 text-2xl md:text-6xl justify-content-center font-semibold w-full pt-8 pb-6">Related Layouts</span>
     <div class="grid align-items-center justify-content-center">
         <div class="col-12 md:col-4">
-            <div class="flex p-3 h-full justify-content-center">
-                <div class="h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
+            <div class="flex h-full justify-content-center">
+                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card border-round-md" style="max-width: 338px">
                     <img src="../templates/assets/layout-images/Atlantis.png" class="border-round-lg" alt="" />
                 </div>
             </div>
         </div>
         <div class="col-12 md:col-4">
             <div class="flex h-full justify-content-center">
-                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
+                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card border-round-md" style="max-width: 338px">
                     <img src="../templates/assets/layout-images/Avalon.png" class="border-round-lg" alt="" />
                 </div>
             </div>
         </div>
         <div class="col-12 md:col-4">
             <div class="flex h-full justify-content-center">
-                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card bg-white border-round-md" style="max-width: 338px">
+                <div class="p-3 h-full w-full flex flex-column justify-content-center surface-card border-round-md" style="max-width: 338px">
                     <img src="../templates/assets/layout-images/Diamond.png" class="border-round-lg" alt="" />
                 </div>
             </div>
@@ -268,6 +268,7 @@
 
 <script>
 import FeatureMenu from '../templates/FeatureMenu.vue';
+
 export default {
     data() {
         return {
@@ -275,6 +276,7 @@ export default {
             visible: false,
             checked: false,
             checked1: true,
+
             items: [
                 {
                     id: 'one',
