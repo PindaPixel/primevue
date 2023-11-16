@@ -1,42 +1,41 @@
 <template>
     <div class="flex flex-column justify-content-center">
-        <div class="flex flex-wrap md:flex-nowrap justify-content-center align-items-center overflow-hidden" style="background-image: url('/_nuxt/pages/templates/assets/Hero.jpg'); background-repeat: no-repeat; background-size: cover">
-            <div
-                class="flex w-full gap-4 pt-3 border-round-3xl my-8 mx-3 p-4 xl:ml-8"
-                style="
-                    border: 1px solid rgba(255, 255, 255, 0.24);
-                    background: linear-gradient(180deg, rgba(170, 140, 255, 0) 0%, rgba(170, 140, 255, 0.8) 100%), rgba(255, 255, 255, 0.1);
-                    box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset, 0px 48px 80px 0px rgba(0, 0, 0, 0.08), 0px -5px 13px -2px rgba(255, 255, 255, 0.55) inset;
-                    backdrop-filter: blur(2px);
-                    max-width: 464px;
-                    min-width: 271px;
-                    min-height: 285px;
-                    max-height: 300px;
-                "
-            >
-                <div class="flex flex-column justify-content-center align-items-start gap-4 md:gap-5" style="min-width: 251px">
-                    <img src="../templates/assets/Logo.svg" alt="1" class="flex w-10rem md:w-full ml-3 h-full vertical-align-bottom" style="min-width: 170px; max-width: 225px" />
-                    <span class="text-white">Vue template with mode options, menu layouts, sample apps, pre-made pages, and 24 PrimeVue themes.</span>
-                    <div class="flex flex-column justify-content-center align-items-start align-self-stretch">
-                        <div class="flex flex-wrap align-items-center justify-content-around gap-3 align-self-stretch">
-                            <Button label="Live Demo" class="flex w-full justify-content-center align-items-center surface-900 border-900" style="padding: 10.5px 17.5px; gap: 7px; border-radius: 48px; max-width: 200px"></Button>
-                            <Button label="Buy Now" severity="info" class="flex w-full justify-content-center align-items-center" style="padding: 10.5px 17.5px; gap: 7px; border-radius: 48px; max-width: 200px"></Button>
+        <div class="flex flex-wrap md:flex-nowrap gap-8 md:gap-4 pt-8 px-5 overflow-hidden" style="background-image: url('/_nuxt/pages/templates/assets/Hero.jpg'); background-repeat: no-repeat; background-size: cover; min-height: 500px">
+            <div class="flex flex-1 justify-content-center align-items-center">
+                <div
+                    class="flex flex-column justify-content-center align-items-center p-3 border-round-3xl"
+                    style="
+                        border: 1px solid rgba(255, 255, 255, 0.24);
+                        background: linear-gradient(180deg, rgba(170, 140, 255, 0) 0%, rgba(170, 140, 255, 0.8) 100%), rgba(255, 255, 255, 0.1);
+                        box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset, 0px 48px 80px 0px rgba(0, 0, 0, 0.08), 0px -5px 13px -2px rgba(255, 255, 255, 0.55) inset;
+                        backdrop-filter: blur(2px);
+                        max-width: 464px;
+                    "
+                >
+                    <div class="flex flex-column justify-content-center align-items-start p-3 gap-4 md:gap-5">
+                        <img src="../templates/assets/Logo.svg" alt="1" class="h-full" style="width: 235px" />
+                        <span class="text-white">Vue template with mode options, menu layouts, sample apps, pre-made pages, and 24 PrimeVue themes.</span>
+
+                        <div class="flex flex-wrap md:flex-nowrap w-full align-items-center gap-3">
+                            <Button label="Live Demo" class="w-full surface-900 border-900 border-round-3xl" style="padding: 10.5px 17.5px"></Button>
+                            <Button label="Buy Now" severity="info" class="w-full border-round-3xl" style="padding: 10.5px 17.5px"></Button>
                         </div>
-                    </div>
-                    <div class="flex lg:justify-content-start justify-content-center w-full sm:mb-3 align-items-center gap-3">
-                        <div class="flex justify-content-center align-items-center mb-2 md:mb-0 gap-2">
-                            <i class="pi pi-github text-white" />
-                            <a target="_blank" href="https://github.com/orgs/primefaces/discussions" class="flex justify-content-center text-white underline">Get Support</a>
-                        </div>
-                        <div class="flex justify-content-center align-items-center mb-2 md:mb-0 gap-2">
-                            <i class="pi pi-book text-white" />
-                            <a target="_blank" href="https://apollo.primevue.org/documentation" class="flex justify-content-center text-white underline">Read Docs</a>
+
+                        <div class="flex md:justify-content-start justify-content-center w-full align-items-center gap-3">
+                            <div class="flex justify-content-center align-items-center gap-2">
+                                <i class="pi pi-github text-white" />
+                                <a target="_blank" href="https://github.com/orgs/primefaces/discussions" class="text-white underline">Get Support</a>
+                            </div>
+                            <div class="flex justify-content-center align-items-center gap-2">
+                                <i class="pi pi-book text-white" />
+                                <a target="_blank" href="https://apollo.primevue.org/documentation" class="text-white underline">Read Docs</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex align-items-end lg:mr-5">
-                <img src="../templates/assets/Group_4.png" alt="1" class="relative w-full h-full ml-4 mt-8" style="max-height: 390px; max-width: 643px; min-height: 325px" />
+            <div class="flex align-items-end">
+                <img src="../templates/assets/Group_4.png" alt="1" class="w-full h-full" style="min-width: 750px; min-height: 460px" />
             </div>
         </div>
     </div>

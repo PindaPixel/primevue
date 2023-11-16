@@ -6,7 +6,7 @@
                 :key="item.id"
                 class="flex w-full p-3 align-items-start gap-4 border-round-xl cursor-pointer"
                 :style="[activeItem.id === item.id ? { 'background-color': '#f5f5f5' } : {}]"
-                style="min-width: 309px"
+                style="min-width: 280px"
                 @click="onClick(item)"
             >
                 <img :src="`/_nuxt/pages/templates/assets/numbers/${activeItem.id === item.id ? item.id + '-fill' : item.id}.svg`" :alt="item.id" />
@@ -16,24 +16,24 @@
                 </div>
             </li>
         </ul>
-        <div v-if="activeItem.isGalleria" class="w-full h-full" style="max-height: 500px; max-width: 470px">
-            <div class="flex p-1 align-items-start justify-content-around gap-1 w-full" style="min-width: 305px; border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
+        <div v-if="activeItem.isGalleria" class="md:h-30rem" style="max-width: 480px">
+            <div class="flex p-1 align-items-center justify-content-around gap-1 w-full" style="min-width: 240px; border-radius: 40px; border: 1px solid var(--root-surface-border, #dfe7ef); background: #fff">
                 <div
                     v-for="layoutMenu in layoutMenus"
                     :key="layoutMenu.id"
                     @click="onMenuClick(layoutMenu)"
-                    :style="[activeMenu.id === layoutMenu.id ? { 'background-color': '#f5f5f5' } : {}]"
-                    class="flex align-items-start p-1"
+                    :style="[activeMenu.id === layoutMenu.id ? { 'background-color': '#f5f5f5', padding: '4px' } : {}]"
+                    class="flex align-items-start"
                     style="border-radius: 36px; max-width: 100px"
                 >
-                    <span :style="[activeMenu.id === layoutMenu.id ? { color: '#212121', 'text-size': '12px' } : {}]" class="flex justify-content-start align-items-center text-xs px-1">
+                    <span :style="[activeMenu.id === layoutMenu.id ? { color: '#212121', 'text-size': '12px' } : {}]" class="flex justify-content-start align-items-center cursor-pointer text-xs p-0 sm:px-1">
                         {{ layoutMenu.menu }}
                     </span>
                 </div>
             </div>
             <img style="display: block; width: 100%" class="pt-4 h-full" :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
         </div>
-        <div v-else>
+        <div v-else style="max-width: 480px">
             <img :src="`/_nuxt/pages/templates/assets/features/${activeItem.image}`" style="display: block; width: 100%" :alt="activeItem.id" />
         </div>
     </div>
@@ -131,24 +131,21 @@ export default {
     methods: {
         onClick(item) {
             clearInterval(this.autoplayInterval);
+            clearInterval(this.autoPlayLayout);
             this.activeItem = item;
-            this.startAnimate();
+            if (this.activeItem.isGalleria === true) this.startAnimate();
         },
         onMenuClick(menu) {
             clearInterval(this.autoPlayLayout);
             this.activeMenu = menu;
         },
         startAnimate() {
-            if (this.activeItem.isGalleria === true) {
-                this.autoPlayLayout = setInterval(() => {
-                    const currentIndex = this.layoutMenus.findIndex((item) => item.id === this.activeMenu.id);
-                    const nextIndex = (currentIndex + 1) % this.layoutMenus.length;
+            this.autoPlayLayout = setInterval(() => {
+                const currentIndex = this.layoutMenus.findIndex((item) => item.id === this.activeMenu.id);
+                const nextIndex = (currentIndex + 1) % this.layoutMenus.length;
 
-                    this.activeMenu = this.layoutMenus[nextIndex];
-                }, 2000);
-            } else {
-                clearInterval(this.autoPlayLayout);
-            }
+                this.activeMenu = this.layoutMenus[nextIndex];
+            }, 2000);
         }
     }
 };
