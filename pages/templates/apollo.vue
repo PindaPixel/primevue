@@ -1,9 +1,12 @@
 <template>
     <div class="flex flex-column justify-content-center">
-        <div class="flex flex-wrap md:flex-nowrap gap-8 md:gap-4 pt-8 px-5 overflow-hidden" style="background-image: url('/_nuxt/pages/templates/assets/Hero.jpg'); background-repeat: no-repeat; background-size: cover; min-height: 500px">
+        <div
+            class="flex flex-wrap md:flex-nowrap gap-8 md:gap-4 pt-8 px-2 md:px-5 overflow-hidden isMobile"
+            style="background-image: url('/_nuxt/pages/templates/assets/Hero.jpg'); background-repeat: no-repeat; background-size: cover; min-height: 500px"
+        >
             <div class="flex flex-1 justify-content-center align-items-center">
                 <div
-                    class="flex flex-column justify-content-center align-items-center p-3 border-round-3xl"
+                    class="flex flex-column justify-content-center align-items-center p-2 md:p-3 border-round-3xl"
                     style="
                         border: 1px solid rgba(255, 255, 255, 0.24);
                         background: linear-gradient(180deg, rgba(170, 140, 255, 0) 0%, rgba(170, 140, 255, 0.8) 100%), rgba(255, 255, 255, 0.1);
@@ -13,11 +16,11 @@
                     "
                 >
                     <div class="flex flex-column justify-content-center align-items-start p-3 gap-4 md:gap-5">
-                        <img src="../templates/assets/Logo.svg" alt="1" class="h-full" style="width: 235px" />
+                        <img src="../templates/assets/Logo.png" alt="1" class="h-full" style="width: 235px" />
                         <span class="text-white">Vue template with mode options, menu layouts, sample apps, pre-made pages, and 24 PrimeVue themes.</span>
 
                         <div class="flex flex-wrap md:flex-nowrap w-full align-items-center gap-3">
-                            <Button label="Live Demo" class="w-full surface-900 border-900 border-round-3xl" style="padding: 10.5px 17.5px"></Button>
+                            <Button label="Live Demo" class="w-full surface-900 border-900 border-round-3xl py-3 px-4" style="padding: 10.5px 17.5px"></Button>
                             <Button label="Buy Now" severity="info" class="w-full border-round-3xl" style="padding: 10.5px 17.5px"></Button>
                         </div>
 
@@ -49,11 +52,11 @@
                 >Only the folders that are related to the layout needs to move in to your project. We‘ve already created a short tutorial with details for Sakai Vue. The both templates have the same implementation.</span
             >
         </div>
-        <div class="border-round-2xl" style="max-width: 1062px; max-height: 596.25px; background-color: #e0e0f7; backdrop-filter: blur(2px)">
+        <div class="border-round-2xl" style="max-width: 1062px; max-height: 596x; background-color: #e0e0f7; backdrop-filter: blur(2px)">
             <div class="relative">
-                <img src="../templates/assets/Dashboard.svg" class="flex align-items-start w-full h-full" style="object-fit: cover; filter: blur(2px)" alt="" />
+                <img src="../templates/assets/Dashboard.png" class="flex align-items-start w-full h-full" style="object-fit: cover; filter: blur(2px)" alt="" />
                 <div class="flex" style="max-width: 100px">
-                    <img src="../templates/assets/PLay.svg" @click="displayModal = true" class="absolute top-50 right-50 cursor-pointer" style="margin-right: -5rem; margin-top: -5rem; height: 10rem" alt="" />
+                    <img src="../templates/assets/PLay.png" @click="displayModal = true" class="absolute top-50 right-50 cursor-pointer -mr-8 -mt-8 h-10rem" alt="" />
                 </div>
             </div>
         </div>
@@ -74,7 +77,7 @@
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
-            <img src="../templates/assets/Apollo_logo.svg" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
+            <img src="../templates/assets/Apollo_logo.png" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
     </div>
@@ -127,37 +130,40 @@
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
-            <img src="../templates/assets/Apollo_logo.svg" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
+            <img src="../templates/assets/Apollo_logo.png" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
-        <div class="flex flex-column p-5 w-full align-items-start gap-4 border-round-2xl bg-white" style="max-width: 788px; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08)">
-            <div class="flex flex-column align-items-center border-round-lg w-full h-full" style="max-height: 221px; border: 1px solid var(--root-surface-border, #dfe7ef)">
-                <div class="flex w-full h-full align-items-center justify-content-start gap-7 flex-grow-0 align-self-strecth" style="max-height: 56px; padding: 4px 24px; border-radius: 12px 12px 0px 0px; background: var(--surface-0, #fff)">
-                    <img src="../templates/assets/Buttons.png" alt="" />
-                </div>
-                <div class="flex w-full justify-content-between align-items-center px-3 border-round-bottom flex-grow-0" style="height: 165px; background-color: #212121">
-                    <div class="flex flex-column h-full justify-content-center gap-4">
-                        <div class="text-white text-sm font-normal line-height-1">> npm install</div>
-                        <div class="text-white text-sm font-normal line-height-1">> ng new my-apollo-app</div>
-                        <div class="text-white text-sm font-normal line-height-1">> cd my-apollo-app</div>
-                        <div class="text-white text-sm font-normal line-height-1">> ng serve</div>
+        <div class="flex pt-8" style="background: url('/_nuxt/pages/templates/assets/Background.png') no-repeat center; min-height: 500px">
+            <div class="flex flex-column p-5 w-full align-items-start gap-4 border-round-2xl bg-white" style="max-width: 788px; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08)">
+                <div class="flex flex-column align-items-center border-round-lg w-full h-full" style="max-height: 221px; border: 1px solid var(--root-surface-border, #dfe7ef)">
+                    <div class="flex w-full h-full align-items-center justify-content-start gap-7 flex-grow-0 align-self-strecth" style="max-height: 56px; padding: 4px 24px; border-radius: 12px 12px 0px 0px; background: var(--surface-0, #fff)">
+                        <img src="../templates/assets/Buttons.png" alt="" />
                     </div>
-                    <div class="flex pt-8 sm:pt-0 sm:px-4 flex-gorw-0 align-items-center justify-content-end">
-                        <img src="../templates/assets/Vue_logo.svg" class="w-5rem h-5rem sm:w-full sm:h-full" alt="" />
+                    <div class="flex w-full justify-content-between align-items-center px-3 border-round-bottom flex-grow-0" style="height: 165px; background-color: #212121">
+                        <div class="flex flex-column h-full justify-content-center gap-4">
+                            <div class="text-white text-sm font-normal line-height-1">> npm install</div>
+                            <div class="text-white text-sm font-normal line-height-1">> ng new my-apollo-app</div>
+                            <div class="text-white text-sm font-normal line-height-1">> cd my-apollo-app</div>
+                            <div class="text-white text-sm font-normal line-height-1">> ng serve</div>
+                        </div>
+                        <div class="flex pt-8 sm:pt-0 sm:px-4 flex-gorw-0 align-items-center justify-content-end">
+                            <img src="../templates/assets/Vue_logo.svg" class="w-5rem h-5rem sm:w-full sm:h-full" alt="" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex flex-column align-items-start gap-2 align-self-stretch">
-                <span class="align-self-stretch text-2xl font-bold">Vue.js App with No Configuration</span>
-                <span class="align-self-stretch text-lg font-normal line-height-3"
-                    >Apollo is powered by Vue CLI to get started in no time following the best practices like service based component interaction modular design and strict mode support
-                </span>
+                <div class="flex flex-column align-items-start gap-2 align-self-stretch">
+                    <span class="align-self-stretch text-2xl font-bold">Vue.js App with No Configuration</span>
+                    <span class="align-self-stretch text-lg font-normal line-height-3"
+                        >Apollo is powered by Vue CLI to get started in no time following the best practices like service based component interaction modular design and strict mode support
+                    </span>
+                </div>
             </div>
         </div>
+
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
-            <img src="../templates/assets/Apollo_logo.svg" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
+            <img src="../templates/assets/Apollo_logo.png" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
     </div>
@@ -168,7 +174,7 @@
         <div class="flex w-full align-items-center gap-4" style="max-width: 1062px">
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
 
-            <img src="../templates/assets/Apollo_logo.svg" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
+            <img src="../templates/assets/Apollo_logo.png" alt="" class="flex justify-content-center align-items-center flex-grow-0" style="padding: 10px 11.992px 14px 12px" />
             <div class="flex-1" style="height: 1px; background-color: #dfe7ef"></div>
         </div>
     </div>
@@ -274,13 +280,13 @@ export default {
                     id: 'one',
                     title: 'Light / Dark / Dim Modes',
                     description: 'Apollo has 3 display modes to choose from; Light, Dim and Dark.',
-                    image: 'Screen_Card.svg'
+                    image: 'Screen_Card.png'
                 },
                 {
                     id: 'two',
                     title: 'Component Themes',
                     description: 'Apollo offers 24 built-in component themes and creating your own theme is a matter of defining couple of sass variables.',
-                    image: 'Colors.svg'
+                    image: 'Colors.png'
                 },
                 {
                     id: 'three',
@@ -301,7 +307,7 @@ export default {
                     id: 'four',
                     title: 'Menu Themes',
                     description: 'Stunning theming for the main menu with 3 alternatives; Color Scheme, Primary Color and Transparent.',
-                    image: 'Themes.svg'
+                    image: 'Themes.png'
                 }
             ],
             items2: [
@@ -309,26 +315,26 @@ export default {
                     id: 'one',
                     title: 'PrimeFlex CSS Utilities',
                     description: 'PrimeFlex is a CSS utility library featuring various helpers such as a grid system, flexbox, spacing, elevation and more.',
-                    image: 'Utilities.svg'
+                    image: 'Utilities.png'
                 },
                 {
                     id: 'two',
                     title: 'PrimeBlocks',
                     description: 'Fully compatible with PrimeBlocks, choose from the wide range of blocks and customize the way you like. Note that PrimeBlocks is not included in the template and requires a separate purchase.',
-                    image: 'Primeblocks.svg'
+                    image: 'Primeblocks.png'
                 },
                 {
                     id: 'three',
                     title: 'PrimeIcons',
                     description: 'Apollo ships with PrimeIcons, PrimeTek’s modern icon library including a wide range of icons for your applications.',
-                    image: 'Prime-icons.svg'
+                    image: 'Prime-icons.png'
                 },
                 {
                     id: 'four',
                     title: 'Figma File',
                     description:
                         'Apollo uses Figma as the design tool. It will be possible to download the Figma file after your purchase. You can preview the Figma file before the purchase. Note that PrimeVue UI components are excluded from the Apollo Figma file as they are available in PrimeOne for Figma only.',
-                    image: 'Figma.svg'
+                    image: 'Figma.png'
                 }
             ]
         };
@@ -341,7 +347,7 @@ export default {
 
 <style>
 @media screen and (max-width: 430px) {
-    .flex.flex-wrap.justify-content-center.align-items-center.overflow-hidden {
+    .isMobile {
         background-image: url('/_nuxt/pages/templates/assets/Mobile-hero.svg') !important;
         background-repeat: no-repeat;
         background-size: cover;
