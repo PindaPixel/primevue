@@ -6,9 +6,8 @@
         >
             <div class="flex flex-1 justify-content-center align-items-center">
                 <div
-                    class="flex flex-column justify-content-center align-items-center p-2 md:p-3 border-round-3xl"
+                    class="flex flex-column justify-content-center align-items-center p-2 md:p-3 border-1 border-white-alpha-40 border-round-3xl"
                     style="
-                        border: 1px solid rgba(255, 255, 255, 0.24);
                         background: linear-gradient(180deg, rgba(170, 140, 255, 0) 0%, rgba(170, 140, 255, 0.8) 100%), rgba(255, 255, 255, 0.1);
                         box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.24) inset, 0px 48px 80px 0px rgba(0, 0, 0, 0.08), 0px -5px 13px -2px rgba(255, 255, 255, 0.55) inset;
                         backdrop-filter: blur(2px);
@@ -135,7 +134,7 @@
         </div>
 
         <div class="flex surface-card flex-column p-5 w-full align-items-start gap-4 border-round-2xl bg-white" style="max-width: 56rem; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.08)">
-            <div class="flex flex-column align-items-center border-round-lg border-200 w-full h-full" style="max-height: 15rem; border: 1px solid">
+            <div class="flex flex-column align-items-center border-round-lg border-1 border-200 w-full h-full" style="max-height: 15rem">
                 <div class="flex w-full h-4rem align-items-center border-round-xl justify-content-start gap-7 flex-grow-0 align-self-strecth py-1 px-4">
                     <div class="flex align-items-center gap-2 h-4">
                         <div class="border-circle" style="width: 0.85rem; height: 0.85rem; background-color: #ed6b5d"></div>

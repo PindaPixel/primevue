@@ -1,12 +1,12 @@
 <template>
-    <div class="flex flex-wrap-reverse w-full h-full gap-5 p-5 justify-content-center align-items-center border-round-2xl surface-card" style="max-width: 1062px">
+    <div class="flex flex-wrap-reverse w-full h-full gap-5 p-5 justify-content-center align-items-center border-round-2xl surface-card" style="max-width: 75rem">
         <ul class="flex flex-column align-items-center pl-0 m-0 h-full gap-2 flex-1">
             <li
                 v-for="item in items"
                 :key="item.id"
                 class="flex w-full p-3 align-items-start gap-4 border-round-xl cursor-pointer"
                 :style="[activeItem.id === item.id ? { 'background-color': 'var(--surface-100)' } : {}]"
-                style="min-width: 280px"
+                style="min-width: 20rem"
                 @click="onClick(item)"
             >
                 <img :src="`/_nuxt/pages/templates/assets/numbers/${activeItem.id === item.id ? item.id + '-fill' : item.id}.svg`" :alt="item.id" />
@@ -16,15 +16,15 @@
                 </div>
             </li>
         </ul>
-        <div v-if="activeItem.isGalleria" class="h-full" style="max-height: 470px; max-width: 480px">
-            <div class="flex p-1 align-items-center justify-content-around gap-1 w-full" style="min-width: 240px; border-radius: 40px; border: 1px solid #dfe7ef">
+        <div v-if="activeItem.isGalleria" class="h-full" style="max-height: 33rem; max-width: 34rem">
+            <div class="flex p-1 border-300 align-items-center justify-content-around gap-1 w-full" style="min-width: 17rem; border-radius: 40px; border: 1px solid">
                 <div
                     v-for="layoutMenu in layoutMenus"
                     :key="layoutMenu.id"
                     @click="onMenuClick(layoutMenu)"
                     :style="[activeMenu.id === layoutMenu.id ? { backgroundColor: '#f5f5f5', padding: '4px' } : {}]"
                     class="flex align-items-start"
-                    style="border-radius: 36px; max-width: 100px"
+                    style="border-radius: 36px; max-width: 7rem"
                 >
                     <span :style="[activeMenu.id === layoutMenu.id ? { fontWeight: '500', color: '#212121' } : { fontWeight: '400' }]" class="flex justify-content-start align-items-center cursor-pointer text-xs p-0 sm:px-1">
                         {{ layoutMenu.menu }}
@@ -33,7 +33,7 @@
             </div>
             <img class="h-full w-full md:h-30rem pt-4" :src="`/_nuxt/pages/templates/assets/layout-menu/${activeMenu.image}`" />
         </div>
-        <div v-else style="max-width: 480px">
+        <div v-else style="max-width: 34rem">
             <img :src="`/_nuxt/pages/templates/assets/features/${activeItem.image}`" class="w-full" :alt="activeItem.id" />
         </div>
     </div>
@@ -45,24 +45,6 @@ export default {
         items: {
             type: Array,
             default: () => []
-        },
-        galleriaStyle: {
-            type: String,
-            default: `
-                  display: flex;
-                  max-width:480px;
-                  height: 100%;
-                  padding: 62px 36px 63px 37px;
-                  justify-content: center;
-                  align-items: center;
-                  align-self: stretch;
-                  border-radius: 12px;
-                  background:  #EFF3F8;
-                  `
-        },
-        dynamicStyle: {
-            type: String,
-            default: null
         }
     },
     data() {
