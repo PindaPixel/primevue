@@ -85,7 +85,7 @@ export interface AccordionPassThroughOptions {
      */
     accordiontab?: AccordionTabPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -174,6 +174,14 @@ export interface AccordionSlots {
      * Default slot to detect AccordionTab components.
      */
     default(): VNode[];
+    /**
+     * Custom collapse icon template.
+     */
+    collapseicon(): VNode[];
+    /**
+     * Custom expand icon template.
+     */
+    expandicon(): VNode[];
 }
 
 /**

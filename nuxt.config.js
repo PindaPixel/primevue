@@ -1,11 +1,11 @@
-import viteConfig from './vite.config';
+import aliasConfig from './nuxt-vite.config.js';
 
 const baseUrl = '/';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     typescript: false,
-    modules: ['nuxt-gtag', 'nuxt-primevue'],
+    modules: ['nuxt-gtag', '~/modules/nuxt-primevue/module'],
     components: [
         '~/components',
         {
@@ -13,11 +13,15 @@ export default defineNuxtConfig({
             prefetch: false
         }
     ],
+    vite: aliasConfig,
     nitro: {
-        alias: viteConfig.resolve.alias
+        alias: aliasConfig.resolve.alias
     },
     primevue: {
-        usePrimeVue: false,
+        options: {
+            ripple: true
+        },
+        layerOrder: 'primevue',
         resolvePath: function ({ as, from, type }) {
             const resolvedPath = from.replace('primevue', '@/components/lib');
 
@@ -48,12 +52,12 @@ export default defineNuxtConfig({
                 {
                     id: 'home-table-link',
                     rel: 'stylesheet',
-                    href: baseUrl + 'styles/landing/themes/lara-light-teal/theme.css'
+                    href: baseUrl + 'styles/landing/themes/lara-light-green/theme.css'
                 },
                 {
                     id: 'theme-link',
                     rel: 'stylesheet',
-                    href: baseUrl + 'themes/lara-light-teal/theme.css'
+                    href: baseUrl + 'themes/lara-light-green/theme.css'
                 },
                 { rel: 'icon', href: baseUrl + 'favicon.ico' }
             ],

@@ -3,6 +3,26 @@
         <div v-if="$slots.start" :class="cx('start')" v-bind="ptm('start')">
             <slot name="start"></slot>
         </div>
+        <slot :id="id" name="menubutton" :class="cx('menubutton')" :toggleCallback="(event) => menuButtonClick(event)">
+            <a
+                v-if="model && model.length > 0"
+                ref="menubutton"
+                role="button"
+                tabindex="0"
+                :class="cx('menubutton')"
+                :aria-haspopup="model.length && model.length > 0 ? true : false"
+                :aria-expanded="mobileActive"
+                :aria-controls="id"
+                :aria-label="$primevue.config.locale.aria?.navigation"
+                @click="menuButtonClick($event)"
+                @keydown="menuButtonKeydown($event)"
+                v-bind="ptm('menubutton')"
+            >
+                <slot name="menubuttonicon">
+                    <BarsIcon v-bind="ptm('menubuttonicon')" />
+                </slot>
+            </a>
+        </slot>
         <MegaMenuSub
             :ref="menubarRef"
             :id="id + '_list'"
@@ -19,7 +39,7 @@
             :horizontal="horizontal"
             :templates="$slots"
             :activeItem="activeItem"
-            :exact="exact"
+            :mobileActive="mobileActive"
             :level="0"
             :pt="pt"
             :unstyled="unstyled"
@@ -36,7 +56,8 @@
 </template>
 
 <script>
-import { DomHandler, ObjectUtils, UniqueComponentId } from 'primevue/utils';
+import BarsIcon from 'primevue/icons/bars';
+import { DomHandler, ObjectUtils, UniqueComponentId, ZIndexUtils } from 'primevue/utils';
 import BaseMegaMenu from './BaseMegaMenu.vue';
 import MegaMenuSub from './MegaMenuSub.vue';
 
@@ -46,6 +67,7 @@ export default {
     emits: ['focus', 'blur'],
     outsideClickListener: null,
     resizeListener: null,
+    matchMediaListener: null,
     container: null,
     menubar: null,
     searchTimeout: null,
@@ -53,10 +75,13 @@ export default {
     data() {
         return {
             id: this.$attrs.id,
+            mobileActive: false,
             focused: false,
             focusedItemInfo: { index: -1, key: '', parentKey: '' },
             activeItem: null,
-            dirty: false
+            dirty: false,
+            query: null,
+            queryMatches: false
         };
     },
     watch: {
@@ -73,17 +98,15 @@ export default {
             }
         }
     },
-    beforeMount() {
-        if (!this.$slots.item) {
-            console.warn('In future versions, vue-router support will be removed. Item templating should be used.');
-        }
-    },
     mounted() {
         this.id = this.id || UniqueComponentId();
+        this.bindMatchMediaListener();
     },
     beforeUnmount() {
+        this.mobileActive = false;
         this.unbindOutsideClickListener();
         this.unbindResizeListener();
+        this.unbindMatchMediaListener();
     },
     methods: {
         getItemProp(item, name) {
@@ -107,7 +130,35 @@ export default {
         isProccessedItemGroup(processedItem) {
             return processedItem && ObjectUtils.isNotEmpty(processedItem.items);
         },
+        toggle(event) {
+            if (this.mobileActive) {
+                this.mobileActive = false;
+                ZIndexUtils.clear(this.menubar);
+                this.hide();
+            } else {
+                this.mobileActive = true;
+                ZIndexUtils.set('menu', this.menubar, this.$primevue.config.zIndex.menu);
+                setTimeout(() => {
+                    this.show();
+                }, 1);
+            }
+
+            this.bindOutsideClickListener();
+            event.preventDefault();
+        },
+        show() {
+            this.focusedItemInfo = { index: this.findFirstFocusedItemIndex(), level: 0, parentKey: '' };
+
+            DomHandler.focus(this.menubar);
+        },
         hide(event, isFocus) {
+            if (this.mobileActive) {
+                this.mobileActive = false;
+                setTimeout(() => {
+                    DomHandler.focus(this.$refs.menubutton);
+                }, 0);
+            }
+
             this.activeItem = null;
             this.focusedItemInfo = { index: -1, key: '', parentKey: '' };
 
@@ -235,15 +286,21 @@ export default {
 
                     this.hide(originalEvent);
                     this.changeFocusedItemInfo(originalEvent, rootProcessedItem ? rootProcessedItem.index : -1);
-
+                    this.mobileActive = false;
                     DomHandler.focus(this.menubar);
                 }
             }
         },
         onItemMouseEnter(event) {
-            if (this.dirty) {
+            if (!this.mobileActive && this.dirty) {
                 this.onItemChange(event);
             }
+        },
+        menuButtonClick(event) {
+            this.toggle(event);
+        },
+        menuButtonKeydown(event) {
+            (event.code === 'Enter' || event.code === 'Space') && this.menuButtonClick(event);
         },
         onArrowDownKey(event) {
             if (this.horizontal) {
@@ -396,7 +453,7 @@ export default {
             if (!this.outsideClickListener) {
                 this.outsideClickListener = (event) => {
                     const isOutsideContainer = this.container && !this.container.contains(event.target);
-                    const isOutsideTarget = this.popup ? !(this.target && (this.target === event.target || this.target.contains(event.target))) : true;
+                    const isOutsideTarget = !(this.target && (this.target === event.target || this.target.contains(event.target)));
 
                     if (isOutsideContainer && isOutsideTarget) {
                         this.hide();
@@ -418,6 +475,8 @@ export default {
                     if (!DomHandler.isTouchDevice()) {
                         this.hide(event, true);
                     }
+
+                    this.mobileActive = false;
                 };
 
                 window.addEventListener('resize', this.resizeListener);
@@ -427,6 +486,27 @@ export default {
             if (this.resizeListener) {
                 window.removeEventListener('resize', this.resizeListener);
                 this.resizeListener = null;
+            }
+        },
+        bindMatchMediaListener() {
+            if (!this.matchMediaListener) {
+                const query = matchMedia(`(max-width: ${this.breakpoint})`);
+
+                this.query = query;
+                this.queryMatches = query.matches;
+
+                this.matchMediaListener = () => {
+                    this.queryMatches = query.matches;
+                    this.mobileActive = false;
+                };
+
+                this.query.addEventListener('change', this.matchMediaListener);
+            }
+        },
+        unbindMatchMediaListener() {
+            if (this.matchMediaListener) {
+                this.query.removeEventListener('change', this.matchMediaListener);
+                this.matchMediaListener = null;
             }
         },
         isItemMatched(processedItem) {
@@ -584,7 +664,8 @@ export default {
         }
     },
     components: {
-        MegaMenuSub: MegaMenuSub
+        MegaMenuSub: MegaMenuSub,
+        BarsIcon: BarsIcon
     }
 };
 </script>

@@ -66,7 +66,7 @@ export interface ButtonPassThroughOptions {
      */
     badge?: ButtonPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -116,6 +116,10 @@ export interface ButtonProps extends ButtonHTMLAttributes {
      * Style class of the badge.
      */
     badgeClass?: string | undefined;
+    /**
+     * Severity type of the badge.
+     */
+    badgeSeverity?: 'info' | 'success' | 'warning' | 'danger' | string | null | undefined;
     /**
      * Whether the button is in loading state.
      * @defaultValue false

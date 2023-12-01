@@ -231,7 +231,7 @@ export interface MultiSelectPassThroughOptions {
      */
     hiddenLastFocusableEl?: MultiSelectPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -518,11 +518,11 @@ export interface MultiSelectProps {
     /**
      * Defines a string value that labels an interactive element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying input element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {MultiSelectPassThroughOptions}
@@ -689,8 +689,15 @@ export interface MultiSelectSlots {
          * Remove token icon function.
          * @param {Event} event - Browser event
          * @param {any} item - Item
+         * @deprecated since v3.39.0. Use 'removeCallback' property instead.
          */
         onClick: (event: Event, item: any) => void;
+        /**
+         * Remove token icon function.
+         * @param {Event} event - Browser event
+         * @param {any} item - Item
+         */
+        removeCallback: (event: Event, item: any) => void;
     }): VNode[];
     /**
      * Custom header checkbox icon template.

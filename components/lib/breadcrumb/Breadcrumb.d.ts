@@ -75,7 +75,7 @@ export interface BreadcrumbPassThroughOptions {
      */
     separatorIcon?: BreadcrumbPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -134,17 +134,18 @@ export interface BreadcrumbProps {
     home?: MenuItem | undefined;
     /**
      * Whether to apply 'router-link-active-exact' class if route exactly matches the item path.
+     * @deprecated since v3.40.0.
      * @defaultValue true
      */
     exact?: boolean | undefined;
     /**
      * Defines a string value that labels an interactive element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying menu element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {BreadcrumbPassThroughOptions}

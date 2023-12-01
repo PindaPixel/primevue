@@ -55,7 +55,7 @@
                 <slot name="chip" :value="option">
                     <span :class="cx('tokenLabel')" v-bind="ptm('tokenLabel')">{{ getOptionLabel(option) }}</span>
                 </slot>
-                <slot name="removetokenicon" :class="cx('removeTokenIcon')" :index="i" :onClick="(event) => removeOption(event, i)">
+                <slot name="removetokenicon" :class="cx('removeTokenIcon')" :index="i" :onClick="(event) => removeOption(event, i)" :removeCallback="(event) => removeOption(event, i)">
                     <component :is="removeTokenIcon ? 'span' : 'TimesCircleIcon'" :class="[cx('removeTokenIcon'), removeTokenIcon]" @click="removeOption($event, i)" aria-hidden="true" v-bind="ptm('removeTokenIcon')" />
                 </slot>
             </li>
@@ -765,7 +765,7 @@ export default {
             return this.isValidOption(option) && this.getOptionLabel(option).toLocaleLowerCase(this.searchLocale) === value.toLocaleLowerCase(this.searchLocale);
         },
         isValidOption(option) {
-            return option && !(this.isOptionDisabled(option) || this.isOptionGroup(option));
+            return ObjectUtils.isNotEmpty(option) && !(this.isOptionDisabled(option) || this.isOptionGroup(option));
         },
         isValidSelectedOption(option) {
             return this.isValidOption(option) && this.isSelected(option);
@@ -884,7 +884,7 @@ export default {
             return this.optionGroupLabel ? this.flatOptions(this.suggestions) : this.suggestions || [];
         },
         inputValue() {
-            if (this.modelValue) {
+            if (ObjectUtils.isNotEmpty(this.modelValue)) {
                 if (typeof this.modelValue === 'object') {
                     const label = this.getOptionLabel(this.modelValue);
 

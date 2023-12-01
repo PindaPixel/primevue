@@ -65,7 +65,7 @@ export interface AvatarPassThroughOptions {
      */
     image?: AvatarPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -101,11 +101,11 @@ export interface AvatarProps {
     /**
      * Establishes a string value that labels the component.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {AvatarPassThroughOptions}

@@ -138,7 +138,7 @@ export interface ListboxPassThroughOptions {
      */
     hiddenLastFocusableEl?: ListboxPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -249,7 +249,7 @@ export interface ListboxProps {
     /**
      * Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.
      * On touch enabled devices, metaKeySelection is turned off automatically.
-     * @defaultValue false
+     * @defaultValue true
      */
     metaKeySelection?: boolean | undefined;
     /**
@@ -330,11 +330,11 @@ export interface ListboxProps {
     /**
      * Defines a string value that labels an interactive element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying input element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {ListboxPassThroughOptions}

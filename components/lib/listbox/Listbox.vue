@@ -203,7 +203,7 @@ export default {
 
             const firstFocusableEl = DomHandler.getFirstFocusableElement(this.$el, ':not([data-p-hidden-focusable="true"])');
 
-            this.$refs.lastHiddenFocusableElement.tabIndex = ObjectUtils.isEmpty(firstFocusableEl) ? -1 : undefined;
+            this.$refs.lastHiddenFocusableElement.tabIndex = DomHandler.isElement(firstFocusableEl) ? undefined : -1;
             this.$refs.firstHiddenFocusableElement.tabIndex = -1;
         },
         onLastHiddenFocus(event) {
@@ -228,6 +228,7 @@ export default {
         onListFocus(event) {
             this.focused = true;
             this.focusedOptionIndex = this.focusedOptionIndex !== -1 ? this.focusedOptionIndex : this.autoOptionFocus ? this.findFirstFocusedOptionIndex() : -1;
+            this.autoUpdateModel();
             this.$emit('focus', event);
         },
         onListBlur(event) {
@@ -327,7 +328,7 @@ export default {
             let metaSelection = this.optionTouched ? false : this.metaKeySelection;
 
             if (metaSelection) {
-                let metaKey = event.metaKey || event.ctrlKey;
+                let metaKey = event && (event.metaKey || event.ctrlKey);
 
                 if (selected) {
                     if (metaKey) {
@@ -511,7 +512,7 @@ export default {
             return this.isValidOption(option) && this.getOptionLabel(option).toLocaleLowerCase(this.filterLocale).startsWith(this.searchValue.toLocaleLowerCase(this.filterLocale));
         },
         isValidOption(option) {
-            return option && !(this.isOptionDisabled(option) || this.isOptionGroup(option));
+            return ObjectUtils.isNotEmpty(option) && !(this.isOptionDisabled(option) || this.isOptionGroup(option));
         },
         isValidSelectedOption(option) {
             return this.isValidOption(option) && this.isSelected(option);
@@ -632,7 +633,7 @@ export default {
             }
         },
         autoUpdateModel() {
-            if (this.selectOnFocus && this.autoOptionFocus && !this.hasSelectedOption && !this.multiple) {
+            if (this.selectOnFocus && this.autoOptionFocus && !this.hasSelectedOption && !this.multiple && this.focused) {
                 this.focusedOptionIndex = this.findFirstFocusedOptionIndex();
                 this.onOptionSelect(null, this.visibleOptions[this.focusedOptionIndex]);
             }

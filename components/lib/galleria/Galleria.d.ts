@@ -171,7 +171,7 @@ export interface GalleriaPassThroughOptions {
      */
     mask?: GalleriaPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -390,6 +390,14 @@ export interface GalleriaProps {
      * Used to pass all properties of the HTMLButtonElement to the next navigation button.
      */
     nextButtonProps?: ButtonHTMLAttributes | undefined;
+    /**
+     * Defines a string value that labels an interactive element.
+     */
+    ariaLabel?: string | undefined;
+    /**
+     * Defines a string value that description for the role of the component.
+     */
+    ariaRoledescription?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {GalleriaPassThroughOptions}

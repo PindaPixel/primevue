@@ -126,9 +126,21 @@ export default {
         return -1;
     },
 
-    addMultipleClasses(element, className) {
-        if (element && className) {
-            className.split(' ').forEach((style) => this.addClass(element, style));
+    addMultipleClasses(element, classNames) {
+        if (element && classNames) {
+            [classNames]
+                .flat()
+                .filter(Boolean)
+                .forEach((cNames) => cNames.split(' ').forEach((className) => this.addClass(element, className)));
+        }
+    },
+
+    removeMultipleClasses(element, classNames) {
+        if (element && classNames) {
+            [classNames]
+                .flat()
+                .filter(Boolean)
+                .forEach((cNames) => cNames.split(' ').forEach((className) => this.removeClass(element, className)));
         }
     },
 
@@ -348,6 +360,35 @@ export default {
 
             element.style.top = top + 'px';
             element.style.left = left + 'px';
+        }
+    },
+
+    nestedPosition(element, level) {
+        if (element) {
+            const parentItem = element.parentElement;
+            const elementOffset = this.getOffset(parentItem);
+            const viewport = this.getViewport();
+            const sublistWidth = element.offsetParent ? element.offsetWidth : this.getHiddenElementOuterWidth(element);
+            const itemOuterWidth = this.getOuterWidth(parentItem.children[0]);
+            let left;
+
+            if (parseInt(elementOffset.left, 10) + itemOuterWidth + sublistWidth > viewport.width - this.calculateScrollbarWidth()) {
+                if (parseInt(elementOffset.left, 10) < sublistWidth) {
+                    // for too small screens
+                    if (level % 2 === 1) {
+                        left = parseInt(elementOffset.left, 10) ? '-' + parseInt(elementOffset.left, 10) + 'px' : '100%';
+                    } else if (level % 2 === 0) {
+                        left = viewport.width - sublistWidth - this.calculateScrollbarWidth() + 'px';
+                    }
+                } else {
+                    left = '-100%';
+                }
+            } else {
+                left = '100%';
+            }
+
+            element.style.top = '0px';
+            element.style.left = left;
         }
     },
 
@@ -670,6 +711,34 @@ export default {
         const nextIndex = index > -1 && focusableElements.length >= index + 1 ? index + 1 : -1;
 
         return nextIndex > -1 ? focusableElements[nextIndex] : null;
+    },
+
+    getPreviousElementSibling(element, selector) {
+        let previousElement = element.previousElementSibling;
+
+        while (previousElement) {
+            if (previousElement.matches(selector)) {
+                return previousElement;
+            } else {
+                previousElement = previousElement.previousElementSibling;
+            }
+        }
+
+        return null;
+    },
+
+    getNextElementSibling(element, selector) {
+        let nextElement = element.nextElementSibling;
+
+        while (nextElement) {
+            if (nextElement.matches(selector)) {
+                return nextElement;
+            } else {
+                nextElement = nextElement.nextElementSibling;
+            }
+        }
+
+        return null;
     },
 
     isClickable(element) {

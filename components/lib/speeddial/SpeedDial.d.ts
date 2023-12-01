@@ -77,7 +77,7 @@ export interface SpeedDialPassThroughOptions {
      */
     mask?: SpeedDialPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -247,11 +247,11 @@ export interface SpeedDialProps {
     /**
      * Defines a string value that labels an interactive list element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying list element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {SpeedDialPassThroughOptions}
@@ -297,8 +297,14 @@ export interface SpeedDialSlots {
         /**
          * Button click function
          * @param {Event} event - Browser event.
+         * @deprecated since v3.39.0. Use 'toggleCallback' property instead.
          */
         onClick: (event: Event) => void;
+        /**
+         * Button click function
+         * @param {Event} event - Browser event.
+         */
+        toggleCallback: (event: Event) => void;
     }): VNode[];
     /**
      * Custom icon template.

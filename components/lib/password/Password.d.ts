@@ -82,7 +82,7 @@ export interface PasswordPassThroughOptions {
      */
     hiddenAccesible?: PasswordPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -248,11 +248,11 @@ export interface PasswordProps extends InputHTMLAttributes {
     /**
      * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Establishes a string value that labels the component.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {PasswordPassThroughOptions}
@@ -293,8 +293,13 @@ export interface PasswordSlots {
     hideicon(scope: {
         /**
          * Hide icon click event
+         * @deprecated since v3.39.0. Use 'toggleCallback' property instead.
          */
         onClick: () => void;
+        /**
+         * Hide icon click event
+         */
+        toggleCallback: () => void;
     }): VNode[];
     /**
      * Custom show icon template.
@@ -302,9 +307,14 @@ export interface PasswordSlots {
      */
     showicon(scope: {
         /**
-         * Show icon click event
+         * Hide icon click event
+         * @deprecated since v3.39.0. Use 'toggleCallback' property instead.
          */
         onClick: () => void;
+        /**
+         * Hide icon click event
+         */
+        toggleCallback: () => void;
     }): VNode[];
 }
 

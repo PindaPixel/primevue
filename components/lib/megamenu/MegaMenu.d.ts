@@ -99,9 +99,17 @@ export interface MegaMenuPassThroughOptions {
      */
     submenu?: MegaMenuPassThroughOptionType;
     /**
+     * Used to pass attributes to the submenu label's DOM element.
+     */
+    submenuLabel?: MegaMenuPassThroughOptionType;
+    /**
      * Used to pass attributes to the separator's DOM element.
      */
     separator?: MegaMenuPassThroughOptionType;
+    /**
+     * Used to pass attributes to the mobile popup menu button's DOM element.
+     */
+    menubutton?: MegaMenuPassThroughOptionType;
     /**
      * Used to pass attributes to the start of the component.
      */
@@ -111,7 +119,7 @@ export interface MegaMenuPassThroughOptions {
      */
     end?: MegaMenuPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -232,7 +240,13 @@ export interface MegaMenuProps {
      */
     orientation?: 'horizontal' | 'vertical' | undefined;
     /**
+     * The breakpoint to define the maximum width boundary.
+     * @defaultValue 960px
+     */
+    breakpoint?: string | undefined;
+    /**
      * Whether to apply 'router-link-active-exact' class if route exactly matches the item path.
+     * @deprecated since v3.40.0.
      * @defaultValue true
      */
     exact?: boolean | undefined;
@@ -248,11 +262,11 @@ export interface MegaMenuProps {
     /**
      * Defines a string value that labels an interactive element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying menu element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {MegaMenuPassThroughOptions}
@@ -304,6 +318,29 @@ export interface MegaMenuSlots {
          */
         hasSubmenu: boolean;
     }): VNode[];
+    /**
+     * Custom menu button template on responsive mode.
+     * @param {Object} scope - menu button slot's params.
+     */
+    menubutton(scope: {
+        /**
+         * Current id state as a string
+         */
+        id: string;
+        /**
+         * Style class of component
+         */
+        class: string;
+        /**
+         *
+         * Toggle event
+         */
+        toggleCallback: () => void;
+    }): VNode[];
+    /**
+     * Custom menu button icon template on responsive mode.
+     */
+    menubuttonicon(): VNode[];
     /**
      * Custom submenu icon template.
      * @param {Object} scope - submenuicon slot's params.

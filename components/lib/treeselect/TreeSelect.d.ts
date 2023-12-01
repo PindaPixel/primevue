@@ -10,7 +10,8 @@
 import { InputHTMLAttributes, TransitionProps, VNode } from 'vue';
 import { ComponentHooks } from '../basecomponent';
 import { PassThroughOptions } from '../passthrough';
-import { TreeExpandedKeys, TreeNode, TreePassThroughOptionType } from '../tree';
+import { TreeExpandedKeys, TreePassThroughOptionType } from '../tree';
+import { TreeNode } from '../treenode';
 import { ClassComponent, GlobalComponentConstructor, PassThrough } from '../ts-helpers';
 
 export declare type TreeSelectPassThroughOptionType = TreeSelectPassThroughAttributes | ((options: TreeSelectPassThroughMethodOptions) => TreeSelectPassThroughAttributes | string) | string | null | undefined;
@@ -98,7 +99,7 @@ export interface TreeSelectPassThroughOptions {
      */
     hiddenInput?: TreeSelectPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -213,11 +214,11 @@ export interface TreeSelectProps {
     /**
      * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Establishes a string value that labels the component.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {TreeSelectPassThroughOptions}

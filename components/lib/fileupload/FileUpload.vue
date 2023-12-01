@@ -295,7 +295,7 @@ export default {
         },
         onBasicUploaderClick(event) {
             if (this.hasFiles) this.upload();
-            if (event.button === 0) this.$refs.fileInput.click();
+            else if (event.button === 0) this.$refs.fileInput.click();
         },
         remove(index) {
             this.clearInputElement();
@@ -328,7 +328,7 @@ export default {
         formatSize(bytes) {
             const k = 1024;
             const dm = 3;
-            const sizes = this.$primevue.config.locale?.fileSizeTypes;
+            const sizes = this.$primevue.config.locale?.fileSizeTypes || ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
             if (bytes === 0) {
                 return `0 ${sizes[0]}`;

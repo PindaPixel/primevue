@@ -93,7 +93,7 @@ export interface MenuPassThroughOptions {
      */
     end?: MenuPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -210,6 +210,7 @@ export interface MenuProps {
     baseZIndex?: number | undefined;
     /**
      * Whether to apply 'router-link-active-exact' class if route exactly matches the item path.
+     * @deprecated since v3.40.0.
      * @defaultValue true
      */
     exact?: boolean | undefined;
@@ -220,11 +221,11 @@ export interface MenuProps {
     /**
      * Defines a string value that labels an interactive element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying input element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {MenuPassThroughOptions}
@@ -294,7 +295,7 @@ export interface MenuSlots {
         /**
          * Menuitem instance
          */
-        submenuheader: MenuItem;
+        item: MenuItem;
     }): VNode[];
 }
 

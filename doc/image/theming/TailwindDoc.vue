@@ -30,7 +30,7 @@ export default {
             class: ['fixed top-0 left-0 w-full h-full', 'flex items-center justify-center', 'bg-black bg-opacity-90']
         },
         toolbar: {
-            class: ['absolute top-0 right-0 flex', 'p-4']
+            class: ['absolute top-0 right-0 z-10 flex', 'p-4']
         },
         rotaterightbutton: {
             class: [
@@ -93,7 +93,8 @@ export default {
     <div class="card flex justify-center">
         <Image src="https://primefaces.org/cdn/primevue/images/galleria/galleria10.jpg" alt="Image" width="250" preview />
     </div>
-</template>`
+</template>
+`
             }
         };
     }

@@ -89,7 +89,7 @@ export interface TieredMenuPassThroughOptions {
      */
     submenu?: TieredMenuPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -184,9 +184,9 @@ export interface TieredMenuContext {
 }
 
 /**
- * Defines valid router binding props in TabMenu component.
+ * Defines valid router binding props in TieredMenu component.
  */
-export interface TabMenuRouterBindProps {
+export interface TieredMenuRouterBindProps {
     /**
      * Action element binding
      */
@@ -235,6 +235,7 @@ export interface TieredMenuProps {
     baseZIndex?: number | undefined;
     /**
      * Whether to apply 'router-link-active-exact' class if route exactly matches the item path.
+     * @deprecated since v3.40.0.
      * @defaultValue true
      */
     exact?: boolean | undefined;
@@ -250,11 +251,11 @@ export interface TieredMenuProps {
     /**
      * Defines a string value that labels an interactive element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying menu element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {TieredMenuPassThroughOptions}
@@ -292,7 +293,7 @@ export interface TieredMenuSlots {
         /**
          * Binding properties of the menuitem
          */
-        props: TabMenuRouterBindProps;
+        props: TieredMenuRouterBindProps;
         /**
          * Whether or not there is a submenu
          */
@@ -322,6 +323,14 @@ export interface TieredMenuSlots {
          */
         class: any;
     }): VNode[];
+    /**
+     * Custom start template.
+     */
+    start(): VNode[];
+    /**
+     * Custom end template.
+     */
+    end(): VNode[];
 }
 
 /**

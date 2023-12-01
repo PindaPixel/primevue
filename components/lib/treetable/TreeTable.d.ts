@@ -12,7 +12,7 @@ import { ComponentHooks } from '../basecomponent';
 import { ColumnPassThroughOptionType } from '../column';
 import { PaginatorPassThroughOptionType } from '../paginator';
 import { PassThroughOptions } from '../passthrough';
-import { TreeNode } from '../tree';
+import { TreeNode } from '../treenode';
 import { ClassComponent, GlobalComponentConstructor, PassThrough } from '../ts-helpers';
 
 export declare type TreeTablePassThroughOptionType = TreeTablePassThroughAttributes | ((options: TreeTablePassThroughMethodOptions) => TreeTablePassThroughAttributes | string) | string | null | undefined;
@@ -268,7 +268,7 @@ export interface TreeTablePassThroughOptions {
      */
     column?: ColumnPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -475,6 +475,11 @@ export interface TreeTableProps {
      */
     loadingIcon?: string | undefined;
     /**
+     * Loading mode display.
+     * @defaultValue mask
+     */
+    loadingMode?: 'mask' | 'icon' | undefined;
+    /**
      * When enabled, background of the rows change on hover.
      * @defaultValue false
      */
@@ -618,27 +623,9 @@ export interface TreeTableSlots {
      */
     loadingicon(): VNode[];
     /**
-     * Custom toggler icon template.
-     */
-    togglericon(): VNode[];
-    /**
      * Custom checkbox icon template.
      */
     checkboxicon(): VNode[];
-    /**
-     * Custom sort icon template.
-     * @param {Object} scope - sorticon slot's params.
-     */
-    sorticon(scope: {
-        /**
-         * Whether or not column is sorted
-         */
-        sorted: TreeNode;
-        /**
-         * Current sort order
-         */
-        sortOrder: boolean;
-    }): VNode[];
     /**
      * Custom paginator first page link icon template.
      */

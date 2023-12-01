@@ -92,7 +92,7 @@ export interface ChipsPassThroughOptions {
      */
     input?: ChipsPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -187,11 +187,11 @@ export interface ChipsProps {
     /**
      * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Establishes a string value that labels the component.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {ChipsPassThroughOptions}
@@ -238,8 +238,14 @@ export interface ChipsSlots {
         /**
          * Remove token icon function.
          * @param {Event} event - Browser event
+         * @deprecated since v3.39.0. Use 'removeCallback' property instead.
          */
         onClick: (event: Event, index: number) => void;
+        /**
+         * Remove token icon function.
+         * @param {Event} event - Browser event
+         */
+        removeCallback: (event: Event, index: number) => void;
     }): VNode[];
 }
 /**

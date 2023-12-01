@@ -25,12 +25,12 @@
                                 <slot name="submenuheader" :item="item">{{ label(item) }}</slot>
                             </li>
                             <template v-for="(child, j) of item.items" :key="child.label + i + '_' + j">
-                                <PVMenuitem v-if="visible(child) && !child.separator" :id="id + '_' + i + '_' + j" :item="child" :templates="$slots" :exact="exact" :focusedOptionId="focusedOptionId" @item-click="itemClick" :pt="pt" />
+                                <PVMenuitem v-if="visible(child) && !child.separator" :id="id + '_' + i + '_' + j" :item="child" :templates="$slots" :focusedOptionId="focusedOptionId" @item-click="itemClick" :pt="pt" />
                                 <li v-else-if="visible(child) && child.separator" :key="'separator' + i + j" :class="[cx('separator'), item.class]" :style="child.style" role="separator" v-bind="ptm('separator')"></li>
                             </template>
                         </template>
                         <li v-else-if="visible(item) && item.separator" :key="'separator' + i.toString()" :class="[cx('separator'), item.class]" :style="item.style" role="separator" v-bind="ptm('separator')"></li>
-                        <PVMenuitem v-else :key="label(item) + i.toString()" :id="id + '_' + i" :item="item" :index="i" :templates="$slots" :exact="exact" :focusedOptionId="focusedOptionId" @item-click="itemClick" :pt="pt" />
+                        <PVMenuitem v-else :key="label(item) + i.toString()" :id="id + '_' + i" :item="item" :index="i" :templates="$slots" :focusedOptionId="focusedOptionId" @item-click="itemClick" :pt="pt" />
                     </template>
                 </ul>
                 <div v-if="$slots.end" :class="cx('end')" v-bind="ptm('end')">
@@ -73,11 +73,6 @@ export default {
     resizeListener: null,
     container: null,
     list: null,
-    beforeMount() {
-        if (!this.$slots.item) {
-            console.warn('In future versions, vue-router support will be removed. Item templating should be used.');
-        }
-    },
     mounted() {
         this.id = this.id || UniqueComponentId();
 
@@ -113,10 +108,6 @@ export default {
 
             if (item.command) {
                 item.command(event);
-            }
-
-            if (item.to && event.navigate) {
-                event.navigate(event.originalEvent);
             }
 
             if (this.overlayVisible) this.hide();
@@ -281,7 +272,11 @@ export default {
         },
         alignOverlay() {
             DomHandler.absolutePosition(this.container, this.target);
-            this.container.style.minWidth = DomHandler.getOuterWidth(this.target) + 'px';
+            const targetWidth = DomHandler.getOuterWidth(this.target);
+
+            if (targetWidth > DomHandler.getOuterWidth(this.container)) {
+                this.container.style.minWidth = DomHandler.getOuterWidth(this.target) + 'px';
+            }
         },
         bindOutsideClickListener() {
             if (!this.outsideClickListener) {

@@ -13,22 +13,23 @@
 </template>
 
 <script>
-definePageMeta({
-    layout: 'custom'
-});
-
 import EventBus from '@/layouts/AppEventBus';
 import AppNews from '@/layouts/AppNews';
 import AppTopBar from '@/layouts/AppTopBar.vue';
-import BlockSection from './landing/BlockSection';
-import FeaturesSection from './landing/FeaturesSection';
-import FooterSection from './landing/FooterSection';
-import HeroSection from './landing/HeroSection';
-import TemplateSection from './landing/TemplateSection';
-import ThemeSection from './landing/ThemeSection';
-import UsersSection from './landing/UsersSection';
+import BlockSection from './landing/BlockSection.vue';
+import FeaturesSection from './landing/FeaturesSection.vue';
+import FooterSection from './landing/FooterSection.vue';
+import HeroSection from './landing/HeroSection.vue';
+import TemplateSection from './landing/TemplateSection.vue';
+import ThemeSection from './landing/ThemeSection.vue';
+import UsersSection from './landing/UsersSection.vue';
 
 export default {
+    setup() {
+        definePageMeta({
+            layout: 'custom'
+        });
+    },
     props: {
         theme: {
             type: String,
@@ -37,7 +38,7 @@ export default {
     },
     data() {
         return {
-            tableTheme: 'lara-light-teal'
+            tableTheme: 'lara-light-green'
         };
     },
     themeChangeListener: null,
@@ -52,11 +53,11 @@ export default {
             document.cookie = 'primeaffiliateid=' + afId + ';expires=' + expire.toUTCString() + ';path=/; domain:primefaces.org';
         }
 
-        this.replaceTableTheme(this.$appState.darkTheme ? 'lara-dark-teal' : 'lara-light-teal');
+        this.replaceTableTheme(this.$appState.darkTheme ? 'lara-dark-green' : 'lara-light-green');
     },
     methods: {
         onDarkModeToggle() {
-            const newTheme = this.$appState.darkTheme ? 'lara-light-teal' : 'lara-dark-teal';
+            const newTheme = this.$appState.darkTheme ? 'lara-light-green' : 'lara-dark-green';
             const newTableTheme = this.$appState.darkTheme ? this.tableTheme.replace('dark', 'light') : this.tableTheme.replace('light', 'dark');
 
             EventBus.emit('theme-change', { theme: newTheme, dark: !this.$appState.darkTheme });

@@ -378,7 +378,7 @@ export interface DataTableRowExpandEvent {
     /**
      * Expanded row data
      */
-    data: any[];
+    data: any;
 }
 
 /**
@@ -685,7 +685,7 @@ export interface DataTablePassThroughOptions {
      */
     column?: ColumnPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;

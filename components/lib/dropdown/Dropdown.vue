@@ -47,7 +47,7 @@
         >
             <slot name="value" :value="modelValue" :placeholder="placeholder">{{ label === 'p-emptylabel' ? '&nbsp;' : label || 'empty' }}</slot>
         </span>
-        <slot v-if="showClear && modelValue != null" name="clearicon" :class="cx('clearIcon')" :onClick="onClearClick">
+        <slot v-if="showClear && modelValue != null" name="clearicon" :class="cx('clearIcon')" :onClick="onClearClick" :clearCallback="onClearClick">
             <component :is="clearIcon ? 'i' : 'TimesIcon'" ref="clearIcon" :class="[cx('clearIcon'), clearIcon]" @click="onClearClick" v-bind="{ ...clearIconProps, ...ptm('clearIcon') }" data-pc-section="clearicon" />
         </slot>
         <div :class="cx('trigger')" v-bind="ptm('trigger')">
@@ -711,7 +711,7 @@ export default {
             return this.isValidOption(option) && this.getOptionLabel(option).toLocaleLowerCase(this.filterLocale).startsWith(this.searchValue.toLocaleLowerCase(this.filterLocale));
         },
         isValidOption(option) {
-            return option && !(this.isOptionDisabled(option) || this.isOptionGroup(option));
+            return ObjectUtils.isNotEmpty(option) && !(this.isOptionDisabled(option) || this.isOptionGroup(option));
         },
         isValidSelectedOption(option) {
             return this.isValidOption(option) && this.isSelected(option);

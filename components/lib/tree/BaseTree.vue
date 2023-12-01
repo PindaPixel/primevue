@@ -34,6 +34,10 @@ export default {
             type: String,
             default: undefined
         },
+        loadingMode: {
+            type: String,
+            default: 'mask'
+        },
         filter: {
             type: Boolean,
             default: false
@@ -62,11 +66,11 @@ export default {
             type: Number,
             default: 0
         },
-        'aria-labelledby': {
+        ariaLabelledby: {
             type: String,
             default: null
         },
-        'aria-label': {
+        ariaLabel: {
             type: String,
             default: null
         }

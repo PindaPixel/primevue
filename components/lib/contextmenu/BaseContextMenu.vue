@@ -26,19 +26,15 @@ export default {
             type: Boolean,
             default: false
         },
-        exact: {
-            type: Boolean,
-            default: true
-        },
         tabindex: {
             type: Number,
             default: 0
         },
-        'aria-labelledby': {
+        ariaLabelledby: {
             type: String,
             default: null
         },
-        'aria-label': {
+        ariaLabel: {
             type: String,
             default: null
         }

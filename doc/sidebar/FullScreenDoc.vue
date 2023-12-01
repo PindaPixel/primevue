@@ -1,13 +1,12 @@
 <template>
     <DocSectionText v-bind="$attrs">
-        <p>Sidebar can cover the whole page when <i>position</i> property is equal to <i>full</i>.</p>
+        <p>The whole page is covered when <i>position</i> property is set as <i>full</i>.</p>
     </DocSectionText>
     <div class="card flex justify-content-center">
-        <Sidebar v-model:visible="visible" position="full">
-            <h2>Sidebar</h2>
+        <Sidebar v-model:visible="visible" header="Sidebar" position="full">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </Sidebar>
-        <Button icon="pi pi-arrow-right" @click="visible = true" />
+        <Button icon="pi pi-window-maximize" @click="visible = true" />
     </div>
     <DocSectionCode :code="code" />
 </template>
@@ -20,21 +19,19 @@ export default {
             code: {
                 basic: `
 <div class="card flex justify-content-center">
-    <Sidebar v-model:visible="visible" position="full">
-        <h2>Sidebar</h2>
+    <Sidebar v-model:visible="visible" header="Sidebar" position="full">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </Sidebar>
-    <Button icon="pi pi-arrow-right" @click="visible = true" />
+    <Button icon="pi pi-window-maximize" @click="visible = true" />
 </div>
 `,
                 options: `
 <template>
     <div class="card flex justify-content-center">
-        <Sidebar v-model:visible="visible" position="full">
-            <h2>Sidebar</h2>
+        <Sidebar v-model:visible="visible" header="Sidebar" position="full">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </Sidebar>
-        <Button icon="pi pi-arrow-right" @click="visible = true" />
+        <Button icon="pi pi-window-maximize" @click="visible = true" />
     </div>
 </template>
 
@@ -51,11 +48,10 @@ export default {
                 composition: `
 <template>
     <div class="card flex justify-content-center">
-        <Sidebar v-model:visible="visible" position="full">
-            <h2>Sidebar</h2>
+        <Sidebar v-model:visible="visible" header="Sidebar" position="full">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </Sidebar>
-        <Button icon="pi pi-arrow-right" @click="visible = true" />
+        <Button icon="pi pi-window-maximize" @click="visible = true" />
     </div>
 </template>
 

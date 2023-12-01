@@ -4,7 +4,7 @@
     </DocSectionText>
 
     <div class="card">
-        <Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px" :responsiveOptions="responsiveOptions" containerClass="w-30rem" contentClass="flex align-items-center">
+        <Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px" contentClass="flex align-items-center">
             <template #item="slotProps">
                 <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
                     <div class="mb-3">
@@ -14,10 +14,9 @@
                         <h4 class="mb-1">{{ slotProps.data.name }}</h4>
                         <h6 class="mt-0 mb-3">${{ slotProps.data.price }}</h6>
                         <Tag :value="slotProps.data.inventoryStatus" :severity="getSeverity(slotProps.data.inventoryStatus)" />
-                        <div class="mt-5">
-                            <Button icon="pi pi-search" rounded class="mr-2" />
-                            <Button icon="pi pi-star-fill" rounded severity="success" class="mr-2" />
-                            <Button icon="pi pi-cog" rounded severity="help" />
+                        <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                            <Button icon="pi pi-search" rounded />
+                            <Button icon="pi pi-star-fill" rounded severity="secondary" />
                         </div>
                     </div>
                 </div>
@@ -34,27 +33,9 @@ export default {
     data() {
         return {
             products: null,
-            responsiveOptions: [
-                {
-                    breakpoint: '1024px',
-                    numVisible: 3,
-                    numScroll: 3
-                },
-                {
-                    breakpoint: '600px',
-                    numVisible: 2,
-                    numScroll: 2
-                },
-                {
-                    breakpoint: '480px',
-                    numVisible: 1,
-                    numScroll: 1
-                }
-            ],
             code: {
                 basic: `
-<Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px"
-    :responsiveOptions="responsiveOptions" containerClass="w-30rem" contentClass="flex align-items-center">
+<Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px" contentClass="flex align-items-center">
     <template #item="slotProps">
         <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
             <div class="mb-3">
@@ -64,10 +45,9 @@ export default {
                 <h4 class="mb-1">{{ slotProps.data.name }}</h4>
                 <h6 class="mt-0 mb-3">\${{ slotProps.data.price }}</h6>
                 <Tag :value="slotProps.data.inventoryStatus" :severity="getSeverity(slotProps.data.inventoryStatus)" />
-                <div class="mt-5">
-                    <Button icon="pi pi-search" rounded class="mr-2" />
-                    <Button icon="pi pi-star-fill" rounded severity="success" class="mr-2" />
-                    <Button icon="pi pi-cog" rounded severity="help" />
+                <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                    <Button icon="pi pi-search" rounded />
+                    <Button icon="pi pi-star-fill" rounded severity="secondary" />
                 </div>
             </div>
         </div>
@@ -77,8 +57,7 @@ export default {
                 options: `
 <template>
     <div class="card">
-        <Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px"
-            :responsiveOptions="responsiveOptions" containerClass="w-30rem" contentClass="flex align-items-center">
+        <Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px" contentClass="flex align-items-center">
             <template #item="slotProps">
                 <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
                     <div class="mb-3">
@@ -88,10 +67,9 @@ export default {
                         <h4 class="mb-1">{{ slotProps.data.name }}</h4>
                         <h6 class="mt-0 mb-3">\${{ slotProps.data.price }}</h6>
                         <Tag :value="slotProps.data.inventoryStatus" :severity="getSeverity(slotProps.data.inventoryStatus)" />
-                        <div class="mt-5">
-                            <Button icon="pi pi-search" rounded class="mr-2" />
-                            <Button icon="pi pi-star-fill" rounded severity="success" class="mr-2" />
-                            <Button icon="pi pi-cog" rounded severity="help" />
+                        <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                            <Button icon="pi pi-search" rounded />
+                            <Button icon="pi pi-star-fill" rounded severity="secondary" />
                         </div>
                     </div>
                 </div>
@@ -106,24 +84,7 @@ import { ProductService } from '@/service/ProductService';
 export default {
     data() {
         return {
-            products: null,
-            responsiveOptions: [
-                {
-                    breakpoint: '1024px',
-                    numVisible: 3,
-                    numScroll: 3
-                },
-                {
-                    breakpoint: '600px',
-                    numVisible: 2,
-                    numScroll: 2
-                },
-                {
-                    breakpoint: '480px',
-                    numVisible: 1,
-                    numScroll: 1
-                }
-            ]
+            products: null
         };
     },
     mounted() {
@@ -152,8 +113,7 @@ export default {
                 composition: `
 <template>
     <div class="card">
-        <Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px"
-            :responsiveOptions="responsiveOptions" containerClass="w-30rem" contentClass="flex align-items-center">
+        <Carousel :value="products" :numVisible="1" :numScroll="1" orientation="vertical" verticalViewPortHeight="360px" contentClass="flex align-items-center">
             <template #item="slotProps">
                 <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
                     <div class="mb-3">
@@ -184,23 +144,7 @@ onMounted(() => {
 })
 
 const products = ref();
-const responsiveOptions = ref([
-    {
-        breakpoint: '1024px',
-        numVisible: 3,
-        numScroll: 3
-    },
-    {
-        breakpoint: '600px',
-        numVisible: 2,
-        numScroll: 2
-    },
-    {
-        breakpoint: '480px',
-        numVisible: 1,
-        numScroll: 1
-    }
-]);
+
 const getSeverity = (status) => {
     switch (status) {
         case 'INSTOCK':
@@ -220,7 +164,7 @@ const getSeverity = (status) => {
 <\/script>
 `,
                 data: `
-/* ProductService */        
+/* ProductService */
 {
     id: '1000',
     code: 'f230fh0g3',

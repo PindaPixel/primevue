@@ -1,9 +1,9 @@
 <template>
     <span :class="containerClass" :style="style" v-bind="ptm('root')" data-pc-name="image">
-        <slot name="image" :onError="onError">
+        <slot name="image" :onError="onError" :errorCallback="onError">
             <img :style="imageStyle" :class="[cx('image'), imageClass]" @error="onError" v-bind="{ ...$attrs, ...ptm('image') }" />
         </slot>
-        <button v-if="preview" ref="previewButton" type="button" :class="cx('button')" @click="onImageClick" v-bind="{ ...previewButtonProps, ...ptm('button') }">
+        <button v-if="preview" ref="previewButton" :aria-label="zoomImageAriaLabel" type="button" :class="cx('button')" @click="onImageClick" v-bind="{ ...previewButtonProps, ...ptm('button') }">
             <slot name="indicatoricon">
                 <component :is="indicatorIcon ? 'i' : 'EyeIcon'" :class="cx('icon')" v-bind="ptm('icon')" />
             </slot>
@@ -43,7 +43,7 @@
                 </div>
                 <transition name="p-image-preview" @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave" @before-leave="onBeforeLeave" @after-leave="onAfterLeave" v-bind="ptm('transition')">
                     <div v-if="previewVisible" v-bind="ptm('previewContainer')">
-                        <slot name="preview" :class="cx('preview')" :style="imagePreviewStyle" :onClick="onPreviewImageClick">
+                        <slot name="preview" :class="cx('preview')" :style="imagePreviewStyle" :onClick="onPreviewImageClick" :previewCallback="onPreviewImageClick">
                             <img :src="$attrs.src" :class="cx('preview')" :style="imagePreviewStyle" @click="onPreviewImageClick" v-bind="ptm('preview')" />
                         </slot>
                     </div>
@@ -211,6 +211,9 @@ export default {
         },
         zoomOutAriaLabel() {
             return this.$primevue.config.locale.aria ? this.$primevue.config.locale.aria.zoomOut : undefined;
+        },
+        zoomImageAriaLabel() {
+            return this.$primevue.config.locale.aria ? this.$primevue.config.locale.aria.zoomImage : undefined;
         },
         closeAriaLabel() {
             return this.$primevue.config.locale.aria ? this.$primevue.config.locale.aria.close : undefined;

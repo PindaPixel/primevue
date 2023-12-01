@@ -337,7 +337,7 @@ export interface ColumnPassThroughOptions {
      */
     hiddenInput?: ColumnPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -948,6 +948,10 @@ export interface ColumnSlots {
      * @param {Object} scope - sort icon slot's params.
      */
     sorticon(scope: {
+        /**
+         * Style class of the sort icon.
+         */
+        class: string;
         /**
          * Current sort state.
          */

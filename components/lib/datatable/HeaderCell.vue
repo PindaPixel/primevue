@@ -27,7 +27,7 @@
             <component v-if="column.children && column.children.header" :is="column.children.header" :column="column" />
             <span v-if="columnProp('header')" :class="cx('headerTitle')" v-bind="getColumnPT('headerTitle')">{{ columnProp('header') }}</span>
             <span v-if="columnProp('sortable')" v-bind="getColumnPT('sort')">
-                <component :is="(column.children && column.children.sorticon) || sortableColumnIcon" :sorted="sortState.sorted" :sortOrder="sortState.sortOrder" data-pc-section="sorticon" :class="cx('sortIcon')" v-bind="getColumnPT('sorticon')" />
+                <component :is="(column.children && column.children.sorticon) || sortableColumnIcon" :sorted="sortState.sorted" :sortOrder="sortState.sortOrder" :class="cx('sortIcon')" v-bind="getColumnPT('sorticon')" data-pc-section="sorticon" />
             </span>
             <span v-if="isMultiSorted()" :class="cx('sortBadge')" v-bind="getColumnPT('sortBadge')">{{ getBadgeValue() }}</span>
             <DTHeaderCheckbox
@@ -270,7 +270,7 @@ export default {
 
                 if (align === 'right') {
                     let right = 0;
-                    let next = this.$el.nextElementSibling;
+                    let next = DomHandler.getNextElementSibling(this.$el, '[data-p-frozen-column="true"]');
 
                     if (next) {
                         right = DomHandler.getOuterWidth(next) + parseFloat(next.style.right || 0);
@@ -279,7 +279,7 @@ export default {
                     this.styleObject.right = right + 'px';
                 } else {
                     let left = 0;
-                    let prev = this.$el.previousElementSibling;
+                    let prev = DomHandler.getPreviousElementSibling(this.$el, '[data-p-frozen-column="true"]');
 
                     if (prev) {
                         left = DomHandler.getOuterWidth(prev) + parseFloat(prev.style.left || 0);

@@ -10,6 +10,7 @@
 import { VNode } from 'vue';
 import { ComponentHooks } from '../basecomponent';
 import { PassThroughOptions } from '../passthrough';
+import { TreeNode } from '../treenode';
 import { ClassComponent, GlobalComponentConstructor, PassThrough } from '../ts-helpers';
 
 export declare type TreePassThroughOptionType = TreePassThroughAttributes | ((options: TreePassThroughMethodOptions) => TreePassThroughAttributes | string) | string | null | undefined;
@@ -41,66 +42,6 @@ export interface TreePassThroughMethodOptions {
 }
 
 /**
- * Custom TreeNode metadata.
- */
-export interface TreeNode {
-    /**
-     * Mandatory unique key of the node.
-     */
-    key?: string;
-    /**
-     * Label of the node.
-     */
-    label?: string;
-    /**
-     * Data represented by the node.
-     */
-    data?: any;
-    /**
-     * Type of the node to match a template.
-     */
-    type?: string;
-    /**
-     * Icon of the node to display next to content.
-     */
-    icon?: string;
-    /**
-     * An array of treenodes as children.
-     */
-    children?: TreeNode[];
-    /**
-     * Inline style of the node.
-     */
-    style?: any;
-    /**
-     * Style class of the node.
-     */
-    styleClass?: string;
-    /**
-     * Whether the node is selectable when selection mode is enabled.
-     * @defaultValue false
-     */
-    selectable?: boolean;
-    /**
-     * Specifies if the node has children. Used in lazy loading.
-     * @defaultValue false
-     */
-    leaf?: boolean;
-    /**
-     * Optional
-     */
-    [key: string]: any;
-    /**
-     * Icon to use in expanded state.
-     */
-    expandedIcon?: string;
-    /**
-     * Icon to use in collapsed state.
-     */
-    collapsedIcon?: string;
-}
-
-/**
  * Custom expanded keys metadata.
  */
 export interface TreeExpandedKeys {
@@ -118,6 +59,21 @@ export interface TreeSelectionKeys {
      * Optional
      */
     [key: string]: any;
+}
+
+/**
+ * Custom filter event.
+ * @see {@link TreeEmits.filter}
+ */
+export interface TreeFilterEvent {
+    /**
+     * Original event
+     */
+    originalEvent: Event;
+    /**
+     * Filter value
+     */
+    value: string;
 }
 
 /**
@@ -198,7 +154,7 @@ export interface TreePassThroughOptions {
      */
     loadingIcon?: TreePassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -292,6 +248,11 @@ export interface TreeProps {
      */
     loadingIcon?: string | undefined;
     /**
+     * Loading mode display.
+     * @defaultValue mask
+     */
+    loadingMode?: 'mask' | 'icon' | undefined;
+    /**
      * When specified, displays an input field to filter the items.
      * @defaultValue false
      */
@@ -321,11 +282,11 @@ export interface TreeProps {
     /**
      * Defines a string value that labels an interactive element.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Identifier of the underlying menu element.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {TreePassThroughOptions}
@@ -424,7 +385,7 @@ export interface TreeEmits {
      * Emitted when the selection keys change.
      * @param {TreeSelectionKeys} value - New selection keys.
      */
-    'update:selectionKeys'(event: TreeSelectionKeys): void;
+    'update:selectionKeys'(value: TreeSelectionKeys): void;
     /**
      * Callback to invoke when a node is selected.
      * @param {TreeNode} node - Node instance.
@@ -445,6 +406,11 @@ export interface TreeEmits {
      * @param {TreeNode} node - Node instance.
      */
     'node-collapse'(node: TreeNode): void;
+    /**
+     * Callback to invoke on filter input.
+     * @param {TreeFilterEvent} event - Custom filter event.
+     */
+    'filter'(event: TreeFilterEvent): void;
 }
 
 /**

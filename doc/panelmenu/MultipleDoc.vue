@@ -1,9 +1,9 @@
 <template>
     <DocSectionText v-bind="$attrs">
-        <p>Only one single root menuitem can be active by default, enable <i>expandedKeys</i> property to be able to open more than one items.</p>
+        <p>Only one root menuitem at a time can be active by default, enabling <i>multiple</i> property changes this behavior to allow multiple root menuitems.</p>
     </DocSectionText>
-    <div class="card flex flex-column align-items-center">
-        <PanelMenu v-model:expandedKeys="expandedKeys" :model="items" class="w-full md:w-25rem" />
+    <div class="card flex justify-content-center">
+        <PanelMenu :model="items" multiple class="w-full md:w-20rem" />
     </div>
     <DocSectionCode :code="code" />
 </template>
@@ -12,482 +12,270 @@
 export default {
     data() {
         return {
-            expandedKeys: {},
             items: [
                 {
-                    key: '0',
-                    label: 'File',
-                    icon: 'pi pi-fw pi-file',
+                    label: 'Files',
+                    icon: 'pi pi-file',
                     items: [
                         {
-                            key: '0_0',
-                            label: 'New',
-                            icon: 'pi pi-fw pi-plus',
+                            label: 'Documents',
+                            icon: 'pi pi-file',
                             items: [
                                 {
-                                    key: '0_0_0',
-                                    label: 'Bookmark',
-                                    icon: 'pi pi-fw pi-bookmark'
-                                },
-                                {
-                                    key: '0_0_1',
-                                    label: 'Video',
-                                    icon: 'pi pi-fw pi-video'
-                                }
-                            ]
-                        },
-                        {
-                            key: '0_1',
-                            label: 'Delete',
-                            icon: 'pi pi-fw pi-trash'
-                        },
-                        {
-                            key: '0_2',
-                            label: 'Export',
-                            icon: 'pi pi-fw pi-external-link'
-                        }
-                    ]
-                },
-                {
-                    key: '1',
-                    label: 'Edit',
-                    icon: 'pi pi-fw pi-pencil',
-                    items: [
-                        {
-                            key: '1_0',
-                            label: 'Left',
-                            icon: 'pi pi-fw pi-align-left'
-                        },
-                        {
-                            key: '1_1',
-                            label: 'Right',
-                            icon: 'pi pi-fw pi-align-right'
-                        },
-                        {
-                            key: '1_2',
-                            label: 'Center',
-                            icon: 'pi pi-fw pi-align-center'
-                        },
-                        {
-                            key: '1_3',
-                            label: 'Justify',
-                            icon: 'pi pi-fw pi-align-justify'
-                        }
-                    ]
-                },
-                {
-                    key: '2',
-                    label: 'Users',
-                    icon: 'pi pi-fw pi-user',
-                    items: [
-                        {
-                            key: '2_0',
-                            label: 'New',
-                            icon: 'pi pi-fw pi-user-plus'
-                        },
-                        {
-                            key: '2_1',
-                            label: 'Delete',
-                            icon: 'pi pi-fw pi-user-minus'
-                        },
-                        {
-                            key: '2_2',
-                            label: 'Search',
-                            icon: 'pi pi-fw pi-users',
-                            items: [
-                                {
-                                    key: '2_2_0',
-                                    label: 'Filter',
-                                    icon: 'pi pi-fw pi-filter',
+                                    label: 'Invoices',
+                                    icon: 'pi pi-file-pdf',
                                     items: [
                                         {
-                                            key: '2_2_0_0',
-                                            label: 'Print',
-                                            icon: 'pi pi-fw pi-print'
+                                            label: 'Pending',
+                                            icon: 'pi pi-stop'
+                                        },
+                                        {
+                                            label: 'Paid',
+                                            icon: 'pi pi-check-circle'
                                         }
                                     ]
                                 },
                                 {
-                                    key: '2_2_1',
-                                    icon: 'pi pi-fw pi-bars',
-                                    label: 'List'
+                                    label: 'Clients',
+                                    icon: 'pi pi-users'
+                                }
+                            ]
+                        },
+                        {
+                            label: 'Images',
+                            icon: 'pi pi-image',
+                            items: [
+                                {
+                                    label: 'Logos',
+                                    icon: 'pi pi-image'
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    key: '3',
-                    label: 'Events',
-                    icon: 'pi pi-fw pi-calendar',
+                    label: 'Cloud',
+                    icon: 'pi pi-cloud',
                     items: [
                         {
-                            key: '3_0',
-                            label: 'Edit',
-                            icon: 'pi pi-fw pi-pencil',
-                            items: [
-                                {
-                                    key: '3_0_0',
-                                    label: 'Save',
-                                    icon: 'pi pi-fw pi-calendar-plus'
-                                },
-                                {
-                                    key: '3_0_0',
-                                    label: 'Delete',
-                                    icon: 'pi pi-fw pi-calendar-minus'
-                                }
-                            ]
+                            label: 'Upload',
+                            icon: 'pi pi-cloud-upload'
                         },
                         {
-                            key: '3_1',
-                            label: 'Archieve',
-                            icon: 'pi pi-fw pi-calendar-times',
-                            items: [
-                                {
-                                    key: '3_1_0',
-                                    label: 'Remove',
-                                    icon: 'pi pi-fw pi-calendar-minus'
-                                }
-                            ]
+                            label: 'Download',
+                            icon: 'pi pi-cloud-download'
+                        },
+                        {
+                            label: 'Sync',
+                            icon: 'pi pi-refresh'
+                        }
+                    ]
+                },
+                {
+                    label: 'Devices',
+                    icon: 'pi pi-desktop',
+                    items: [
+                        {
+                            label: 'Phone',
+                            icon: 'pi pi-mobile'
+                        },
+                        {
+                            label: 'Desktop',
+                            icon: 'pi pi-desktop'
+                        },
+                        {
+                            label: 'Tablet',
+                            icon: 'pi pi-tablet'
                         }
                     ]
                 }
             ],
             code: {
                 basic: `
-<PanelMenu v-model:expandedKeys="expandedKeys" :model="items" />
+<PanelMenu :model="items" multiple />
 `,
                 options: `
 <template>
-    <div class="card flex flex-column align-items-center">
-        <PanelMenu v-model:expandedKeys="expandedKeys" :model="items" class="w-full md:w-25rem" />
+    <div class="card flex justify-content-center">
+        <PanelMenu :model="items" multiple class="w-full md:w-20rem" />
     </div>
 </template>
 
 <script>
 export default {
-  data() {
-      return {
-          expandedKeys: {},
-          items: [
-              {
-                  key: '0',
-                  label: 'File',
-                  icon: 'pi pi-fw pi-file',
-                  items: [
-                      {
-                          key: '0_0',
-                          label: 'New',
-                          icon: 'pi pi-fw pi-plus',
-                          items: [
-                              {
-                                  key: '0_0_0',
-                                  label: 'Bookmark',
-                                  icon: 'pi pi-fw pi-bookmark'
-                              },
-                              {
-                                  key: '0_0_1',
-                                  label: 'Video',
-                                  icon: 'pi pi-fw pi-video'
-                              }
-                          ]
-                      },
-                      {
-                          key: '0_1',
-                          label: 'Delete',
-                          icon: 'pi pi-fw pi-trash'
-                      },
-                      {
-                          key: '0_2',
-                          label: 'Export',
-                          icon: 'pi pi-fw pi-external-link'
-                      }
-                  ]
-              },
-              {
-                  key: '1',
-                  label: 'Edit',
-                  icon: 'pi pi-fw pi-pencil',
-                  items: [
-                      {
-                          key: '1_0',
-                          label: 'Left',
-                          icon: 'pi pi-fw pi-align-left'
-                      },
-                      {
-                          key: '1_1',
-                          label: 'Right',
-                          icon: 'pi pi-fw pi-align-right'
-                      },
-                      {
-                          key: '1_2',
-                          label: 'Center',
-                          icon: 'pi pi-fw pi-align-center'
-                      },
-                      {
-                          key: '1_3',
-                          label: 'Justify',
-                          icon: 'pi pi-fw pi-align-justify'
-                      }
-                  ]
-              },
-              {
-                  key: '2',
-                  label: 'Users',
-                  icon: 'pi pi-fw pi-user',
-                  items: [
-                      {
-                          key: '2_0',
-                          label: 'New',
-                          icon: 'pi pi-fw pi-user-plus'
-                      },
-                      {
-                          key: '2_1',
-                          label: 'Delete',
-                          icon: 'pi pi-fw pi-user-minus'
-                      },
-                      {
-                          key: '2_2',
-                          label: 'Search',
-                          icon: 'pi pi-fw pi-users',
-                          items: [
-                              {
-                                  key: '2_2_0',
-                                  label: 'Filter',
-                                  icon: 'pi pi-fw pi-filter',
-                                  items: [
-                                      {
-                                          key: '2_2_0_0',
-                                          label: 'Print',
-                                          icon: 'pi pi-fw pi-print'
-                                      }
-                                  ]
-                              },
-                              {
-                                  key: '2_2_1',
-                                  icon: 'pi pi-fw pi-bars',
-                                  label: 'List'
-                              }
-                          ]
-                      }
-                  ]
-              },
-              {
-                  key: '3',
-                  label: 'Events',
-                  icon: 'pi pi-fw pi-calendar',
-                  items: [
-                      {
-                          key: '3_0',
-                          label: 'Edit',
-                          icon: 'pi pi-fw pi-pencil',
-                          items: [
-                              {
-                                  key: '3_0_0',
-                                  label: 'Save',
-                                  icon: 'pi pi-fw pi-calendar-plus'
-                              },
-                              {
-                                  key: '3_0_0',
-                                  label: 'Delete',
-                                  icon: 'pi pi-fw pi-calendar-minus'
-                              }
-                          ]
-                      },
-                      {
-                          key: '3_1',
-                          label: 'Archieve',
-                          icon: 'pi pi-fw pi-calendar-times',
-                          items: [
-                              {
-                                  key: '3_1_0',
-                                  label: 'Remove',
-                                  icon: 'pi pi-fw pi-calendar-minus'
-                              }
-                          ]
-                      }
-                  ]
-              }
-          ]
-      };
-  },
+    data() {
+        return {
+            items: [
+                {
+                    label: 'Files',
+                    icon: 'pi pi-file',
+                    items: [
+                        {
+                            label: 'Documents',
+                            icon: 'pi pi-file',
+                            items: [
+                                {
+                                    label: 'Invoices',
+                                    icon: 'pi pi-file-pdf',
+                                    items: [
+                                        {
+                                            label: 'Pending',
+                                            icon: 'pi pi-stop'
+                                        },
+                                        {
+                                            label: 'Paid',
+                                            icon: 'pi pi-check-circle'
+                                        }
+                                    ]
+                                },
+                                {
+                                    label: 'Clients',
+                                    icon: 'pi pi-users'
+                                }
+                            ]
+                        },
+                        {
+                            label: 'Images',
+                            icon: 'pi pi-image',
+                            items: [
+                                {
+                                    label: 'Logos',
+                                    icon: 'pi pi-image'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: 'Cloud',
+                    icon: 'pi pi-cloud',
+                    items: [
+                        {
+                            label: 'Upload',
+                            icon: 'pi pi-cloud-upload'
+                        },
+                        {
+                            label: 'Download',
+                            icon: 'pi pi-cloud-download'
+                        },
+                        {
+                            label: 'Sync',
+                            icon: 'pi pi-refresh'
+                        }
+                    ]
+                },
+                {
+                    label: 'Devices',
+                    icon: 'pi pi-desktop',
+                    items: [
+                        {
+                            label: 'Phone',
+                            icon: 'pi pi-mobile'
+                        },
+                        {
+                            label: 'Desktop',
+                            icon: 'pi pi-desktop'
+                        },
+                        {
+                            label: 'Tablet',
+                            icon: 'pi pi-tablet'
+                        }
+                    ]
+                }
+            ]
+        };
+    }
 };
 <\/script>
 `,
                 composition: `
 <template>
-    <div class="card flex flex-column align-items-center">
-        <PanelMenu v-model:expandedKeys="expandedKeys" :model="items" class="w-full md:w-25rem"  />
+    <div class="card flex justify-content-center">
+        <PanelMenu :model="items" multiple class="w-full md:w-20rem" />
     </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 
-const expandedKeys = ref({});
 const items = ref([
-  {
-      key: '0',
-      label: 'File',
-      icon: 'pi pi-fw pi-file',
-      items: [
-          {
-              key: '0_0',
-              label: 'New',
-              icon: 'pi pi-fw pi-plus',
-              items: [
-                  {
-                      key: '0_0_0',
-                      label: 'Bookmark',
-                      icon: 'pi pi-fw pi-bookmark'
-                  },
-                  {
-                      key: '0_0_1',
-                      label: 'Video',
-                      icon: 'pi pi-fw pi-video'
-                  }
-              ]
-          },
-          {
-              key: '0_1',
-              label: 'Delete',
-              icon: 'pi pi-fw pi-trash'
-          },
-          {
-              key: '0_2',
-              label: 'Export',
-              icon: 'pi pi-fw pi-external-link'
-          }
-      ]
-  },
-  {
-      key: '1',
-      label: 'Edit',
-      icon: 'pi pi-fw pi-pencil',
-      items: [
-          {
-              key: '1_0',
-              label: 'Left',
-              icon: 'pi pi-fw pi-align-left'
-          },
-          {
-              key: '1_1',
-              label: 'Right',
-              icon: 'pi pi-fw pi-align-right'
-          },
-          {
-              key: '1_2',
-              label: 'Center',
-              icon: 'pi pi-fw pi-align-center'
-          },
-          {
-              key: '1_3',
-              label: 'Justify',
-              icon: 'pi pi-fw pi-align-justify'
-          }
-      ]
-  },
-  {
-      key: '2',
-      label: 'Users',
-      icon: 'pi pi-fw pi-user',
-      items: [
-          {
-              key: '2_0',
-              label: 'New',
-              icon: 'pi pi-fw pi-user-plus'
-          },
-          {
-              key: '2_1',
-              label: 'Delete',
-              icon: 'pi pi-fw pi-user-minus'
-          },
-          {
-              key: '2_2',
-              label: 'Search',
-              icon: 'pi pi-fw pi-users',
-              items: [
-                  {
-                      key: '2_2_0',
-                      label: 'Filter',
-                      icon: 'pi pi-fw pi-filter',
-                      items: [
-                          {
-                              key: '2_2_0_0',
-                              label: 'Print',
-                              icon: 'pi pi-fw pi-print'
-                          }
-                      ]
-                  },
-                  {
-                      key: '2_2_1',
-                      icon: 'pi pi-fw pi-bars',
-                      label: 'List'
-                  }
-              ]
-          }
-      ]
-  },
-  {
-      key: '3',
-      label: 'Events',
-      icon: 'pi pi-fw pi-calendar',
-      items: [
-          {
-              key: '3_0',
-              label: 'Edit',
-              icon: 'pi pi-fw pi-pencil',
-              items: [
-                  {
-                      key: '3_0_0',
-                      label: 'Save',
-                      icon: 'pi pi-fw pi-calendar-plus'
-                  },
-                  {
-                      key: '3_0_0',
-                      label: 'Delete',
-                      icon: 'pi pi-fw pi-calendar-minus'
-                  }
-              ]
-          },
-          {
-              key: '3_1',
-              label: 'Archieve',
-              icon: 'pi pi-fw pi-calendar-times',
-              items: [
-                  {
-                      key: '3_1_0',
-                      label: 'Remove',
-                      icon: 'pi pi-fw pi-calendar-minus'
-                  }
-              ]
-          }
-      ]
-  }
+    {
+        label: 'Files',
+        icon: 'pi pi-file',
+        items: [
+            {
+                label: 'Documents',
+                icon: 'pi pi-file',
+                items: [
+                    {
+                        label: 'Invoices',
+                        icon: 'pi pi-file-pdf',
+                        items: [
+                            {
+                                label: 'Pending',
+                                icon: 'pi pi-stop'
+                            },
+                            {
+                                label: 'Paid',
+                                icon: 'pi pi-check-circle'
+                            }
+                        ]
+                    },
+                    {
+                        label: 'Clients',
+                        icon: 'pi pi-users'
+                    }
+                ]
+            },
+            {
+                label: 'Images',
+                icon: 'pi pi-image',
+                items: [
+                    {
+                        label: 'Logos',
+                        icon: 'pi pi-image'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        label: 'Cloud',
+        icon: 'pi pi-cloud',
+        items: [
+            {
+                label: 'Upload',
+                icon: 'pi pi-cloud-upload'
+            },
+            {
+                label: 'Download',
+                icon: 'pi pi-cloud-download'
+            },
+            {
+                label: 'Sync',
+                icon: 'pi pi-refresh'
+            }
+        ]
+    },
+    {
+        label: 'Devices',
+        icon: 'pi pi-desktop',
+        items: [
+            {
+                label: 'Phone',
+                icon: 'pi pi-mobile'
+            },
+            {
+                label: 'Desktop',
+                icon: 'pi pi-desktop'
+            },
+            {
+                label: 'Tablet',
+                icon: 'pi pi-tablet'
+            }
+        ]
+    }
 ]);
-
-
-const expandAll = () => {
-  for (let node of items.value) {
-      expandNode(node);
-  }
-
-  expandedKeys.value = {...expandedKeys.value};
-};
-
-const collapseAll = () => {
-  expandedKeys.value = {};
-};
-
-const expandNode = (node) => {
-  if (node.items && node.items.length) {
-      expandedKeys.value[node.key] = true;
-
-      for (let child of node.items) {
-          expandNode(child);
-      }
-  }
-};
 <\/script>
 `
             }

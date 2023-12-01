@@ -3,10 +3,10 @@
         <div class="doc-intro">
             <h1>Meet the Team</h1>
             <p>
-                <a href="https://www.primetek.com.tr" class="text-primary hover:underline font-semibold"> PrimeTek </a> is a world renowned vendor of popular UI Component suites including
-                <a href="https://primefaces.org" class="text-primary hover:underline font-semibold"> PrimeFaces </a>, <a href="https://primeng.org" class="text-primary hover:underline font-semibold"> PrimeNG </a>,
-                <a href="https://primereact.org" class="text-primary hover:underline font-semibold"> PrimeReact </a> and
-                <a href="https://primevue.org" class="text-primary hover:underline font-semibold"> PrimeVue </a>
+                <a href="https://www.primetek.com.tr" class="text-primary hover:underline font-medium"> PrimeTek </a> is a world renowned vendor of popular UI Component suites including
+                <a href="https://primefaces.org" class="text-primary hover:underline font-medium"> PrimeFaces </a>, <a href="https://primeng.org" class="text-primary hover:underline font-medium"> PrimeNG </a>,
+                <a href="https://primereact.org" class="text-primary hover:underline font-medium"> PrimeReact </a> and
+                <a href="https://primevue.org" class="text-primary hover:underline font-medium"> PrimeVue </a>
                 . All the members in our team are full time employees of PrimeTek who share the same passion and vision for open source to create awesome UI libraries.
             </p>
         </div>
@@ -59,13 +59,23 @@
                     <span>UI/UX Designer</span>
                 </div>
                 <div class="flex flex-column align-items-center flex-auto">
-                    <img src="https://primefaces.org/cdn/primevue/images/team/bugra.jpg" class="border-circle mb-4" alt="Buğra Beydüz" />
-                    <span class="mb-2 text-xl font-bold">Buğra Beydüz</span>
+                    <img src="https://primefaces.org/cdn/primevue/images/team/aliriza.jpg" class="border-circle mb-4" alt="Alirıza Gücal" />
+                    <span class="mb-2 text-xl font-bold">Alirıza Gücal</span>
                     <span>Front-End Developer</span>
                 </div>
                 <div class="flex flex-column align-items-center flex-auto">
-                    <img src="https://primefaces.org/cdn/primevue/images/team/aliriza.jpg" class="border-circle mb-4" alt="Alirıza Gücal" />
-                    <span class="mb-2 text-xl font-bold">Alirıza Gücal</span>
+                    <img src="https://primefaces.org/cdn/primevue/images/team/umit.jpg" class="border-circle mb-4" alt="Ümit Çelik" />
+                    <span class="mb-2 text-xl font-bold">Ümit Çelik</span>
+                    <span>UI/UX Designer</span>
+                </div>
+                <div class="flex flex-column align-items-center flex-auto">
+                    <img src="https://primefaces.org/cdn/primevue/images/team/toprak.jpg" class="border-circle mb-4" alt="Toprak Koç" />
+                    <span class="mb-2 text-xl font-bold">Toprak Koç</span>
+                    <span>Front-End Developer</span>
+                </div>
+                <div class="flex flex-column align-items-center flex-auto">
+                    <img src="https://primefaces.org/cdn/primevue/images/team/mehmet.jpg" class="border-circle mb-4" alt="Mehmet Çetin" />
+                    <span class="mb-2 text-xl font-bold">Mehmet Çetin</span>
                     <span>Front-End Developer</span>
                 </div>
                 <div class="flex flex-column align-items-center flex-auto">
@@ -77,11 +87,6 @@
                     <img src="https://primefaces.org/cdn/primevue/images/team/burak.jpg" class="border-circle mb-4" alt="Burak Sağlam" />
                     <span class="mb-2 text-xl font-bold">Burak Sağlam</span>
                     <span>Front-End Developer</span>
-                </div>
-                <div class="flex flex-column align-items-center flex-auto">
-                    <img src="https://primefaces.org/cdn/primevue/images/team/umit.jpg" class="border-circle mb-4" alt="Ümit Çelik" />
-                    <span class="mb-2 text-xl font-bold">Ümit Çelik</span>
-                    <span>UI/UX Designer</span>
                 </div>
             </div>
         </div>

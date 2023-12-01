@@ -48,7 +48,7 @@ export interface CalendarPassThroughMethodOptions {
  */
 export interface CalendarResponsiveOptions {
     /**
-     * Breakpoint for responsive mode. Exp; @media screen and (max-width: ${breakpoint}) {...}
+     * Breakpoint for responsive mode. Exp; \@media screen and (max-width: ${breakpoint}) {...}
      */
     breakpoint: string;
     /**
@@ -183,6 +183,10 @@ export interface CalendarPassThroughOptions {
      */
     weekHeader?: CalendarPassThroughOptionType;
     /**
+     * Used to pass attributes to the week header label's DOM element.
+     */
+    weekHeaderLabel?: CalendarPassThroughOptionType;
+    /**
      * Used to pass attributes to the table header cell's DOM element.
      */
     tableHeaderCell?: CalendarPassThroughOptionType;
@@ -305,7 +309,7 @@ export interface CalendarPassThroughOptions {
      */
     hiddenYear?: CalendarPassThroughOptionType;
     /**
-     * Used to manage all lifecycle hooks
+     * Used to manage all lifecycle hooks.
      * @see {@link BaseComponent.ComponentHooks}
      */
     hooks?: ComponentHooks;
@@ -476,6 +480,11 @@ export interface CalendarProps {
      */
     showIcon?: boolean | undefined;
     /**
+     * Icon position of the component. This only applies if the showIcon option is set to true.
+     * @defaultValue 'button'
+     */
+    iconDisplay?: 'button' | 'input' | undefined;
+    /**
      * Icon of the calendar button.
      * @deprecated since v3.27.0. Use 'dropdownicon' slot.
      */
@@ -509,6 +518,11 @@ export interface CalendarProps {
      * An array of options for responsive design.
      */
     responsiveOptions?: CalendarResponsiveOptions[];
+    /**
+     * The breakpoint to define the maximum width boundary for datepicker panel.
+     * @defaultValue 769px
+     */
+    breakpoint?: string | undefined;
     /**
      * Type of view to display.
      * @defaultValue date
@@ -699,11 +713,11 @@ export interface CalendarProps {
     /**
      * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
      */
-    'aria-labelledby'?: string | undefined;
+    ariaLabelledby?: string | undefined;
     /**
      * Establishes a string value that labels the component.
      */
-    'aria-label'?: string | undefined;
+    ariaLabel?: string | undefined;
     /**
      * Used to pass attributes to DOM elements inside the component.
      * @type {CalendarPassThroughOptions}
@@ -752,6 +766,20 @@ export interface CalendarSlots {
         years: string[] | undefined;
     }): VNode[];
     /**
+     * Custom week header label template.
+     */
+    weekheaderlabel(): VNode[];
+    /**
+     * Custom week label template.
+     * @param {Object} scope - weeklabel slot's params.
+     */
+    weeklabel(scope: {
+        /**
+         * Number of the week
+         */
+        weekNumber: number;
+    }): VNode[];
+    /**
      * Custom dropdown icon template.
      * @param {Object} scope - dropdown icon slot's params.
      */
@@ -760,6 +788,20 @@ export interface CalendarSlots {
          * Style class of the dropdown icon
          */
         class: any;
+    }): VNode[];
+    /**
+     * Custom input icon template.
+     * @param {Object} scope - input icon slot's params.
+     */
+    inputicon(scope: {
+        /**
+         * Style class of the input icon
+         */
+        class: any;
+        /**
+         * Click callback
+         */
+        clickCallback: () => void;
     }): VNode[];
     /**
      * Custom previous icon template.

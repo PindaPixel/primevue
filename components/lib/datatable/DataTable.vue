@@ -402,7 +402,7 @@ export default {
             }
         },
         editingRows: {
-            deep: true,
+            immediate: true,
             handler(newValue) {
                 if (this.dataKey) {
                     this.updateEditingRowKeys(newValue);
@@ -416,11 +416,6 @@ export default {
             }
         }
     },
-    beforeMount() {
-        if (this.isStateful()) {
-            this.restoreState();
-        }
-    },
     mounted() {
         this.$el.setAttribute(this.attributeSelector, '');
 
@@ -428,8 +423,10 @@ export default {
             this.createResponsiveStyle();
         }
 
-        if (this.isStateful() && this.resizableColumns) {
-            this.restoreColumnWidths();
+        if (this.isStateful()) {
+            this.restoreState();
+
+            this.resizableColumns && this.restoreColumnWidths();
         }
 
         if (this.editMode === 'row' && this.dataKey && !this.d_editingRowKeys) {
@@ -787,6 +784,8 @@ export default {
             this.rowTouched = false;
 
             if (focusedItem) {
+                if (e.originalEvent.target.getAttribute('data-pc-section') === 'rowtogglericon' || e.originalEvent.target.parentElement.getAttribute('data-pc-section') === 'rowtogglericon') return;
+
                 const targetRow = e.originalEvent.target.closest('tr[data-p-selectable-row="true"]');
 
                 focusedItem.tabIndex = '-1';
@@ -857,6 +856,7 @@ export default {
                             const data = this.dataToRender(slotProps.rows);
 
                             this.$emit('update:selection', data);
+                            event.preventDefault();
                         }
 
                         break;
@@ -1301,7 +1301,7 @@ export default {
             this.createStyleElement();
 
             let innerHTML = '';
-            let selector = `[data-pc-name="datatable"][${this.attributeSelector}] > [data-pc-section="wrapper"] ${this.virtualScrollerDisabled ? '' : '> [data-pc-section="virtualscroller"]'} > table[data-pc-section="table"]`;
+            let selector = `[data-pc-name="datatable"][${this.attributeSelector}] > [data-pc-section="wrapper"] ${this.virtualScrollerDisabled ? '' : '> [data-pc-name="virtualscroller"]'} > table[data-pc-section="table"]`;
 
             widths.forEach((width, index) => {
                 let colWidth = index === colIndex ? newColumnWidth : nextColumnWidth && index === colIndex + 1 ? nextColumnWidth : width;
@@ -1758,7 +1758,7 @@ export default {
                     this.createStyleElement();
 
                     let innerHTML = '';
-                    let selector = `[data-pc-name="datatable"][${this.attributeSelector}] > [data-pc-section="wrapper"] ${this.virtualScrollerDisabled ? '' : '> [data-pc-section="virtualscroller"]'} > table[data-pc-section="table"]`;
+                    let selector = `[data-pc-name="datatable"][${this.attributeSelector}] > [data-pc-section="wrapper"] ${this.virtualScrollerDisabled ? '' : '> [data-pc-name="virtualscroller"]'} > table[data-pc-section="table"]`;
 
                     widths.forEach((width, index) => {
                         let style = `width: ${width}px !important; max-width: ${width}px !important`;
