@@ -42,7 +42,9 @@ export default {
             formBorderRadius: '12px',
             headerPadding: '2rem',
             contentPadding: '2rem',
-            formElementBorderRadius: '12px',
+            formElementBorderRadius: '12px'
+        },
+        colorScheme: {
             light: {
                 hoverBg: '{blue.50}',
                 highlightBg: '{surface.100}',
