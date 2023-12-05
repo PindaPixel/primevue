@@ -10,7 +10,7 @@
 import { InputHTMLAttributes, TransitionProps, VNode } from 'vue';
 import { ComponentHooks } from '../basecomponent';
 import { PassThroughOptions } from '../passthrough';
-import { TreeExpandedKeys, TreePassThroughOptionType } from '../tree';
+import { TreeExpandedKeys, TreePassThroughOptions } from '../tree';
 import { TreeNode } from '../treenode';
 import { ClassComponent, GlobalComponentConstructor, PassThrough } from '../ts-helpers';
 
@@ -34,6 +34,10 @@ export interface TreeSelectPassThroughMethodOptions {
      * Defines current inline state.
      */
     state: TreeSelectState;
+    /**
+     * Defines parent options.
+     */
+    parent: any;
     /**
      * Defines passthrough(pt) options in global config.
      */
@@ -97,9 +101,9 @@ export interface TreeSelectPassThroughOptions {
     wrapper?: TreeSelectPassThroughOptionType;
     /**
      * Used to pass attributes to Tree component.
-     * @see {@link TreePassThroughOptionType}
+     * @see {@link TreePassThroughOptions}
      */
-    tree?: TreePassThroughOptionType<TreeSelectSharedPassThroughMethodOptions>;
+    tree?: TreePassThroughOptions<TreeSelectSharedPassThroughMethodOptions>;
     /**
      * Used to pass attributes to the empty message's DOM element.
      */
