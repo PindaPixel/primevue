@@ -1,14 +1,10 @@
 import { palette } from 'primevue/theme';
-import { button, data, file, input, menu, messages, misc, multimedia, overlay, panel } from './style';
+import accordion from 'primevue/theme/lara/accordion';
+import panel from 'primevue/theme/lara/panel';
 
 export default {
     variables: {
-        borderRadius: '1rem',
-        fontFamily: 'Arial',
-        colorScheme: 'light',
-        colors: {
-            primaryColor: '#14b8a6',
-            primaryTextColor: '#ffffff',
+        primitive: {
             blue: palette('#3B82F6'),
             green: palette('#22C55E'),
             yellow: palette('#EAB308'),
@@ -19,22 +15,11 @@ export default {
             orange: palette('#F97316'),
             bluegray: palette('#64748B'),
             purple: palette('#A855F7'),
-            red: palette('#FF3D32'),
+            red: palette('#FF3D32')
+        },
+        semantic: {
+            // @todo
             primary: palette('#14b8a6'),
-            shade: {
-                '000': '#ffffff',
-                100: '#f9fafb',
-                200: '#f3f4f6',
-                300: '#e5e7eb',
-                400: '#d1d5db',
-                500: '#9ca3af',
-                600: '#6b7280',
-                700: '#4b5563',
-                800: '#374151',
-                900: '#1f2937'
-            },
-            textColor: '#4b5563',
-            textColorSecondary: '#6b7280',
             surface: {
                 a: '#ffffff',
                 b: '#f9fafb',
@@ -54,31 +39,24 @@ export default {
                 800: '#1f2937',
                 900: '#111827'
             },
-            gray: {
-                50: '#f9fafb',
-                100: '#f3f4f6',
-                200: '#e5e7eb',
-                300: '#d1d5db',
-                400: '#9ca3af',
-                500: '#6b7280',
-                600: '#4b5563',
-                700: '#374151',
-                800: '#1f2937',
-                900: '#111827'
+            formBorderRadius: '12px',
+            headerPadding: '2rem',
+            contentPadding: '2rem',
+            formElementBorderRadius: '12px',
+            light: {
+                hoverBg: '{blue.50}',
+                highlightBg: '{surface.100}',
+                formBackground: '{surface.0}'
+            },
+            dark: {
+                hoverBg: '{semantic.surface.200}',
+                highlightBg: '{surface.100}',
+                formBackground: '{surface.800}'
             }
         }
     },
-    global: `
-
-    `,
-    ...button,
-    ...data,
-    ...file,
-    ...input,
-    ...menu,
-    ...messages,
-    ...misc,
-    ...multimedia,
-    ...overlay,
-    ...panel
+    styles: {
+        accordion,
+        panel
+    }
 };

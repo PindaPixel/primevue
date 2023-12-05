@@ -18,9 +18,7 @@ export default defineNuxtConfig({
         alias: aliasConfig.resolve.alias
     },
     primevue: {
-        options: {
-            ripple: true
-        },
+        usePrimeVue: false,
         layerOrder: 'primevue',
         resolvePath: function ({ as, from, type }) {
             const resolvedPath = from.replace('primevue', '@/components/lib');
@@ -54,11 +52,11 @@ export default defineNuxtConfig({
                     rel: 'stylesheet',
                     href: baseUrl + 'styles/landing/themes/lara-light-green/theme.css'
                 },
-                {
+                /*{
                     id: 'theme-link',
                     rel: 'stylesheet',
                     href: baseUrl + 'themes/lara-light-green/theme.css'
-                },
+                },*/
                 { rel: 'icon', href: baseUrl + 'favicon.ico' }
             ],
             script: [

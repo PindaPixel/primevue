@@ -155,12 +155,19 @@ const ICON_ALIAS = {
     'primevue/icons/windowminimize': path.resolve(__dirname, './components/lib/icons/windowminimize/index.vue')
 };
 
+const THEME_ALIAS = {
+    'primevue/theme/lara/accordion': path.resolve(__dirname, './components/lib/theme/lara/accordion/index.js'),
+    'primevue/theme/lara/panel': path.resolve(__dirname, './components/lib/theme/lara/panel/index.js'),
+    'primevue/theme': path.resolve(__dirname, './components/lib/theme/index.js')
+};
+
 export default {
     resolve: {
         alias: {
             'primevue/utils': path.resolve(__dirname, './components/lib/utils/Utils.js'),
             'primevue/api': path.resolve(__dirname, './components/lib/api/Api.js'),
             ...STYLE_ALIAS,
+            ...THEME_ALIAS,
             'primevue/base': path.resolve(__dirname, './components/lib/base/Base.js'),
             'primevue/basedirective': path.resolve(__dirname, './components/lib/basedirective/BaseDirective.js'),
             'primevue/ripple': path.resolve(__dirname, './components/lib/ripple/Ripple.js'),
