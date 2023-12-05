@@ -38,9 +38,27 @@ export interface TreeTablePassThroughMethodOptions {
      */
     context: TreeTableContext;
     /**
+     * Defines parent options.
+     */
+    parent: any;
+    /**
      * Defines passthrough(pt) options in global config.
      */
     global: object | undefined;
+}
+
+/**
+ * Custom shared passthrough(pt) option method.
+ */
+export interface TreeTableSharedPassThroughMethodOptions {
+    /**
+     * Defines valid properties.
+     */
+    props: TreeTableProps;
+    /**
+     * Defines current inline state.
+     */
+    state: TreeTableState;
 }
 
 /**
@@ -214,7 +232,7 @@ export interface TreeTablePassThroughOptions {
      * Used to pass attributes to the Paginator component.
      * @see {@link PaginatorPassThroughOptionType}
      */
-    paginator?: PaginatorPassThroughOptionType;
+    paginator?: PaginatorPassThroughOptionType<TreeTableSharedPassThroughMethodOptions>;
     /**
      * Used to pass attributes to the wrapper's DOM element.
      */
