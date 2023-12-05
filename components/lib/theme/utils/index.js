@@ -1,3 +1,3 @@
 export * from './color';
-export * from './method';
 export { default as sharedUtils } from './sharedUtils';
+export { default as toVariables } from './toVariables';

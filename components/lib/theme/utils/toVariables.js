@@ -1,4 +1,4 @@
-import SharedUtils from '../sharedUtils';
+import SharedUtils from './sharedUtils';
 
 const VARIABLE = {
     PREFIX: 'p',
