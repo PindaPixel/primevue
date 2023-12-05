@@ -18,9 +18,7 @@ export default defineNuxtConfig({
         alias: aliasConfig.resolve.alias
     },
     primevue: {
-        options: {
-            ripple: true
-        },
+        usePrimeVue: false,
         layerOrder: 'primevue',
         resolvePath: function ({ as, from, type }) {
             const resolvedPath = from.replace('primevue', '@/components/lib');
