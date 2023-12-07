@@ -1,7 +1,7 @@
-var lastId = 0;
+var idCounters = {};
 
 export default function (prefix = 'pv_id_') {
-    lastId++;
+    idCounters[prefix] = (idCounters[prefix] || 0) + 1;
 
-    return `${prefix}${lastId}`;
+    return `${prefix}${idCounters[prefix]}`;
 }
