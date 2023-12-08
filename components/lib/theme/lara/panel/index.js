@@ -35,8 +35,8 @@ export default `
 .p-panel .p-panel-content {
     padding: 1.25rem;
     border: 1px solid var(--p-dark-shade-600, var(--p-shade-300));
-    background: #ffffff;
-    color: #4b5563;
+    background: var(--p-dark-shade-800, var(--p-shade-0));
+    color: var(--p-dark-shade-0, var(--p-shade-700));;
     border-top: 0 none;
 }
 .p-panel .p-panel-content:last-child {
@@ -45,9 +45,9 @@ export default `
 }
 .p-panel .p-panel-footer {
     padding: 0.75rem 1.25rem;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #4b5563;
+    border: 1px solid var(--p-dark-shade-600, var(--p-shade-300));;
+    background: var(--p-dark-shade-800, var(--p-shade-0));;
+    color: #var(--p-dark-shade-0, var(--p-shade-700));;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
     border-top: 0 none;
