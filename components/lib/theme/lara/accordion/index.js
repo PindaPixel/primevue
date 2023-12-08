@@ -17,7 +17,7 @@ export default `
     box-shadow: inset 0 0 0 0.2rem var(--p-primary-lightest-color, var(--p-primary-light-color));
 }
 .p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
-    background: var(--p-dark-hover-bg, var(--p-shade-200));
+    background: var(--p-dark-surface-c, var(--p-shade-200));
     border-color: var(--p-dark-shade-600, var(--p-shade-300));
     color: var(--p-dark-shade-0, var(--p-shade-800));
 }
@@ -30,14 +30,14 @@ export default `
 }
 .p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
     border-color: var(--p-dark-shade-600, var(--p-shade-300));
-    background: var(--p-dark-hover-bg, var(--p-shade-200));
+    background: var(--p-dark-surface-c, var(--p-shade-200));
     color: var(--p-dark-shade-0, var(--p-shade-800));
 }
 .p-accordion .p-accordion-content {
     padding: 1.25rem;
-    border: 1px solid var(--p-dark-shade-300, var(--p-shade-300));
-    background: var(--p-dark-shade-0, var(--p-shade-0));
-    color: var(--p-dark-shade-700, var(--p-shade-700));
+    border: 1px solid var(--p-dark-shade-600, var(--p-shade-300));
+    background: var(--p-dark-shade-800, var(--p-shade-0));
+    color: var(--p-dark-shade-0, var(--p-shade-700));
     border-top: 0;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
