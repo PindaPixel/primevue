@@ -17,7 +17,9 @@ export default {
             purple: palette('#A855F7'),
             red: palette('#FF3D32')
         },
-        semantic: {},
+        semantic: {
+            //borderRadius: '6px'
+        },
         colorScheme: {
             // @todo
             light: {
