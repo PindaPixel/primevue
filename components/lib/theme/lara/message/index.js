@@ -1,61 +1,84 @@
 export default `
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    color: #6b7280;
-    background: #f9fafb;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: box-shadow 0.2s;
+.p-message {
+    margin: var(--p-message-margin);
+    border-radius: var(--p-border-radius);
 }
-
-.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
-    margin-right: 0.5rem;
+.p-message .p-message-wrapper {
+    padding: var(--p-message-padding);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus-visible {
-    outline: 0 none;
-    outline-offset: 0;
-    box-shadow: inset 0 0 0 0.2rem #99f6e4;
+.p-message .p-message-close {
+    width: var(--p-action-icon-width);
+    height: var(--p-action-icon-height);
+    border-radius: var(--p-action-icon-border-radius);
+    background: transparent;
+    transition: var(--p-action-icon-transition);
 }
-
-.p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
-    background: #f3f4f6;
-    border-color: #e5e7eb;
-    color: #374151;
+.p-message .p-message-close:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
-    background: #f9fafb;
-    border-color: #e5e7eb;
-    color: #374151;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.p-message .p-message-close:focus-visible {
+    outline: var(--p-focus-outline);
+    outline-offset: var(--p-focus-outline-offset);
+    box-shadow: var(--p-focus-shadow);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
-    border-color: #e5e7eb;
-    background: #f3f4f6;
-    color: #374151;
+.p-message.p-message-info {
+    background: var(--p-info-message-bg);
+    border: var(--p-info-message-border);
+    border-width: var(--p-message-border-width);
+    color: var(--p-info-message-text-color);
 }
-
-.p-accordion .p-accordion-content {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #4b5563;
-    border-top: 0;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
+.p-message.p-message-info .p-message-icon {
+    color: var(--p-info-message-icon-color);
 }
-
-.p-accordion .p-accordion-tab {
-    margin-bottom: 4px;
+.p-message.p-message-info .p-message-close {
+    color: var(--p-info-message-icon-color);
 }
-
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+.p-message.p-message-success {
+    background: var(--p-success-message-bg);
+    border: var(--p-success-message-border);
+    border-width: var(--p-message-border-width);
+    color: var(--p-success-message-text-color);
+}
+.p-message.p-message-success .p-message-icon {
+    color: var(--p-success-message-icon-color);
+}
+.p-message.p-message-success .p-message-close {
+    color: var(--p-success-message-icon-color);
+}
+.p-message.p-message-warn {
+    background: var(--p-warning-message-bg);
+    border: var(--p-warning-message-border);
+    border-width: var(--p-message-border-width);
+    color: var(--p-warning-message-text-color);
+}
+.p-message.p-message-warn .p-message-icon {
+    color: var(--p-warning-message-icon-color);
+}
+.p-message.p-message-warn .p-message-close {
+    color: var(--p-warning-message-icon-color);
+}
+.p-message.p-message-error {
+    background: var(--p-error-message-bg);
+    border: var(--p-error-message-border);
+    border-width: var(--p-message-border-width);
+    color: var(--p-error-message-text-color);
+}
+.p-message.p-message-error .p-message-icon {
+    color: var(--p-error-message-icon-color);
+}
+.p-message.p-message-error .p-message-close {
+    color: var(--p-error-message-icon-color);
+}
+.p-message .p-message-text {
+    font-size: var(--p-message-text-font-size);
+    font-weight: var(--p-message-text-font-weight);
+}
+.p-message .p-message-icon {
+    font-size: var(--p-message-icon-font-size);
+    margin-right: var(--p-inline-spacing);
+}
+.p-message .p-icon:not(.p-message-close-icon) {
+    width: var(--p-message-icon-font-size);
+    height: var(--p-message-icon-font-size);
 }
 `;

@@ -109,6 +109,8 @@ export default {
             ObjectUtils.isNotEmpty(globalCSS) && BaseComponentStyle.loadGlobalStyle(globalCSS, { nonce: this.$config?.csp?.nonce });
 
             this._loadThemeVariables();
+
+            BaseComponentStyle.loadGlobalTheme(this.$presetTheme?.styles?.global, { nonce: this.$config?.csp?.nonce });
         },
         _loadThemeVariables() {
             const { colorScheme, ...rest } = this.$presetTheme?.variables;

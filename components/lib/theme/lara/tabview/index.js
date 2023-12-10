@@ -1,61 +1,65 @@
 export default `
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    color: #6b7280;
-    background: #f9fafb;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: box-shadow 0.2s;
+.p-tabview .p-tabview-nav {
+    background: var(--p-tabview-nav-bg);
+    border: var(--p-tabview-nav-border);
+    border-width: var(--p-tabview-nav-border-width);
+}
+.p-tabview .p-tabview-nav li {
+    margin-right: var(--p-tabview-header-spacing);
+}
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    border: var(--p-tabview-header-border);
+    border-width: var(--p-tabview-header-border-width);
+    border-color: var(--p-tabview-header-border-color);
+    background: var(--p-tabview-header-bg);
+    color: var(--p-tabview-header-text-color);
+    padding: var(--p-tabview-header-padding);
+    font-weight: var(--p-tabview-header-font-weight);
+    border-top-right-radius: var(--p-border-radius);
+    border-top-left-radius: var(--p-border-radius);
+    transition: var(--p-list-item-transition);
+    margin: var(--p-tabview-header-margin);
+}
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus-visible {
+    outline: var(--p-focus-outline);
+    outline-offset: var(--p-focus-outline-offset);
+    box-shadow: inset var(--p-focus-shadow);
+}
+.p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+    background: var(--p-tabview-header-hover-bg);
+    border-color: var(--p-tabview-header-hover-border-color);
+    color: var(--p-tabview-header-text-hover-color);
+}
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: var(--p-tabview-header-active-bg);
+    border-color: var(--p-tabview-header-active-border-color);
+    color: var(--p-tabview-header-text-active-color);
+}
+.p-tabview .p-tabview-nav-btn.p-link {
+    background: var(--p-tabview-header-active-bg);
+    color: var(--p-tabview-header-text-active-color);
+    width: var(--p-button-icon-only-width);
+    box-shadow: var(--p-raised-button-shadow);
+    border-radius: 0;
+}
+.p-tabview .p-tabview-nav-btn.p-link:focus-visible {
+    outline: var(--p-focus-outline);
+    outline-offset: var(--p-focus-outline-offset);
+    box-shadow: inset var(--p-focus-shadow);
+}
+.p-tabview .p-tabview-panels {
+    background: var(--p-tabview-content-bg);
+    padding: var(--p-tabview-content-padding);
+    border: var(--p-tabview-content-border);
+    color: var(--p-tabview-content-text-color);
+    border-bottom-right-radius: var(--p-border-radius);
+    border-bottom-left-radius: var(--p-border-radius);
 }
 
-.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
-    margin-right: 0.5rem;
-}
-
-.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus-visible {
-    outline: 0 none;
-    outline-offset: 0;
-    box-shadow: inset 0 0 0 0.2rem #99f6e4;
-}
-
-.p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
-    background: #f3f4f6;
-    border-color: #e5e7eb;
-    color: #374151;
-}
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
-    background: #f9fafb;
-    border-color: #e5e7eb;
-    color: #374151;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
-    border-color: #e5e7eb;
-    background: #f3f4f6;
-    color: #374151;
-}
-
-.p-accordion .p-accordion-content {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #4b5563;
-    border-top: 0;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.p-accordion .p-accordion-tab {
-    margin-bottom: 4px;
-}
-
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    transition:
+        background-color var(--p-transition-duration),
+        border-color var(--p-transition-duration),
+        box-shadow var(--p-transition-duration);
 }
 `;

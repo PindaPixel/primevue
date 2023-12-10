@@ -1,61 +1,34 @@
 export default `
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    color: #6b7280;
-    background: #f9fafb;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: box-shadow 0.2s;
+.p-dataview .p-paginator-top {
+    border-width: var(--p-table-top-paginator-border-width);
+    border-radius: 0;
 }
-
-.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
-    margin-right: 0.5rem;
+.p-dataview .p-paginator-bottom {
+    border-width: var(--p-table-bottom-paginator-border-width);
+    border-radius: 0;
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus-visible {
-    outline: 0 none;
-    outline-offset: 0;
-    box-shadow: inset 0 0 0 0.2rem #99f6e4;
+.p-dataview .p-dataview-header {
+    background: var(--p-table-header-bg);
+    color: var(--p-table-header-text-color);
+    border: var(--p-table-header-border);
+    border-width: var(--p-table-header-border-width);
+    padding: var(--p-table-header-padding);
+    font-weight: var(--p-table-header-font-weight);
 }
-
-.p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
-    background: #f3f4f6;
-    border-color: #e5e7eb;
-    color: #374151;
+.p-dataview .p-dataview-content {
+    background: var(--p-table-body-row-bg);
+    color: var(--p-table-body-row-text-color);
+    border: var(--p-data-view-content-border);
+    padding: var(--p-data-view-content-padding);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
-    background: #f9fafb;
-    border-color: #e5e7eb;
-    color: #374151;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
-    border-color: #e5e7eb;
-    background: #f3f4f6;
-    color: #374151;
-}
-
-.p-accordion .p-accordion-content {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #4b5563;
-    border-top: 0;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-}
-
-.p-accordion .p-accordion-tab {
-    margin-bottom: 4px;
-}
-
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+.p-dataview .p-dataview-footer {
+    background: var(--p-table-footer-bg);
+    color: var(--p-table-footer-text-color);
+    border: var(--p-table-footer-border);
+    border-width: var(--p-table-footer-border-width);
+    padding: var(--p-table-footer-padding);
+    font-weight: var(--p-table-footer-font-weight);
+    border-bottom-left-radius: var(--p-border-radius);
+    border-bottom-right-radius: var(--p-border-radius);
 }
 `;

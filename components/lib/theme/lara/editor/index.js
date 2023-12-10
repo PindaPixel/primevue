@@ -1,61 +1,100 @@
 export default `
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    color: #6b7280;
-    background: #f9fafb;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: box-shadow 0.2s;
+.p-editor-container .p-editor-toolbar {
+    background: var(--p-editor-toolbar-bg);
+    border-top-right-radius: var(--p-border-radius);
+    border-top-left-radius: var(--p-border-radius);
 }
-
-.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
-    margin-right: 0.5rem;
+.p-editor-container .p-editor-toolbar.ql-snow {
+    border: var(--p-editor-toolbar-border);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus-visible {
-    outline: 0 none;
-    outline-offset: 0;
-    box-shadow: inset 0 0 0 0.2rem #99f6e4;
+.p-editor-container .p-editor-toolbar.ql-snow .ql-stroke {
+    stroke: var(--p-editor-toolbar-icon-color);
 }
-
-.p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
-    background: #f3f4f6;
-    border-color: #e5e7eb;
-    color: #374151;
+.p-editor-container .p-editor-toolbar.ql-snow .ql-fill {
+    fill: var(--p-editor-toolbar-icon-color);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
-    background: #f9fafb;
-    border-color: #e5e7eb;
-    color: #374151;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker .ql-picker-label {
+    border: 0 none;
+    color: var(--p-editor-toolbar-icon-color);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
-    border-color: #e5e7eb;
-    background: #f3f4f6;
-    color: #374151;
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker .ql-picker-label:hover {
+    color: var(--p-editor-toolbar-icon-hover-color);
 }
-
-.p-accordion .p-accordion-content {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #4b5563;
-    border-top: 0;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker .ql-picker-label:hover .ql-stroke {
+    stroke: var(--p-editor-toolbar-icon-hover-color);
 }
-
-.p-accordion .p-accordion-tab {
-    margin-bottom: 4px;
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker .ql-picker-label:hover .ql-fill {
+    fill: var(--p-editor-toolbar-icon-hover-color);
 }
-
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+    color: var(--p-editor-toolbar-icon-hover-color);
+}
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-stroke {
+    stroke: var(--p-editor-toolbar-icon-hover-color);
+}
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-fill {
+    fill: var(--p-editor-toolbar-icon-hover-color);
+}
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+    background: var(--p-input-overlay-bg);
+    border: var(--p-input-overlay-border);
+    box-shadow: var(--p-input-overlay-shadow);
+    border-radius: var(--p-border-radius);
+    padding: var(--p-input-list-padding);
+}
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options .ql-picker-item {
+    color: var(--p-input-list-item-text-color);
+}
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options .ql-picker-item:hover {
+    color: var(--p-input-list-item-text-hover-color);
+    background: var(--p-input-list-item-hover-bg);
+}
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded:not(.ql-icon-picker) .ql-picker-item {
+    padding: var(--p-input-list-item-padding);
+}
+.p-editor-container .p-editor-content {
+    border-bottom-right-radius: var(--p-border-radius);
+    border-bottom-left-radius: var(--p-border-radius);
+}
+.p-editor-container .p-editor-content.ql-snow {
+    border: var(--p-editor-content-border);
+}
+.p-editor-container .p-editor-content .ql-editor {
+    background: var(--p-input-bg);
+    color: var(--p-input-text-color);
+    border-bottom-right-radius: var(--p-border-radius);
+    border-bottom-left-radius: var(--p-border-radius);
+}
+.p-editor-container .ql-snow.ql-toolbar button:hover,
+.p-editor-container .ql-snow.ql-toolbar button:focus {
+    color: var(--p-editor-toolbar-icon-hover-color);
+}
+.p-editor-container .ql-snow.ql-toolbar button:hover .ql-stroke,
+.p-editor-container .ql-snow.ql-toolbar button:focus .ql-stroke {
+    stroke: var(--p-editor-toolbar-icon-hover-color);
+}
+.p-editor-container .ql-snow.ql-toolbar button:hover .ql-fill,
+.p-editor-container .ql-snow.ql-toolbar button:focus .ql-fill {
+    fill: var(--p-editor-toolbar-icon-hover-color);
+}
+.p-editor-container .ql-snow.ql-toolbar button.ql-active,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-item.ql-selected {
+    color: var(--p-editor-icon-active-color);
+}
+.p-editor-container .ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke {
+    stroke: var(--p-editor-icon-active-color);
+}
+.p-editor-container .ql-snow.ql-toolbar button.ql-active .ql-fill,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill {
+    fill: var(--p-editor-icon-active-color);
+}
+.p-editor-container .ql-snow.ql-toolbar button.ql-active .ql-picker-label,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-picker-label,
+.p-editor-container .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-picker-label {
+    color: var(--p-editor-icon-active-color);
 }
 `;

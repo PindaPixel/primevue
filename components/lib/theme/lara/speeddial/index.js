@@ -1,61 +1,78 @@
 export default `
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    color: #6b7280;
-    background: #f9fafb;
-    font-weight: 700;
-    border-radius: 6px;
-    transition: box-shadow 0.2s;
+.p-speeddial-button.p-button.p-button-icon-only {
+    width: var(--p-speed-dial-button-width);
+    height: var(--p-speed-dial-button-height);
 }
-
-.p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
-    margin-right: 0.5rem;
+.p-speeddial-button.p-button.p-button-icon-only .p-button-icon {
+    font-size: var(--p-speed-dial-button-icon-font-size);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus-visible {
+.p-speeddial-button.p-button.p-button-icon-only .p-icon {
+    width: var(--p-speed-dial-button-icon-font-size);
+    height: var(--p-speed-dial-button-icon-font-size);
+}
+.p-speeddial-list {
     outline: 0 none;
-    outline-offset: 0;
-    box-shadow: inset 0 0 0 0.2rem #99f6e4;
 }
-
-.p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
-    background: #f3f4f6;
-    border-color: #e5e7eb;
-    color: #374151;
+.p-speeddial-item.p-focus > .p-speeddial-action {
+    outline: var(--p-focus-outline);
+    outline-offset: var(--p-focus-outline-offset);
+    box-shadow: var(--p-focus-shadow);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
-    background: #f9fafb;
-    border-color: #e5e7eb;
-    color: #374151;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.p-speeddial-action {
+    width: var(--p-speed-dial-action-width);
+    height: var(--p-speed-dial-action-height);
+    background: var(--p-speed-dial-action-bg);
+    color: var(--p-speed-dial-action-text-color);
 }
-
-.p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
-    border-color: #e5e7eb;
-    background: #f3f4f6;
-    color: #374151;
+.p-speeddial-action:hover {
+    background: var(--p-speed-dial-action-hover-bg);
+    color: var(--p-speed-dial-action-text-hover-color);
 }
-
-.p-accordion .p-accordion-content {
-    padding: 1.25rem;
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
-    color: #4b5563;
-    border-top: 0;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
+.p-speeddial-direction-up .p-speeddial-item {
+    margin: "math.div(var(--p-inline-spacing), 2) 0";
 }
-
-.p-accordion .p-accordion-tab {
-    margin-bottom: 4px;
+.p-speeddial-direction-up .p-speeddial-item:first-child {
+    margin-bottom: var(--p-inline-spacing);
 }
-
-.p-accordion .p-accordion-header .p-accordion-header-link {
-    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+.p-speeddial-direction-down .p-speeddial-item {
+    margin: "math.div(var(--p-inline-spacing), 2) 0";
+}
+.p-speeddial-direction-down .p-speeddial-item:first-child {
+    margin-top: var(--p-inline-spacing);
+}
+.p-speeddial-direction-left .p-speeddial-item {
+    margin: "0 math.div(var(--p-inline-spacing), 2)";
+}
+.p-speeddial-direction-left .p-speeddial-item:first-child {
+    margin-right: var(--p-inline-spacing);
+}
+.p-speeddial-direction-right .p-speeddial-item {
+    margin: "0 math.div(var(--p-inline-spacing), 2)";
+}
+.p-speeddial-direction-right .p-speeddial-item:first-child {
+    margin-left: var(--p-inline-spacing);
+}
+.p-speeddial-circle .p-speeddial-item,
+.p-speeddial-semi-circle .p-speeddial-item,
+.p-speeddial-quarter-circle .p-speeddial-item {
+    margin: 0;
+}
+.p-speeddial-circle .p-speeddial-item:first-child,
+.p-speeddial-circle .p-speeddial-item:last-child,
+.p-speeddial-semi-circle .p-speeddial-item:first-child,
+.p-speeddial-semi-circle .p-speeddial-item:last-child,
+.p-speeddial-quarter-circle .p-speeddial-item:first-child,
+.p-speeddial-quarter-circle .p-speeddial-item:last-child {
+    margin: 0;
+}
+.p-speeddial-mask {
+    background-color: var(--p-mask-bg);
+    border-radius: var(--p-border-radius);
+}
+.p-speeddial-item.p-focus > .p-speeddial-action {
+    box-shadow:
+        0 0 0 2px #ffffff,
+        0 0 0 4px "scale-color($buttonBg, $lightness: 50%)",
+        0 1px 2px 0 black;
 }
 `;
