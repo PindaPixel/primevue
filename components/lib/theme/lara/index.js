@@ -390,7 +390,7 @@ export default {
             accordionHeaderTextColor: 'var(--p-dark-pink-0, var(--p-pink-600))', //TODO:
             accordionHeaderFontWeight: '700',
             accordionHeaderPadding: '1.25rem',
-            accordionHeaderHoverBg: 'var(--p-dark-pink-900, var(--p-pink-200))', //TODO:
+            accordionHeaderHoverBg: 'var(--p-dark-pink-900, var(--p-pink-200))',
             accordionHeaderHoverBorderColor: 'var(--p-dark-pink-600, var(--p-pink-300))',
             accordionHeaderTextHoverColor: 'var(--p-dark-pink-0, var(--p-pink-800))',
             accordionHeaderActiveBg: 'var(--p-dark-pink-800, var(--p-pink-100))',
@@ -433,14 +433,16 @@ export default {
             fileUploadFilePadding: 'var(1rem, var(1rem))',
             scrollPanelTrackBorder: 'var(0 none, var(0 none))',
             scrollPanelTrackBg: 'var(var(--p-dark-pink-600), var(var(--p-pink-100)))',
-            cardBodyPadding: 'var(1.25rem, var(1.25rem))',
-            cardTitleFontSize: 'var(1.5rem, var(1.5rem))',
-            cardTitleFontWeight: 'var(700, var(700))',
-            cardSubTitleFontWeight: 'var(400, var(400))',
-            cardSubTitleColor: 'var(var(--p-dark-pink-100), var(var(--p-pink-600)))',
-            cardContentPadding: 'var(1.25rem 0, var(1.25rem 0))',
-            cardFooterPadding: 'var(1.25rem 0 0 0, var(1.25rem 0 0 0))',
-            cardShadow: 'var(0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12), var(0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)))',
+
+            cardBodyPadding: '1.25rem',
+            cardTitleFontSize: '1.5rem',
+            cardTitleFontWeight: '700',
+            cardSubTitleFontWeight: '400',
+            cardSubTitleColor: 'var(--p-dark-pink-100, var(--p-pink-600))',
+            cardContentPadding: '1.25rem 0',
+            cardFooterPadding: '1.25rem 0 0 0',
+            cardShadow: '0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)', //TODO:
+
             editorToolbarBg: 'var(var(--p-dark-panel-header-bg), var(var(--p-panel-header-bg)))',
             editorToolbarBorder: 'var(var(--p-dark-panel-header-border), var(var(--p-panel-header-border)))',
             editorToolbarPadding: 'var(var(--p-dark-panel-header-padding), var(var(--p-panel-header-padding)))',
