@@ -1272,10 +1272,14 @@ export default {
             let formattedValue = null;
 
             if (date) {
-                formattedValue = this.formatDate(date, this.datePattern);
+                if (this.timeOnly) {
+                    formattedValue = this.formatTime(date);
+                } else {
+                    formattedValue = this.formatDate(date, this.datePattern);
 
-                if (this.showTime || this.timeOnly) {
-                    formattedValue += ' ' + this.formatTime(date);
+                    if (this.showTime) {
+                        formattedValue += ' ' + this.formatTime(date);
+                    }
                 }
             }
 
@@ -1683,10 +1687,14 @@ export default {
         },
         enableModality() {
             if (!this.mask) {
-                this.mask = document.createElement('div');
+                let styleClass = 'p-datepicker-mask p-datepicker-mask-scrollblocker p-component-overlay p-component-overlay-enter';
+
+                this.mask = DomHandler.createElement('div', {
+                    'data-pc-section': 'datepickermask',
+                    class: !this.isUnstyled && styleClass,
+                    'p-bind': this.ptm('datepickermask')
+                });
                 this.mask.style.zIndex = String(parseInt(this.overlay.style.zIndex, 10) - 1);
-                this.mask.setAttribute('data-pc-section', 'datepicker-mask');
-                !this.isUnstyled && DomHandler.addMultipleClasses(this.mask, 'p-datepicker-mask p-datepicker-mask-scrollblocker p-component-overlay p-component-overlay-enter');
 
                 this.maskClickListener = () => {
                     this.overlayVisible = false;
@@ -1722,7 +1730,7 @@ export default {
             for (let i = 0; i < bodyChildren.length; i++) {
                 let bodyChild = bodyChildren[i];
 
-                if (DomHandler.isAttributeEquals(bodyChild, 'data-pc-section', 'datepicker-mask')) {
+                if (DomHandler.isAttributeEquals(bodyChild, 'data-pc-section', 'datepickermask')) {
                     hasBlockerMasks = true;
                     break;
                 }
@@ -1794,13 +1802,18 @@ export default {
             let date;
             let parts = text.split(' ');
 
-            const dateFormat = this.datePattern;
-
-            if (this.showTime || this.timeOnly) {
-                date = this.parseDate(parts[0], dateFormat);
-                this.populateTime(date, parts[1], parts[2]);
+            if (this.timeOnly) {
+                date = new Date(this.modelValue);
+                this.populateTime(date, parts[0], parts[1]);
             } else {
-                date = this.parseDate(text, dateFormat);
+                const dateFormat = this.datePattern;
+
+                if (this.showTime) {
+                    date = this.parseDate(parts[0], dateFormat);
+                    this.populateTime(date, parts[1], parts[2]);
+                } else {
+                    date = this.parseDate(text, dateFormat);
+                }
             }
 
             return date;

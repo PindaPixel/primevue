@@ -45,6 +45,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -488,6 +496,14 @@
                             "type": "AccordionTabProps",
                             "default": "",
                             "description": "Defines valid properties."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -3075,6 +3091,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -4277,6 +4301,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -4971,6 +5003,14 @@
                             "readonly": false,
                             "type": "BadgeContext",
                             "default": ""
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -5739,6 +5779,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -6025,6 +6073,14 @@
                             "type": "BreadcrumbContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -6878,6 +6934,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -7406,6 +7470,14 @@
                             "type": "CalendarPassThroughOptionType",
                             "default": "",
                             "description": "Used to pass attributes to the aria year's DOM element."
+                        },
+                        {
+                            "name": "datepickerMask",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "CalendarPassThroughOptionType",
+                            "default": "",
+                            "description": "Used to pass attributes to the datepicker mask's DOM element."
                         },
                         {
                             "name": "hooks",
@@ -8790,6 +8862,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -9441,6 +9521,14 @@
                             "type": "CascadeSelectState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -10336,6 +10424,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -10676,6 +10772,14 @@
                             "type": "CheckboxContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -11164,6 +11268,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -11504,6 +11616,14 @@
                             "type": "ChipsState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -12035,6 +12155,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -12469,6 +12597,14 @@
                             "type": "ColumnProps",
                             "default": "",
                             "description": "Defines valid properties."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -14052,6 +14188,14 @@
                             "type": "ColumnGroupProps",
                             "default": "",
                             "description": "Defines valid properties."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -16111,6 +16255,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -16547,6 +16699,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -16962,6 +17122,14 @@
                             "type": "ContextMenuContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -17620,6 +17788,14 @@
                             "type": "DataTableContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -20616,6 +20792,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -21186,6 +21370,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -21487,6 +21679,14 @@
                             "type": "DeferredContentState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -22447,6 +22647,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -22704,6 +22912,14 @@
                             "type": "DockContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -24625,6 +24841,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -25207,6 +25431,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -25597,6 +25829,14 @@
                             "type": "FileUploadState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -26809,6 +27049,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -27839,6 +28087,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -28349,6 +28605,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -28620,6 +28884,14 @@
                             "type": "InplaceState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -28989,6 +29261,14 @@
                             "description": "Defines instance."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -29198,6 +29478,14 @@
                             "type": "any",
                             "default": "",
                             "description": "Defines instance."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -29425,6 +29713,14 @@
                             "type": "InputMaskContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -30460,6 +30756,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -31102,6 +31406,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -31553,6 +31865,14 @@
                             "type": "ListboxContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -32415,6 +32735,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -33127,6 +33455,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -33706,6 +34042,14 @@
                             "type": "MenubarContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -34926,6 +35270,14 @@
                             "type": "MultiSelectContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -36287,6 +36639,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -36967,6 +37327,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -37630,6 +37998,14 @@
                             "type": "OverlayPanelState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -38650,6 +39026,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -39087,6 +39471,14 @@
                             "type": "PanelMenuContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -39823,6 +40215,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -40484,6 +40884,14 @@
                             "type": "PickListContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -41932,6 +42340,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -42183,6 +42599,14 @@
                             "type": "RadioButtonState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -42570,6 +42994,14 @@
                             "type": "RatingContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -43247,6 +43679,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -43465,6 +43905,14 @@
                             "type": "ScrollPanelState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -43766,6 +44214,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -44059,6 +44515,14 @@
                             "type": "SelectButtonContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -44514,6 +44978,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -44946,6 +45418,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -45197,6 +45677,14 @@
                             "type": "SliderProps",
                             "default": "",
                             "description": "Defines valid properties."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -45593,6 +46081,14 @@
                             "type": "SpeedDialContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -46232,6 +46728,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -46748,6 +47252,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -47163,6 +47675,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -47412,6 +47932,14 @@
                             "type": "StepsContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -48014,6 +48542,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -48447,6 +48983,14 @@
                             "type": "TabPanelContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -49288,6 +49832,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -49561,6 +50113,14 @@
                             "type": "TerminalState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -49945,6 +50505,14 @@
                             "type": "TextareaContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -50867,6 +51435,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -51225,6 +51801,14 @@
                             "type": "ToastState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -51900,6 +52484,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -52364,6 +52956,14 @@
                             "description": "Defines valid properties."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -52600,6 +53200,14 @@
                             "readonly": false,
                             "type": "TooltipContext",
                             "default": ""
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -53898,6 +54506,14 @@
                             "description": "Defines current inline state."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -54617,6 +55233,14 @@
                             "type": "TreeTableContext",
                             "default": "",
                             "description": "Defines current options."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
@@ -56138,6 +56762,14 @@
                             "description": "Defines current options."
                         },
                         {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
+                        },
+                        {
                             "name": "parent",
                             "optional": false,
                             "readonly": false,
@@ -56852,6 +57484,14 @@
                             "type": "VirtualScrollerState",
                             "default": "",
                             "description": "Defines current inline state."
+                        },
+                        {
+                            "name": "attrs",
+                            "optional": false,
+                            "readonly": false,
+                            "type": "any",
+                            "default": "",
+                            "description": "Defines valid attributes."
                         },
                         {
                             "name": "parent",
