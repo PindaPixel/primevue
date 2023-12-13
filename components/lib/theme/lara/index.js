@@ -385,7 +385,7 @@ export default {
             panelFooterPadding: '0.75rem 1.25rem',
 
             accordionSpacing: '4px',
-            accordionHeaderBorder: 'var(--p-dark-pink-600, var(--p-pink-300))',
+            accordionHeaderBorder: '1px solid var(--p-dark-pink-600, var(--p-pink-300))',
             accordionHeaderBg: 'var(--p-dark-pink-800, var(--p-pink-100))',
             accordionHeaderTextColor: 'var(--p-dark-pink-0, var(--p-pink-600))', //TODO:
             accordionHeaderFontWeight: '700',
@@ -399,7 +399,7 @@ export default {
             accordionHeaderActiveHoverBg: 'var(--p-dark-pink-900, var(--p-pink-200))',
             accordionHeaderActiveHoverBorderColor: 'var(--p-dark-pink-600, var(--p-pink-300))',
             accordionHeaderTextActiveHoverColor: 'var(--p-dark-pink-0, var(--p-pink-800))',
-            accordionContentBorder: 'var(--p-dark-pink-600, var(--p-pink-300))',
+            accordionContentBorder: '1px solid var(--p-dark-pink-600, var(--p-pink-300))',
             accordionContentBg: 'var(--p-dark-pink-800, var(--p-pink-0))',
             accordionContentTextColor: 'var(--p-dark-pink-0, var(--p-pink-700))',
             accordionContentPadding: '1.25rem',
