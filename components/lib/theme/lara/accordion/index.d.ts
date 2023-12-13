@@ -1,0 +1,24 @@
+export interface AccordionVariables {
+    accordionHeaderPadding?: string | undefined;
+    accordionHeaderBorder?: string | undefined;
+    accordionHeaderTextColor?: string | undefined;
+    accordionHeaderBg?: string | undefined;
+    accordionHeaderFontWeight?: string | undefined;
+    accordionHeaderHoverBg?: string | undefined;
+    accordionHeaderHoverBorderColor?: string | undefined;
+    accordionHeaderTextHoverColor?: string | undefined;
+    accordionHeaderActiveBg?: string | undefined;
+    accordionHeaderActiveBorderColor?: string | undefined;
+    accordionHeaderTextActiveColor?: string | undefined;
+    accordionHeaderActiveHoverBorderColor?: string | undefined;
+    accordionHeaderActiveHoverBg?: string | undefined;
+    accordionHeaderTextActiveHoverColor?: string | undefined;
+    accordionContentPadding?: string | undefined;
+    accordionContentBorder?: string | undefined;
+    accordionContentBg?: string | undefined;
+    accordionContentTextColor?: string | undefined;
+    accordionSpacing?: string | undefined;
+    accordionContentBorderTop?: string | undefined;
+    accordionContentBorderBottomRightRadius?: string | undefined;
+    accordionContentBorderBottomLeftRadius?: string | undefined;
+}
