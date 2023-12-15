@@ -95,6 +95,8 @@ export default {
         semantic: {
             /*** global */
             fontFamily: '"Inter var", sans-serif',
+            fontFeatureSettings: '"cv02","cv03","cv04","cv11"', // @todo
+            fontVariationSettings: 'normal', // @todo
             fontSize: '1rem',
             fontWeight: 'normal',
             borderRadius: '6px',
@@ -297,9 +299,11 @@ export default {
             toggleButtonActiveHoverBorderColor: 'var(var(--p-dark-primary-light-color), var(var(--p-primary-dark-color)))',
             toggleButtonTextActiveHoverColor: 'var(var(--p-dark-primary-text-color), var(var(--p-primary-text-color)))',
             toggleButtonIconActiveHoverColor: 'var(var(--p-dark-primary-text-color), var(var(--p-primary-text-color)))',
-            inplacePadding: 'var(var(--p-dark-input-padding), var(var(--p-input-padding)))',
-            inplaceHoverBg: 'var(var(--p-dark-pink-900), var(var(--p-pink-200)))',
-            inplaceTextHoverColor: 'var(var(--p-dark-pink-0), var(var(--p-pink-700)))',
+
+            inplacePadding: '.75rem .75rem',
+            inplaceHoverBg: 'var(--p-dark-pink-900, var(--p-pink-200))',
+            inplaceTextHoverColor: 'var(--p-dark-pink-0, var(--p-pink-700))',
+
             ratingIconFontSize: 'var(1.143rem, var(1.143rem))',
             ratingCancelIconColor: 'var(#F48FB1, var(#ea5455))',
             ratingCancelIconHoverColor: 'var(#F48FB1, var(#e73d3e))',
@@ -618,16 +622,20 @@ export default {
             stepsItemNumberColor: 'var(var(--p-dark-pink-0), var(var(--p-pink-700)))',
             stepsItemNumberBorderRadius: 'var(50%, var(50%))',
             stepsItemActiveFontWeight: 'var(700, var(700))',
-            progressBarHeight: 'var(1.5rem, var(1.5rem))',
-            progressBarBorder: 'var(0 none, var(0 none))',
-            progressBarBg: 'var(var(--p-dark-pink-600), var(var(--p-pink-300)))',
-            progressBarValueBg: 'var(var(--p-dark-primary-color), var(var(--p-primary-color)))',
-            progressBarValueTextColor: 'var(var(--p-dark-primary-text-color), var(var(--p-primary-text-color)))',
-            progressSpinnerStrokeColor: 'var(var(--p-dark-error-message-text-color), var(var(--p-error-message-text-color)))',
-            progressSpinnerColorOne: 'var(var(--p-dark-error-message-text-color), var(var(--p-error-message-text-color)))',
-            progressSpinnerColorTwo: 'var(var(--p-dark-info-message-text-color), var(var(--p-info-message-text-color)))',
-            progressSpinnerColorThree: 'var(var(--p-dark-success-message-text-color), var(var(--p-success-message-text-color)))',
-            progressSpinnerColorFour: 'var(var(--p-dark-warning-message-text-color), var(var(--p-warning-message-text-color)))',
+
+            progressBarHeight: '1.5rem',
+            progressBarBorder: '0 none',
+            progressBarBg: 'var(--p-dark-pink-600, var(--p-pink-300))',
+            progressBarValueBg: 'var(--p-dark-primary-color, var(--p-primary-color))',
+            progressBarValueTextColor: 'var(--p-dark-primary-text-color, var(--p-primary-text-color))',
+            progressBarMargin: '0',
+
+            progressSpinnerStrokeColor: 'var(#fca5a5, var(#ff5757))', //TODO:
+            progressSpinnerColorOne: 'var(#fca5a5, var(#ff5757))',
+            progressSpinnerColorTwo: 'var(#93c5fd, var(#3b82f6))',
+            progressSpinnerColorThree: 'var(#6ee7b7, var(#1ea97c))',
+            progressSpinnerColorFour: 'var(#fde047, var(#cc8925))',
+
             menuWidth: 'var(12.5rem, var(12.5rem))',
             menuBg: 'var(var(--p-dark-pink-700), var(var(--p-pink-0)))',
             menuBorder: 'var(1px solid var(--p-dark-pink-600), var(1px solid var(--p-pink-300)))',
@@ -680,13 +688,47 @@ export default {
             horizontalMenuRootMenuitemTextActiveColor: 'var(var(--p-dark-menuitem-text-active-color), var(var(--p-menuitem-text-active-color)))',
             horizontalMenuRootMenuitemIconActiveColor: 'var(var(--p-dark-menuitem-icon-active-color), var(var(--p-menuitem-icon-active-color)))',
             horizontalMenuRootMenuitemActiveBg: 'var(var(--p-dark-menuitem-active-bg), var(var(--p-menuitem-active-bg)))',
-            badgeBg: 'var(var(--p-dark-primary-color), var(var(--p-primary-color)))',
-            badgeTextColor: 'var(var(--p-dark-primary-text-color), var(var(--p-primary-text-color)))',
-            badgeMinWidth: 'var(1.5rem, var(1.5rem))',
-            badgeHeight: 'var(1.5rem, var(1.5rem))',
-            badgeFontWeight: 'var(700, var(700))',
-            badgeFontSize: 'var(.75rem, var(.75rem))',
-            tagPadding: 'var(.25rem .4rem, var(.25rem .4rem))',
+
+            badgeBg: 'var(--p-dark-primary-color, var(--p-primary-color))',
+            badgeTextColor: 'var(--p-dark-primary-text-color, var(--p-primary-text-color))',
+            badgeMinWidth: '1.5rem',
+            badgeHeight: '1.5rem',
+            badgeFontWeight: '700',
+            badgeFontSize: '.75rem',
+            badgeSecondaryBg: 'var(#94a3b8, var(#64748B))', //TODO:
+            badgeSecondaryTextColor: 'var(#020617, var(#ffffff))',
+            badgeSuccessBg: 'var(#4ade80, var(#22C55E))',
+            badgeSuccessTextColor: 'var(#052e16, var(#ffffff))',
+            badgeInfoBg: 'var(#38bdf8, var(#0ea5e9))',
+            badgeInfoTextColor: 'var(#082f49, var(#ffffff))',
+            badgeWarningBg: 'var(#fb923c, var(#f97316))',
+            badgeWarningTextColor: 'var(#431407, var(#ffffff))',
+            badgeDangerBg: 'var(#f87171, var(#EF4444))',
+            badgeDangerTextColor: 'var(#450a0a, var(#ffffff))',
+
+            tagPadding: '.25rem .4rem',
+            tagBg: 'var(--p-dark-primary-color, var(--p-primary-color))',
+            tagTextColor: 'var(--p-dark-primary-text-color, var(--p-primary-text-color))',
+            tagFontWeight: '700',
+            tagFontSize: '.75rem',
+            tagSecondaryBg: 'var(#94a3b8, var(#64748B))', //TODO:
+            tagSecondaryTextColor: 'var(#020617, var(#ffffff))',
+            tagSuccessBg: 'var(#4ade80, var(#22C55E))',
+            tagSuccessTextColor: 'var(#052e16, var(#ffffff))',
+            tagInfoBg: 'var(#38bdf8, var(#0ea5e9))',
+            tagInfoTextColor: 'var(#082f49, var(#ffffff))',
+            tagWarningBg: 'var(#fb923c, var(#f97316))',
+            tagWarningTextColor: 'var(#431407, var(#ffffff))',
+            tagDangerBg: 'var(#f87171, var(#EF4444))',
+            tagDangerTextColor: 'var(#450a0a, var(#ffffff))',
+            tagIconWidth: '.75rem',
+            tagIconHeight: '.75rem',
+
+            terminalBg: 'var(--p-dark-pink-800, var(--p-pink-0))',
+            terminalTextColor: 'var(--p-dark-pink-0, var(--p-pink-700))',
+            terminalBorder: 'var(--p-dark-pink-0, var(--p-pink-700))',
+            terminalPadding: '1.25rem',
+
             carouselIndicatorsPadding: 'var(1rem, var(1rem))',
             carouselIndicatorBg: 'var(var(--p-dark-pink-600), var(var(--p-pink-400)))',
             carouselIndicatorHoverBg: 'var(var(--p-dark-pink-900), var(var(--p-pink-500)))',
@@ -739,13 +781,27 @@ export default {
             dividerVerticalPadding: '1.25rem 0',
             dividerSize: '1px',
             dividerColor: 'var(--p-dark-pink-600, var(--p-pink-300))',
+
             avatarBg: 'var(--p-dark-pink-600, var(--p-pink-300))',
-            avatarTextColor: 'var(--p-dark-text-color, var(--p-text-color))',
+            // avatarTextColor: 'var(--p-dark-text-color, var(--p-text-color))', //TODO: unused variable
+            avatarBorder: '2px solid var(--p-dark-pink-800, var(--p-pink-0))',
+            avatarLargeWidth: '3rem',
+            avatarLargeHeight: '3rem',
+            avatarLargeFontSize: '1.5rem',
+            avatarLargeIconFontSize: '1.5rem',
+            avatarXLWidth: '4rem',
+            avatarXLHeight: '4rem',
+            avatarXLFontSize: '4rem',
+            avatarXLIconFontSize: '4rem',
+            avatarMarginLeft: '-1rem',
+
             chipBg: 'var(--p-dark-pink-600, var(--p-pink-300))',
             chipTextColor: 'var(--p-dark-text-color, var(--p-text-color))',
             chipBorderRadius: '16px',
             chipFocusBg: 'var(--p-dark-pink-500, var(--p-pink-400))',
             chipFocusTextColor: 'var(--p-dark-text-color, var(--p-text-color))',
+            chipPadding: '.75rem',
+
             scrollTopBg: 'var(--p-dark-highlight-bg, rgba(0,0,0,0.7))',
             scrollTopHoverBg: 'var(scale-color(var(--p-dark-highlight-bg), alpha: 24%), var(rgba(0,0,0,0.8)))', // @todo
             scrollTopWidth: '3rem',
@@ -753,7 +809,8 @@ export default {
             scrollTopBorderRadius: '50%',
             scrollTopFontSize: '1.5rem',
             scrollTopTextColor: 'var(--p-dark-highlight-text-color, var(--p-pink-100))',
-            skeletonBg: 'var(rgba(255,255,255,.06), var(var(--p-pink-300)))', // @todo
+
+            skeletonBg: 'var(rgba(255,255,255,.06), var(--p-pink-300))', // @todo
             skeletonAnimationBg: 'rgba(255,255,255,.04)',
 
             splitterGutterBg: 'var(rgba(255,255,255,.03), var(--p-pink-100))', // @todo

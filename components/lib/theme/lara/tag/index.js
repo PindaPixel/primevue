@@ -1,34 +1,34 @@
 export default `
 .p-tag {
-    background: var(--p-badge-bg);
-    color: var(--p-badge-text-color);
-    font-size: var(--p-badge-font-size);
-    font-weight: var(--p-badge-font-weight);
-    padding: var(--p-tag-padding);
-    border-radius: var(--p-border-radius);
+    background: var(--p-tag-bg, var(--p-dark-primary-color, var(--p-primary-color)));
+    color: var(--p-tag-text-color, var(--p-dark-primary-text-color, var(--p-primary-text-color)));
+    font-size: var(--p-tag-font-size, .75rem);
+    font-weight: var(--p-tag-font-weight, 700);
+    padding: var(--p-tag-padding, .25rem .4rem);
+    border-radius: var(--p-border-radius, 6px);
 }
 .p-tag-success {
-    background-color: var(--p-success-button-bg);
-    color: var(--p-success-button-text-color);
+    background-color: var(--p-tag-success-bg);
+    color: var(--p-tag-success-text-color);
 }
 .p-tag-info {
-    background-color: var(--p-info-button-bg);
-    color: var(--p-info-button-text-color);
+    background-color: var(--p-tag-info-bg);
+    color: var(--p-tag-info-text-color);
 }
 .p-tag-warning {
-    background-color: var(--p-warning-button-bg);
-    color: var(--p-warning-button-text-color);
+    background-color: var(--p-tag-warning-bg);
+    color: var(--p-tag-warning-text-color);
 }
 .p-tag-danger {
-    background-color: var(--p-danger-button-bg);
-    color: var(--p-danger-button-text-color);
+    background-color: var(--p-tag-danger-bg);
+    color: var(--p-tag-danger-text-color);
 }
 .p-tag-icon {
-    margin-right: "math.div(var(--p-inline-spacing), 2)";
-    font-size: var(--p-badge-font-size);
+    margin-right: calc(var(--p-inline-spacing) / 2);
+    font-size: var(--p-tag-font-size, .75rem);
 }
 .p-tag-icon.p-icon {
-    width: var(--p-badge-font-size);
-    height: var(--p-badge-font-size);
+    width: var(--p-tag-icon-width, .75rem);
+    height: var(--p-tag-icon-height, .75rem);
 }
 `;
