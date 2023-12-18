@@ -1,47 +1,44 @@
 export default `
 .p-tabmenu .p-tabmenu-nav {
-    background: var(--p-tabview-nav-bg);
-    border: var(--p-tabview-nav-border);
-    border-width: var(--p-tabview-nav-border-width);
+    background: var(--p-tabmenu-nav-bg, var(transparent, var(--p-pink-0)));
+    border: var(--p-tabmenu-nav-border, 1px solid var(--p-dark-pink-600, var(--p-pink-300)));
+    border-width: var(--p-tabmenu-nav-border-width, 0 0 2px 0);
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem {
-    margin-right: var(--p-tabview-header-spacing);
+    margin-right: var(--p-tabmenu-item-spacing, 0);
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
-    border: var(--p-tabview-header-border);
-    border-width: var(--p-tabview-header-border-width);
-    border-color: var(--p-tabview-header-border-color);
-    background: var(--p-tabview-header-bg);
-    color: var(--p-tabview-header-text-color);
-    padding: var(--p-tabview-header-padding);
-    font-weight: var(--p-tabview-header-font-weight);
-    border-top-right-radius: var(--p-border-radius);
-    border-top-left-radius: var(--p-border-radius);
-    transition: var(--p-list-item-transition);
-    margin: var(--p-tabview-header-margin);
+    border: var(--p-tabmenu-item-border, var(--p-dark-pink-600, var(--p-pink-300)));
+    border-width: var(--p-tabmenu-item-border-width, 0 0 2px 0);
+    border-color: var(--p-tabmenu-item-border-color, transparent transparent var(--p-dark-pink-600, var(--p-pink-300)) transparent);
+    background: var(--p-tabmenu-item-bg, var(--p-dark-pink-800, var(--p-pink-0)));
+    color: var(--p-tabmenu-item-text-color, var(--p-dark-pink-100, var(--p-pink-600)));
+    padding: var(--p-tabmenu-item-padding, 1.25rem);
+    font-weight: var(--p-tabmenu-item-font-weight, 700);
+    border-top-right-radius: var(--p-border-radius, 6px);
+    border-top-left-radius: var(--p-border-radius, 6px);
+    transition: var(--p-list-item-transition, box-shadow var(--p-transition-duration));
+    margin: var(--p-tabmenu-item-margin, 0 0 -2px 0);
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link .p-menuitem-icon {
-    margin-right: var(--p-inline-spacing);
+    margin-right: var(--p-inline-spacing, .5rem);
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus-visible {
-    outline: var(--p-focus-outline);
-    outline-offset: var(--p-focus-outline-offset);
-    box-shadow: inset var(--p-focus-shadow);
+    outline: var(--p-focus-outline, 0 none);
+    outline-offset: var(--p-focus-outline-offset, 0);
+    box-shadow: var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color)));
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
-    background: var(--p-tabview-header-hover-bg);
-    border-color: var(--p-tabview-header-hover-border-color);
-    color: var(--p-tabview-header-text-hover-color);
+    background: var(--p-tabmenu-item-hover-bg, var(--p-dark-pink-800, var(--p-pink-0)));
+    border-color: var(--p-tabmenu-item-hover-border-color, var(--p-dark-primary-color, var(--p-pink-500)));
+    color: var(--p-tabmenu-item-text-hover-color, var(--p-dark-pink-0, var(--p-pink-600)));
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
-    background: var(--p-tabview-header-active-bg);
-    border-color: var(--p-tabview-header-active-border-color);
-    color: var(--p-tabview-header-text-active-color);
+    background: var(--p-tabmenu-item-active-bg, var(--p-dark-pink-800, var(--p-pink-0)));
+    border-color: var(--p-tabmenu-item-active-border-color, var(--p-dark-primary-color, var(--p-primary-color)));
+    color: var(--p-tabmenu-item-text-active-color, var(--p-dark-primary-color, var(--p-primary-color)));
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
-    transition:
-        background-color var(--p-transition-duration),
-        border-color var(--p-transition-duration),
-        box-shadow var(--p-transition-duration);
+    transition:  background-color var(--p-transition-duration), border-color var(--p-transition-duration), box-shadow var(--p-transition-duration);
 }
 `;
