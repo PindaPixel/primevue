@@ -26,7 +26,7 @@ export default `
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus-visible {
     outline: var(--p-focus-outline, 0 none);
     outline-offset: var(--p-focus-outline-offset, 0);
-    box-shadow: var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color)));
+    box-shadow: inset var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color))); /* //TODO: */
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
     background: var(--p-tabmenu-item-hover-bg, var(--p-dark-pink-800, var(--p-pink-0)));

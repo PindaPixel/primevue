@@ -23,7 +23,7 @@ export default `
 .p-panelmenu .p-panelmenu-header:not(.p-disabled):focus-visible .p-panelmenu-header-content {
     outline: var(--p-focus-outline, 0 none);
     outline-offset: var(--p-focus-outline-offset, 0);
-    box-shadow: var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color)));
+    box-shadow: inset var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color))); /* //TODO: */
 }
 .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled):hover .p-panelmenu-header-content {
     background: var(--p-panelmenu-header-hover-bg, var(--p-dark-pink-900, var(--p-pink-200)));

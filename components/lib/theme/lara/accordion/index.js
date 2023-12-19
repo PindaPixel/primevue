@@ -14,7 +14,7 @@ export default `
 .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus-visible {
     outline: var(--p-focus-outline, 0 none);
     outline-offset: var(--p-focus-outline-offset, 0);
-    box-shadow: inset var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color)));
+    box-shadow: inset var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color))); /* //TODO: */
 }
 .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
     background: var(--p-accordion-header-hover-bg, var(--p-dark-pink-900, var(--p-pink-200)));

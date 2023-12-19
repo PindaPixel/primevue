@@ -23,7 +23,7 @@ export default `
 .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus-visible {
     outline: var(--p-focus-outline, 0 none);
     outline-offset: var(--p-focus-outline-offset, 0);
-    box-shadow: inset var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color)));
+    box-shadow: inset var(--p-focus-shadow, 0 0 0 .2rem var(--p-dark-primary-lightest-color, var(--p-primary-light-color))); /* //TODO: */
 }
 .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
     background: var(--p-tabview-header-hover-bg, var(--p-dark-pink-800, var(--p-pink-0)));
