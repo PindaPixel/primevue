@@ -635,23 +635,39 @@ export default {
             errorMessageTextColor: 'var(#fca5a5, var(#ff5757))',
             errorMessageIconColor: 'var(#fca5a5, var(#ff5757))',
 
-            overlayContentBorder: 'var(1px solid var(--p-dark-pink-600), var(0 none))',
-            overlayContentBg: 'var(var(--p-dark-panel-content-bg), var(var(--p-panel-content-bg)))',
-            overlayContainerShadow: 'var(0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0,0,0,.12), var(0 1px 3px rgba(0,0,0,.3)))',
-            dialogHeaderBg: 'var(var(--p-dark-pink-800), var(var(--p-pink-0)))',
-            dialogHeaderBorder: 'var(0 none, var(0 none))',
-            dialogHeaderTextColor: 'var(var(--p-dark-pink-0), var(var(--p-pink-800)))',
-            dialogHeaderFontWeight: 'var(700, var(700))',
-            dialogHeaderFontSize: 'var(1.25rem, var(1.25rem))',
-            dialogHeaderPadding: 'var(1.5rem, var(1.5rem))',
-            dialogContentPadding: 'var(0 1.5rem 2rem 1.5rem, var(0 1.5rem 2rem 1.5rem))',
-            dialogFooterBorder: 'var(0 none, var(0 none))',
-            dialogFooterPadding: 'var(0 1.5rem 1.5rem 1.5rem, var(0 1.5rem 1.5rem 1.5rem))',
-            confirmPopupContentPadding: 'var(var(--p-dark-panel-content-padding), var(var(--p-panel-content-padding)))',
-            confirmPopupFooterPadding: 'var(0 1.25rem 1.25rem 1.25rem, var(0 1.25rem 1.25rem 1.25rem))',
-            tooltipBg: 'var(var(--p-dark-pink-600), var(var(--p-pink-700)))',
-            tooltipTextColor: 'var(var(--p-dark-pink-0), var(var(--p-pink-0)))',
-            tooltipPadding: 'var(var(--p-dark-input-padding), var(var(--p-input-padding)))',
+            overlayContentBorder: 'var(1px solid var(--p-dark-pink-600), var(0 none))', //TODO:
+            overlayContentBg: 'var(--p-dark-panel-content-bg, var(--p-panel-content-bg))', //TODO:
+            overlayContainerShadow: 'var(0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0,0,0,.12), var(0 1px 3px rgba(0,0,0,.3)))', //TODO:
+
+            dialogHeaderBg: 'var(--p-dark-pink-800, var(--p-pink-0))',
+            dialogHeaderBorder: '0 none',
+            dialogHeaderTextColor: 'var(--p-dark-pink-0, var(--p-pink-800))',
+            dialogHeaderFontWeight: '700',
+            dialogHeaderFontSize: '1.25rem',
+            dialogHeaderPadding: '1.5rem',
+            dialogContentPadding: '0 1.5rem 2rem 1.5rem',
+            dialogContentTextColor: 'var(--p-dark-pink-0, var(--p-pink-700))',
+            dialogFooterBorder: '0 none',
+            dialogFooterPadding: '0 1.5rem 1.5rem 1.5rem',
+            dialogFooterTextColor: 'var(--p-dark-pink-0, var(--p-pink-700))',
+
+            confirmPopupContentTextColor: 'var(--p-dark-pink-0, var(--p-pink-700))', //TODO:
+            confirmPopupContentPadding: 'var(--p-dark-panel-content-padding, var(--p-panel-content-padding))', //TODO:
+            confirmPopupFooterPadding: '0 1.25rem 1.25rem 1.25rem',
+
+            overlayPanelContentTextColor: 'var(--p-dark-pink-0, var(--p-pink-700))',
+            overlayPanelContentPadding: '0 1.5rem 2rem 1.5rem',
+
+            sidebarContentTextColor: 'var(--p-dark-pink-0, var(--p-pink-700))',
+            sidebarHeaderPadding: '1.25rem',
+            sidebarHeaderFontWeight: '700',
+            sidebarHeaderFontSize: '1.25rem',
+            sidebarContentPadding: '1.25rem',
+
+            tooltipBg: 'var(--p-dark-pink-600, var(--p-pink-700))',
+            tooltipTextColor: 'var(--p-dark-pink-0, var(--p-pink-0))',
+            tooltipPadding: 'var(--p-dark-input-padding, var(--p-input-padding))',
+            tooltipShadow: 'var(0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), var(0 2px 12px 0 rgba(0,0,0,.1)))', //TODO:
 
             stepsItemBg: 'var(transparent, var(--p-pink-0))',
             stepsItemBorder: 'var(0 none, 1px solid var(--p-pink-200))', //TODO:

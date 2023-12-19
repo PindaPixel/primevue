@@ -1,25 +1,26 @@
 export default `
 .p-confirm-popup {
-    background: var(--p-overlay-content-bg);
-    color: var(--p-panel-content-text-color);
-    border: var(--p-overlay-content-border);
-    border-radius: var(--p-border-radius);
-    box-shadow: var(--p-overlay-container-shadow);
+    background: var(--p-overlay-content-bg, var(--p-dark-panel-content-bg, var(--p-panel-content-bg)));
+    color: var(--p-confirm-popup-content-text-color, var(--p-dark-pink-0, var(--p-pink-700))); /* //TODO: */
+    border: var(--p-overlay-content-border, var(1px solid var(--p-dark-pink-600), var(0 none)));
+    border-radius: var(--p-border-radius, 6px);
+    box-shadow: var(--p-overlay-container-shadow, var(0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0,0,0,.12), var(0 1px 3px rgba(0,0,0,.3))));
 }
 .p-confirm-popup .p-confirm-popup-content {
-    padding: var(--p-confirm-popup-content-padding);
+    padding: var(--p-confirm-popup-content-padding); /* //TODO: */
 }
 .p-confirm-popup .p-confirm-popup-footer {
-    text-align: right;
-    padding: var(--p-confirm-popup-footer-padding);
+    text-align: right; /* //TODO: */
+    padding: var(--p-confirm-popup-footer-padding, 0 1.25rem 1.25rem 1.25rem);
 }
-.p-confirm-popup .p-confirm-popup-footer button {
-    margin: 0 var(--p-inline-spacing) 0 0;
+.p-confirm-popup .p-confirm-popup-footer button { /* //TODO: */
+    margin: 0 var(--p-inline-spacing, .5rem) 0 0;
     width: auto;
 }
 .p-confirm-popup .p-confirm-popup-footer button:last-child {
-    margin: 0;
+    margin: 0; /* //TODO: */
 }
+/* //TODO: */
 .p-confirm-popup:after {
     border: solid transparent;
     border-color: rgba(var(--p-overlay-content-bg), 0);
@@ -38,6 +39,7 @@ export default `
   }
   */
 }
+/* //TODO: */
 .p-confirm-popup.p-confirm-popup-flipped:after {
     border-top-color: var(--p-overlay-content-bg);
 }
@@ -52,13 +54,13 @@ export default `
   */
 }
 .p-confirm-popup .p-confirm-popup-icon {
-    font-size: "var(--p-prime-icon-font-size) * 1.5";
+    font-size: calc(var(--p-prime-icon-font-size) * 1.5);
 }
 .p-confirm-popup .p-confirm-popup-icon.p-icon {
-    width: "var(--p-prime-icon-font-size) * 1.5";
-    height: "var(--p-prime-icon-font-size) * 1.5";
+    width: calc(var(--p-prime-icon-font-size) * 1.5);
+    height: calc(var(--p-prime-icon-font-size) * 1.5);
 }
 .p-confirm-popup .p-confirm-popup-message {
-    margin-left: "var(--p-inline-spacing) * 2";
+    margin-left: calc(var(--p-inline-spacing) * 2);
 }
 `;
