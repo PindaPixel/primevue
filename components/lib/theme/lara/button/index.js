@@ -5,7 +5,7 @@ export default `
     border: var(--p-button-border, 1px solid var(--p-dark-primary-color, var(--p-primary-color)));
     padding: var(--p-button-padding, .75rem 1.25rem);
     font-size: var(--p-font-size, 1rem);
-    transition: var(--p-form-element-transition); //TODO:
+    transition: var(--p-form-element-transition); /* //TODO: */
     border-radius: var(--p-border-radius, 6px);
 }
 .p-button:not(:disabled):hover {
@@ -19,7 +19,7 @@ export default `
     border-color: var(--p-button-active-border-color, var(--p-dark-primary-lighter-color, var(--p-primary-darker-color)));
 }
 .p-button.p-button-outlined {
-    background-color: transparent; //TODO:
+    background-color: transparent; /* //TODO: */
     color: var(--p-button-bg, var(--p-dark-primary-color, var(--p-primary-color)));
     border: var(--p-outlined-button-border, 1px solid);
 }
@@ -46,19 +46,19 @@ export default `
     color: var(--p-plain-button-text-color, var(--p-dark-text-secondary-color, var(--p-text-secondary-color)));
 }
 .p-button.p-button-text {
-    background-color: transparent; //TODO:
+    background-color: transparent; /* //TODO: */
     color: var(--p-button-bg, var(--p-dark-primary-color, var(--p-primary-color)));
-    border-color: transparent; //TODO:
+    border-color: transparent; /* //TODO: */
 }
 .p-button.p-button-text:not(:disabled):hover {
     background: rgba(var(--p-button-bg, var(--p-dark-primary-color, var(--p-primary-color))), var(--p-text-button-hover-bg-opacity));
     color: var(--p-button-bg, var(--p-dark-primary-color, var(--p-primary-color)));
-    border-color: transparent; //TODO:
+    border-color: transparent; /* //TODO: */
 }
 .p-button.p-button-text:not(:disabled):active {
     background: rgba(var(--p-button-bg, var(--p-dark-primary-color, var(--p-primary-color))), var(--p-text-button-active-bg-opacity));
     color: var(--p-button-bg, var(--p-dark-primary-color, var(--p-primary-color)));
-    border-color: transparent; //TODO:
+    border-color: transparent; /* //TODO: */
 }
 .p-button.p-button-text.p-button-plain {
     color: var(--p-plain-button-text-color, var(--p-dark-text-secondary-color, var(--p-text-secondary-color)));
@@ -117,7 +117,7 @@ export default `
     border-radius: var(--p-button-icon-only-rounded-border-radius, 50%);
     height: var(--p-button-icon-only-width, 3rem);
 }
-.p-button.p-button-sm { //TODO:
+.p-button.p-button-sm { /* //TODO: */
     font-size: "$val * $scale";
     padding: "nth($val, 1) * $scale nth($val, 2) * $scale";
 }
@@ -135,7 +135,7 @@ export default `
     margin-left: var(--p-inline-spacing, .5rem);
 }
 .p-button.p-button-loading-label-only .p-button-loading-icon {
-    margin-right: 0; //TODO:
+    margin-right: 0; /* //TODO: */
 }
 
 .p-fluid .p-button {
