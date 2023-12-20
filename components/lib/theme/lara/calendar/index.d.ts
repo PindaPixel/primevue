@@ -1,0 +1,32 @@
+interface CalendarVariable {
+    calendarTableMargin?: string | undefined;
+    calendarPadding?: string | undefined;
+    calendarBg?: string | undefined;
+    calendarInlineBg?: string | undefined;
+    calendarTextColor?: string | undefined;
+    calendarBorder?: string | undefined;
+    calendarOverlayBorder?: string | undefined;
+    calendarHeaderPadding?: string | undefined;
+    calendarHeaderBg?: string | undefined;
+    calendarInlineHeaderBg?: string | undefined;
+    calendarHeaderBorder?: string | undefined;
+    calendarHeaderTextColor?: string | undefined;
+    calendarHeaderFontWeight?: string | undefined;
+    calendarHeaderCellPadding?: string | undefined;
+    calendarMonthYearHeaderHoverTextColor?: string | undefined;
+    calendarCellDatePadding?: string | undefined;
+    calendarCellDateWidth?: string | undefined;
+    calendarCellDateHeight?: string | undefined;
+    calendarCellDateBorderRadius?: string | undefined;
+    calendarCellDateBorder?: string | undefined;
+    calendarCellDateHoverBg?: string | undefined;
+    calendarCellDateTodayBg?: string | undefined;
+    calendarCellDateTodayBorderColor?: string | undefined;
+    calendarCellDateTodayTextColor?: string | undefined;
+    calendarButtonBarPadding?: string | undefined;
+    calendarTimePickerPadding?: string | undefined;
+    calendarTimePickerElementPadding?: string | undefined;
+    calendarTimePickerTimeFontSize?: string | undefined;
+    calendarBreakpoint?: string | undefined;
+    calendarCellDatePaddingSM?: string | undefined;
+}
