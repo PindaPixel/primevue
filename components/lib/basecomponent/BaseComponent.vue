@@ -243,7 +243,7 @@ export default {
             return ObjectUtils.getItemValue(this.theme, this.$params);
         },
         $params() {
-            const parentInstance = this.$parentInstance || this.$parent;
+            const parentInstance = this._getHostInstance(this) || this.$parent;
 
             return {
                 instance: this,

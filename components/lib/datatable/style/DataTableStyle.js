@@ -98,7 +98,7 @@ const css = `
 
     .p-datatable .p-column-resizer {
         display: block;
-        position: absolute !important;
+        position: absolute;
         top: 0;
         right: 0;
         margin: 0;
@@ -230,7 +230,7 @@ const css = `
     }
 
     .p-datatable .p-virtualscroller .p-virtualscroller-loading {
-        transform: none !important;
+        transform: none;
         min-height: 0;
         position: sticky;
         top: 0;
@@ -368,7 +368,7 @@ const classes = {
     rowgroupHeader: 'p-rowgroup-header',
     rowGroupToggler: 'p-row-toggler p-link',
     rowGroupTogglerIcon: 'p-row-toggler-icon',
-    row: ({ instance, props, rowData }) => {
+    row: ({ instance, props, index }) => {
         let rowStyleClass = [];
 
         if (props.selectionMode) {
@@ -377,15 +377,17 @@ const classes = {
 
         if (props.selection) {
             rowStyleClass.push({
-                'p-highlight': instance.isSelected(rowData)
+                'p-highlight': instance.isSelected
             });
         }
 
         if (props.contextMenuSelection) {
             rowStyleClass.push({
-                'p-highlight-contextmenu': instance.isSelectedWithContextMenu(rowData)
+                'p-highlight-contextmenu': instance.isSelectedWithContextMenu
             });
         }
+
+        rowStyleClass.push(index % 2 === 0 ? 'p-row-even' : 'p-row-odd');
 
         return rowStyleClass;
     },

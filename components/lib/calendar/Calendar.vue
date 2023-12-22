@@ -2185,6 +2185,7 @@ export default {
                 }
 
                 case 'Enter':
+                case 'NumpadEnter':
 
                 case 'Space': {
                     this.onDateSelect(event, date);
@@ -2361,6 +2362,7 @@ export default {
                 }
 
                 case 'Enter':
+                case 'NumpadEnter':
 
                 case 'Space': {
                     this.onMonthSelect(event, index);
@@ -2454,6 +2456,7 @@ export default {
                 }
 
                 case 'Enter':
+                case 'NumpadEnter':
 
                 case 'Space': {
                     this.onYearSelect(event, index);
@@ -2726,14 +2729,14 @@ export default {
                         let { breakpoint, numMonths } = responsiveOptions[i];
                         let styles = `
                             .p-datepicker[${this.attributeSelector}] .p-datepicker-group:nth-child(${numMonths}) .p-datepicker-next {
-                                display: inline-flex !important;
+                                display: inline-flex;
                             }
                         `;
 
                         for (let j = numMonths; j < this.numberOfMonths; j++) {
                             styles += `
                                 .p-datepicker[${this.attributeSelector}] .p-datepicker-group:nth-child(${j + 1}) {
-                                    display: none !important;
+                                    display: none;
                                 }
                             `;
                         }

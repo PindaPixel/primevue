@@ -19677,7 +19677,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "default": "true",
+                            "default": "false",
                             "description": "Defines whether metaKey is requred or not for the selection. When true metaKey needs to be pressed to select or unselect an item and\nwhen set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically."
                         },
                         {
@@ -19747,7 +19747,7 @@
                             "name": "columnResizeMode",
                             "optional": true,
                             "readonly": false,
-                            "type": "\"fit\" | \"expand\"",
+                            "type": "\"expand\" | \"fit\"",
                             "default": "fit",
                             "description": "Defines whether the overall table width."
                         },
@@ -30408,6 +30408,14 @@
                             "description": "The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3;\nthe default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the [ISO 4217 currency code](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) list (2 if the list doesn't provide that information)."
                         },
                         {
+                            "name": "roundingMode",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "RoundingMode",
+                            "default": "",
+                            "description": "How decimals should be rounded.\nThe default value is  `\"halfExpand\"` , [further information](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#roundingmode)."
+                        },
+                        {
                             "name": "min",
                             "optional": true,
                             "readonly": false,
@@ -30645,6 +30653,9 @@
         "types": {
             "description": "Defines the custom types used by the module.",
             "values": {
+                "RoundingMode": {
+                    "values": "\"ceil\" | \"floor\" | \"expand\" | \"trunc\" | \"halfCeil\" | \"halfFloor\" | \"halfExpand\" | \"halfTrunc\" | \"halfEven\""
+                },
                 "InputNumberPassThroughOptionType": {
                     "values": "InputNumberPassThroughAttributes | (options: InputNumberPassThroughMethodOptions) => undefined | string | null | undefined"
                 }
@@ -32254,7 +32265,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "default": "true",
+                            "default": "false",
                             "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically."
                         },
                         {
@@ -34680,15 +34691,6 @@
                             "description": "Icon of the item."
                         },
                         {
-                            "name": "to",
-                            "optional": true,
-                            "readonly": false,
-                            "type": "RouteLocationRaw",
-                            "default": "",
-                            "description": "Route configuration such as path, name and parameters.",
-                            "deprecated": "since v3.33.0."
-                        },
-                        {
                             "name": "command",
                             "optional": true,
                             "readonly": false,
@@ -36953,7 +36955,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "default": "true",
+                            "default": "false",
                             "description": "Defines whether metaKey is requred or not for the selection.\nWhen true metaKey needs to be pressed to select or unselect an item and\nwhen set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically."
                         },
                         {
@@ -41438,7 +41440,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "default": "true",
+                            "default": "false",
                             "description": "Defines whether metaKey is requred or not for the selection.\nWhen true metaKey needs to be pressed to select or unselect an item and\nwhen set to false selection of each item can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically."
                         },
                         {
@@ -53967,7 +53969,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "default": "true",
+                            "default": "false",
                             "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically."
                         },
                         {
@@ -54823,7 +54825,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "default": "true",
+                            "default": "false",
                             "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically."
                         },
                         {
@@ -55975,6 +55977,14 @@
                             "description": "An array of treenodes."
                         },
                         {
+                            "name": "dataKey",
+                            "optional": true,
+                            "readonly": false,
+                            "type": "string | Function",
+                            "default": "\"key\"",
+                            "description": "Name of the field that uniquely identifies the a record in the data."
+                        },
+                        {
                             "name": "expandedKeys",
                             "optional": true,
                             "readonly": false,
@@ -56003,7 +56013,7 @@
                             "optional": true,
                             "readonly": false,
                             "type": "boolean",
-                            "default": "true",
+                            "default": "false",
                             "description": "Defines how multiple items can be selected, when true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually.\nOn touch enabled devices, metaKeySelection is turned off automatically."
                         },
                         {
@@ -56219,7 +56229,7 @@
                             "name": "columnResizeMode",
                             "optional": true,
                             "readonly": false,
-                            "type": "\"fit\" | \"expand\"",
+                            "type": "\"expand\" | \"fit\"",
                             "default": "fit",
                             "description": "Defines whether the overall table width should change on column resize."
                         },
